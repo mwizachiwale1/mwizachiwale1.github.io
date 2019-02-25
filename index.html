@@ -8,6 +8,7 @@
 
   <!-- Site Properties -->
   <title>Homepage - Semantic</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="components/reset.css">
   <link rel="stylesheet" type="text/css" href="components/site.min.css">
 
@@ -27,7 +28,9 @@
   <link rel="stylesheet" type="text/css" href="components/transition.min.css">
 
   <style type="text/css">
-
+html, body{
+  font-family: 'Roboto', sans-serif;
+    }
     .hidden.menu {
       display: none;
     }
@@ -173,7 +176,7 @@
 
 <!-- Page Contents -->
 <div class="pusher">
-  <div class="ui inverted vertical masthead center aligned segment">
+  <div class="ui fixed inverted main menu">
 
     <div class="ui container">
       <div class="ui large secondary inverted pointing menu">
@@ -184,6 +187,9 @@
         <a class="item">Work</a>
         <a class="item">Company</a>
         <a class="item">Careers</a>
+        <div class="item">
+        Menu
+      </div>
         <div class="right item">
           <a class="ui inverted button">Log in</a>
           <a class="ui inverted button">Sign Up</a>

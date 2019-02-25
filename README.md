@@ -1,1 +1,2 @@
-# mwizachiwale1.github.io
+# isanziplay
+A simple social media web app

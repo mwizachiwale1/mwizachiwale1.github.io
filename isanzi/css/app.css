@@ -1,0 +1,173 @@
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+    
+nav .nav-wrapper a{
+    color:black;
+}
+nav .nav-wrapper a.brand-logo{
+    font-size:22px;
+    font-weight:700;
+}
+nav .nav-wrapper a.brand-logo img{
+    width:50px;
+    position: absolute;
+    top:5px;
+}
+nav .nav-wrapper a.brand-logo .logo-txt{
+    margin-left:60px;
+}
+
+.background-img{
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 210px !important;
+    background-position: top;
+}
+.remove-margins{
+    padding:0px !important;
+    margin:0px !important;
+}
+h1{
+    font-size:27px;
+    font-weight:700;
+}
+h2{
+    font-size:20px;
+    font-weight:500;
+}
+ol li{
+    font-weight:300 !important;
+    font-weight:100 !important;
+}
+p{
+    font-size: 16px;
+}
+p.mission{
+    font-size:18px;
+}
+.section-1{
+    padding-bottom: 2%;
+    margin-bottom:5%;
+}
+.service-container{
+    margin-bottom: 10%;
+}
+.service-container .service-header i.material-icons{
+    font-size: 80px;
+}
+.service-container .service-header img{
+    width:120px;
+    border-radius: 50%;
+    border: 4px solid orange;
+}
+.service-container .sub-header{
+    font-size: 20px;
+    font-weight:500;
+}
+.service-container .description{
+    font-size: 15px;
+}
+/* label color */
+.input-field label {
+    color: grey;
+  }
+  /* label focus color */
+  .input-field input[type=text]:focus + label {
+    color: orange !important;
+  }
+  .input-field textarea:focus + label {
+    color: orange !important;
+  }
+  /* label underline focus color */
+  .input-field input[type=text]:focus {
+    border-bottom: 1px solid orange !important;
+    box-shadow: 0 1px 0 0 orange !important;
+  }
+  .input-field textarea:focus {
+    border-bottom: 1px solid orange !important;
+    box-shadow: 0 1px 0 0 orange !important;
+  }
+  /* valid color */
+  .input-field input[type=text].valid {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+  }
+  /* invalid color */
+  .input-field input[type=text].invalid {
+    border-bottom: 1px solid #000;
+    box-shadow: 0 1px 0 0 #000;
+  }
+  /* icon prefix focus color */
+  .input-field .prefix {
+    color: rgb(109, 108, 108) !important;
+  }
+  .input-field .prefix.active {
+    color: orange !important;
+  }
+  .card-content{
+      height: 120px !important;
+      max-height: 120px !important;
+      min-height: 120px !important;
+  }
+@media only screen and (min-width : 765px) {
+    .background-img{
+        height: 400px !important;
+    }
+}
+@media only screen and (min-width : 1020px) {
+    .section-1 .container{
+        padding-top: 1% !important;
+    }
+    .background-img{
+        height: 485px !important;
+    }
+}
+@media only screen and (min-width : 1024px) {
+    .background-img{
+        height: 490px !important;
+        background-position: right !important;
+    }
+    .section-1{
+        padding-bottom: 0% !important;
+    }
+    .section-1 .container{
+        padding-top: 5% !important;
+    }
+    h1{
+        font-size:35px;
+        color:black;
+    }
+    h2{
+        font-size:27px;
+        color:black;
+    }
+    p{
+        font-size: 18px;
+    }
+    p.mission{
+        font-size:20px;
+    }
+    nav .nav-wrapper a.brand-logo{
+        font-size:23px;
+        margin-left:20px;
+    }
+    nav .nav-wrapper a.brand-logo .logo-txt{
+        margin-left:60px;
+    }
+}
+@media only screen and (max-width : 380px) {
+    nav .nav-wrapper a.brand-logo img{
+        display: none !important;
+    }
+    nav .nav-wrapper a.brand-logo .logo-txt{
+        margin-left:0px;
+    }
+}

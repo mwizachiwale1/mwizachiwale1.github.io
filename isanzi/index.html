@@ -53,7 +53,7 @@
                             </div>
                     </div>
                 <div class="col s12 m12 l6 remove-margins">
-                    <div class="background-img" style="background-image: url('img/fghhj.jpg');"></div>
+                    <div class="background-img" id="bg1"></div>
                 </div>
                 <div class="col s12 m12 l6 hide-on-large-only">
                         <div class="container">
@@ -127,7 +127,7 @@
           <div class="section-1 grey lighten-4">
                 <div class="row">
                     <div class="col s12 m12 l6 remove-margins">
-                        <div class="background-img" style="background-image: url('img/bg3.jpg');"></div>
+                        <div class="background-img" id="bg2"></div>
                     </div>
                     <div class="col s12 m12 l6">
                             <div class="container">
@@ -215,7 +215,11 @@
  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js" defer></script>
   <script type="text/javascript">
     $(document).ready(function(){
-      $(".button-collapse").sideNav();
+      $(".button-collapse").sideNav();$("#bg1").css({
+        "background-image": "url('img/fghhj.jpg')"
+    });$("#bg2").css({
+        "background-image": "url('img/bg3.jpg')"
+    });
     });
   </script>
 </html>

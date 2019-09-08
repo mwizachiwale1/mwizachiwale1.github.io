@@ -1,13 +1,3 @@
-
-@font-face {
-    font-family:'Nunito-Regular';
-    src:url('../../new fonts/Nunito_sans/NunitoSans-Regular.ttf') format('truetype');
-  }
-  @font-face {
-    font-family:'roboto';
-    src:url('../../new fonts/roboto/Roboto-Regular.ttf') format('truetype');
-  }
-  
 body {
     display: flex;
     min-height: 100vh;
@@ -98,8 +88,8 @@ ol li{
     font-weight:300 !important;
 }
 p{
-    font-size: 22px !important;
-    font-family: Nunito-Regular !important;
+    font-size: 22px;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 .outlinebtn-container{
@@ -109,7 +99,6 @@ p{
     font-size: 15px;
     border: 3px solid #2b73cc;
     color: #2b73cc;
-    font-weight: 600;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     border-bottom-left-radius: 15px;
@@ -117,6 +106,11 @@ p{
     text-align: center;
     padding: 11px 15px 11px 15px;
     transition: 0.6s cubic-bezier(0.0, 0.0, 0.2, 1);
+  }
+  .outlinebtn-container .btn-outline.second{
+    font-size: 15px;
+    border: 3px solid #f5f5f5 !important;
+    color: #f5f5f5 !important;
   }
   .outlinebtn-container .btn-outline:hover{
     color: #ffff;
@@ -151,12 +145,6 @@ p{
       margin-top: 15px;
       padding-top: 9px;
       padding-left: 9px;
-      background-color: rgb(255, 123, 0);
-    background:linear-gradient(top, rgb(255, 123, 0), rgb(255, 0, 0)); 
-    background:-moz-linear-gradient(top, rgb(255, 123, 0), rgb(255, 0, 0));
-    background:-webkit-linear-gradient(top, rgb(255, 123, 0), rgb(255, 0, 0));
-    background:-o-linear-gradient(top, rgb(255, 123, 0), rgb(255, 0, 0));
-    background:-ms-linear-gradient(top, rgb(255, 123, 0), rgb(255, 0, 0)); 
       
 
   }
@@ -170,7 +158,7 @@ p{
   }
   .custom-collection .item .item-description h5 a{
       margin-top: 0px !important;
-      color: rgb(255, 123, 0);
+      color: dodgerblue;
   }
 .section-1{
     padding-bottom: 2%;
@@ -235,9 +223,7 @@ p{
         color:black;
     }
    
-    p{
-        font-size: 18px;
-    }
+    
   
     nav .nav-wrapper a.brand-logo{
         font-size:23px;
@@ -248,6 +234,9 @@ p{
     }
 }
 @media only screen and (max-width : 380px) {
+  .center-img{
+    width:35%;
+}
     nav .nav-wrapper a.brand-logo{
         margin-left: -25px;
     }

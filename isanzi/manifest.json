@@ -1,0 +1,21 @@
+{
+  "short_name": "ISANZI TECH",
+  "name": "ISANZI TECHNOLOGIES LTD",
+  "icons": [
+    {
+      "src": "/img/logo.png",
+      "type": "image/png",
+      "sizes": "50x50"
+    },
+    {
+      "src": "/img/logo.png",
+      "type": "image/png",
+      "sizes": "50x50"
+    }
+  ],
+  "start_url": "/isanzi/",
+  "background_color": "#ffff",
+  "display": "browser",
+  "scope": "/isanzi/",
+  "theme_color": "#0000"
+}

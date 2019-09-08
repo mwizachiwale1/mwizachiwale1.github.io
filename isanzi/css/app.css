@@ -52,11 +52,11 @@ nav .nav-wrapper a.brand-logo .logo-txt{
 
 .bg-gradient{
     background-color: #141415ee;
-    background:linear-gradient(top, rgba(0, 0, 0, 0), #000000b9); 
-    background:-moz-linear-gradient(top, rgba(0, 0, 0, 0), #000000b9);
-    background:-webkit-linear-gradient(top, rgba(0, 0, 0, 0), #000000b9);
-    background:-o-linear-gradient(top, rgba(0, 0, 0, 0), #000000b9);
-    background:-ms-linear-gradient(top, rgba(0, 0, 0, 0), #000000b9); 
+    background:linear-gradient(top, rgba(0, 0, 0, 0.342), #020202ee); 
+    background:-moz-linear-gradient(top, rgba(0, 0, 0, 0.342), #020202ee);
+    background:-webkit-linear-gradient(top, rgba(0, 0, 0, 0.342), #020202ee);
+    background:-o-linear-gradient(top, rgba(0, 0, 0, 0.342), #020202ee);
+    background:-ms-linear-gradient(top, rgba(0, 0, 0, 0.342), #020202ee);  
 }
 
 .grid-photos{

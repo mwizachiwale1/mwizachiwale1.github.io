@@ -1,0 +1,262 @@
+
+@font-face {
+    font-family:'Nunito-Regular';
+    src:url('../../new fonts/Nunito_sans/NunitoSans-Regular.ttf') format('truetype');
+  }
+  @font-face {
+    font-family:'roboto';
+    src:url('../../new fonts/roboto/Roboto-Regular.ttf') format('truetype');
+  }
+  
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+    -webkit-animation: parallax-fade-in 0.9s ease-in-out; /* Safari 4+ */
+    -moz-animation:    parallax-fade-in 0.9s ease-in-out; /* Fx 5+ */
+    -o-animation:      parallax-fade-in 0.9s ease-in-out; /* Opera 12+ */
+    animation:         parallax-fade-in 0.9s ease-in-out; /* IE 10+, Fx 29+ */
+  }
+ 
+  @-webkit-keyframes parallax-fade-in {
+    0%   { opacity: 0; margin-top: 100px;}
+    100% { opacity: 1; margin-top: 0px;}
+  }
+  @-moz-keyframes parallax-fade-in {
+    0%   { opacity: 0; margin-top: 100px;}
+    100% { opacity: 1; margin-top: 100px;}
+  }
+  @-o-keyframes parallax-fade-in {
+    0%   { opacity: 0; margin-top: 100px;}
+    100% { opacity: 1; margin-top: 0px;}
+  }
+  @keyframes parallax-fade-in {
+    0%   { opacity: 0; margin-top: 100px;}
+    100% { opacity: 1; margin-top: 0px;}
+  } 
+
+nav .nav-wrapper a.brand-logo{
+    font-size:20px !important;
+    font-weight:600;
+}
+nav .nav-wrapper a.brand-logo img{
+    width:50px;
+    position: absolute;
+    top:5px;
+}
+nav .nav-wrapper a.brand-logo .logo-txt{
+    margin-left:60px;
+}
+
+.background-img{
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 180px !important;
+    background-position: top;
+}
+
+
+.bg-gradient{
+    background-color: #141415ee;
+    background:linear-gradient(top, rgba(0, 0, 0, 0), #000000b9); 
+    background:-moz-linear-gradient(top, rgba(0, 0, 0, 0), #000000b9);
+    background:-webkit-linear-gradient(top, rgba(0, 0, 0, 0), #000000b9);
+    background:-o-linear-gradient(top, rgba(0, 0, 0, 0), #000000b9);
+    background:-ms-linear-gradient(top, rgba(0, 0, 0, 0), #000000b9); 
+}
+
+.grid-photos{
+    position: relative;
+}
+
+
+
+.remove-margins{
+    padding:0px !important;
+    margin:0px !important;
+}
+.center-img{
+    width:25%;
+}
+
+.cost{
+    font-weight: 600;
+}
+h1{
+    font-size:27px;
+    font-weight:700;
+}
+h2{
+    font-size:20px;
+    font-weight:500;
+}
+ol li{
+    font-weight:300 !important;
+}
+p{
+    font-size: 22px !important;
+    font-family: Nunito-Regular !important;
+}
+
+.outlinebtn-container{
+    padding-top: 12px;
+  }
+  .outlinebtn-container .btn-outline{
+    font-size: 15px;
+    border: 3px solid #2b73cc;
+    color: #2b73cc;
+    font-weight: 600;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    text-align: center;
+    padding: 11px 15px 11px 15px;
+    transition: 0.6s cubic-bezier(0.0, 0.0, 0.2, 1);
+  }
+  .outlinebtn-container .btn-outline:hover{
+    color: #ffff;
+    background-color: #2b73cc;
+  }
+  .grided-view{
+      padding-top: 0% !important;
+  }
+  .grid-photos{
+      height: 350px;
+      background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+  }
+  .pitch-area {
+      padding-top: 6%;
+      padding-bottom: 5%;
+  }
+  
+  .custom-collection{
+      width:100%;
+  }
+  .custom-collection .item{
+    width: 100%;
+  }
+  .custom-collection .item .item-icon{
+      width: 43px;
+      height: 43px;
+      border-radius: 50%;
+      float: left;
+      margin-top: 15px;
+      padding-top: 9px;
+      padding-left: 9px;
+      background-color: rgb(255, 123, 0);
+    background:linear-gradient(top, rgb(255, 123, 0), rgb(255, 0, 0)); 
+    background:-moz-linear-gradient(top, rgb(255, 123, 0), rgb(255, 0, 0));
+    background:-webkit-linear-gradient(top, rgb(255, 123, 0), rgb(255, 0, 0));
+    background:-o-linear-gradient(top, rgb(255, 123, 0), rgb(255, 0, 0));
+    background:-ms-linear-gradient(top, rgb(255, 123, 0), rgb(255, 0, 0)); 
+      
+
+  }
+ 
+  .custom-collection .item .item-description{
+    width: 70%;
+    
+    float: left;
+    margin-left: 25px;
+    
+  }
+  .custom-collection .item .item-description h5 a{
+      margin-top: 0px !important;
+      color: rgb(255, 123, 0);
+  }
+.section-1{
+    padding-bottom: 2%;
+    margin-bottom:5%;
+}
+
+ 
+  .fixed-action-btn a.btn-floating{
+    -webkit-animation: btn-fade-in 0.5s ease-out; /* Safari 4+ */
+      -moz-animation:    btn-fade-in 0.5s ease-out; /* Fx 5+ */
+      -o-animation:      btn-fade-in 0.5s ease-out; /* Opera 12+ */
+      animation:         btn-fade-in 0.5s ease-out; /* IE 10+, Fx 29+ */
+  }
+  @-webkit-keyframes btn-fade-in {
+    0%   { width: 0px; height: 0px; }
+    100% { width: 56px; height: 56px;}
+  }
+  @-moz-keyframes btn-fade-in {
+    0%   { width: 0px; height: 0px; }
+    100% { width: 56px; height: 56px;}
+  }
+  @-o-keyframes btn-fade-in {
+    0%   { width: 0px; height: 0px; }
+    100% { width: 56px; height: 56px;}
+  }
+  @keyframes btn-fade-in {
+    0%   { width: 0; height: 0px; }
+    100% { width: 56px; height: 56px;}
+  }
+@media only screen and (min-width : 765px) {
+    .background-img{
+        height: 400px !important;
+    }
+}
+@media only screen and (max-width : 1020px) {
+    .section-1{
+        padding-top: 4% !important;
+    }
+}
+@media only screen and (min-width : 1020px) {
+    .section-1{
+        padding-top: 4% !important;
+    }
+    .background-img{
+        height: 485px !important;
+    }
+    
+}
+@media only screen and (min-width : 1024px) {
+    .background-img{
+        height: 490px !important;
+        background-position: right !important;
+    }
+    .section-1{
+        padding-bottom: 0% !important;
+    }
+    .section-1 .container{
+        padding-top: 5% !important;
+    }
+    h1{
+        font-size:35px;
+        color:black;
+    }
+   
+    p{
+        font-size: 18px;
+    }
+  
+    nav .nav-wrapper a.brand-logo{
+        font-size:23px;
+        margin-left:20px;
+    }
+    nav .nav-wrapper a.brand-logo .logo-txt{
+        margin-left:60px;
+    }
+}
+@media only screen and (max-width : 380px) {
+    nav .nav-wrapper a.brand-logo{
+        margin-left: -25px;
+    }
+    nav .nav-wrapper a.brand-logo .logo-txt{
+        display: none;
+    }
+    .grid-photos{
+        height: 200px;
+      
+    }
+    
+}

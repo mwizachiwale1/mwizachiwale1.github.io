@@ -1,0 +1,113 @@
+/*material components*/
+
+@import "../../material_components/sass/components/_color";
+@import "../../material_components/sass/components/_variables";
+@import "../../material_components/sass/components/_global";
+@import "../../material_components/sass/components/forms/_input-fields";
+@import "../../material_components/sass/components/_typography";
+@import "../../material_components/sass/components/_roboto";
+@import "../../material_components/sass/components/_grid";
+@import "../../material_components/sass/components/_cards";
+@import "../../material_components/sass/components/_buttons";
+@import "../../material_components/sass/components/_waves";
+/*theming*/
+$primary: color("blue", "base");
+$accent-1: #FFFFFF;
+$accent-2: color("blue", "lighten-3");
+
+/*typography*/
+$large-text: 20px;
+$medium-text: 19px;
+$small-text: 15px;
+/*actual styling code*/
+
+html, body{
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	background-image: url('../background/himalayas.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	.container{
+		-webkit-animation: swile-in 0.8s ease-in-out; /* Safari 4+ */
+    -moz-animation:    swile-in 0.8s ease-in-out; /* Fx 5+ */
+    -o-animation:      swile-in 0.8s ease-in-out; /* Opera 12+ */
+    animation:         swile-in 0.8s ease-in-out; /* IE 10+, Fx 29+ */
+	@-webkit-keyframes swile-in {
+    0%   { opacity: 0;}
+    100%   { opacity: 1;}
+  }
+  @-moz-keyframes swile-in {
+    0%   { opacity: 0;}
+    100% { opacity: 1;}
+  }
+  @-o-keyframes swile-in {
+    0%   { opacity: 0;}
+    100% { opacity: 1;}
+  }
+  @keyframes swile-in {
+    0%   { opacity: 0;}
+    100% { opacity: 1;}
+  }
+	}
+.box.card{
+	height: 465px;
+	text-align: center;
+	bakcground-color: color("shades", "white");
+	padding: 20px 30px 0px 30px;
+	$border: color("grey", "lighten-4");
+	border: 1px solid $border;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	
+	.title{
+	color: $primary;
+	width: 100%;
+	font-size: $large-text;
+	margin-bottom: 20px;
+	}
+	.icon{
+		height: 136px;
+		width: 135px;
+		border: 2px solid $primary;
+		color: #FFFFFF;
+		margin: 0px auto;
+		border-radius: 50%;
+		padding-top: 5%;
+	}
+	.sub-text{
+		color: color("grey", "darken-3");
+		width: 100%;
+		font-size: $large-text;
+	}
+	.input-section .col.input-field{
+		margin-top: 0px !important;
+		text-align: center !important;
+	}
+	.input-section .col.input-field input, .input-section .col.input-field label{
+		text-align: center !important;
+		font-size: 16px !important;
+	}
+	.input-section .col.input-field label{
+	color: color("grey", "darken-2") !important;
+	}
+	.button-area{
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	.foot-link{
+		width: 100%;
+		font-size: $small-text;
+	}
+}
+.footer{
+	margin-top:10px;
+	text-align: center;
+	font-size: $small-text;
+	color: color("grey", "lighten-3");
+	font-family: 16px;
+}
+}

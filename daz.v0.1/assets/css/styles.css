@@ -1,0 +1,46 @@
+#hero-section {
+  color: #ffdaa6;
+  margin-top: 69px;
+}
+
+#hero-section .sub-text {
+  color: #a3897b;
+}
+
+.nav-tabs a {
+  color: #405d74;
+}
+
+.nav-tabs .active {
+  background-color: #7a0b03 !important;
+  color: #ffebe9 !important;
+  border: none !important;
+  font-weight: 500;
+}
+
+.nav-tabs .nav-link {
+  margin-right: 10px !important;
+  background-color: #0a1218;
+  border-radius: 15px;
+}
+
+@media screen and (min-width: 1000px) {
+  .main-content {
+    width: 70% !important;
+  }
+}
+
+.dropdown-menu {
+  background-color: #0a1218;
+}
+
+.dropdown-menu .dropdown-item {
+  color: #405d74;
+  border-radius: 15px;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background-color: #7a0b03 !important;
+  color: #ffebe9 !important;
+}
+

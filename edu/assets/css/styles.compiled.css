@@ -1,0 +1,33 @@
+.user input, .form-select {
+  background-color: #D4D99C;
+  color: #383A25 !important;
+}
+
+.user .btn-primary {
+  background-color: #095703;
+}
+
+.user .secondary-btn {
+  background-color: #3f51b5 !important;
+}
+
+.user .btn {
+  border: none;
+  font-size: 1rem !important;
+  padding: 0.75rem 3rem !important;
+}
+
+.surface-links {
+  color: #262318;
+  text-decoration: none;
+}
+
+.text-dark {
+  color: #262318;
+}
+
+.form-select {
+  font-size: 0.8rem;
+  border-radius: 10rem;
+  padding: 1rem;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>display</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body id="fun-spot" class="d-flex flex-column justify-content-center align-items-center" style="background: rgb(53, 53, 53);padding-top: 2rem; height:100vh; overflow: hidden;">
+    <img class="target" src="assets/img/bg2.png"  height="680vh">
+    
+    <!-- <a href='https://pngtree.com/so/Creative'>Creative png from pngtree.com/</a> -->
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+    <!-- <script src="assets/js/main.js"></script> -->
+    <script defer type="text/javascript">
+        $(document).ready(function(){
+
+            const firebaseConfig = {
+
+    apiKey: "AIzaSyB-tEIY3LlVKA-bjslG_bJ2Yk3zb2YphG0",
+
+    authDomain: "unza-connect.firebaseapp.com",
+
+    projectId: "unza-connect",
+
+    storageBucket: "unza-connect.appspot.com",
+
+    messagingSenderId: "768834600387",
+
+    appId: "1:768834600387:web:f248e6d61cec0202505176"
+
+  };
+
+  const app = firebase.initializeApp(firebaseConfig);
+  const storage = firebase.storage().ref();
+
+  const db = firebase.firestore();
+
+    // when card is selected
+    var docRef = firebase.firestore().doc("active_slides/active_slide");
+
+
+
+
+        db.collection("fun-slides").get().then((querySnapshot) => {
+            // $("#fun-spot").html("");
+          querySnapshot.forEach((doc) => {
+            // doc.data() is never undefined for query doc snapshots
+            $("#fun-spot").append(`
+            <img class="target hidden" id="${doc.id}" src="${doc.data().slideUrl}" height="680vh">
+            `);
+            
+
+            
+docRef.onSnapshot(function(doc) {
+  if (doc.exists) {
+    // document data is available in the doc object
+    var data = doc.data().id;
+    console.log(data);
+    $(".target").each(function() {
+        $(this).addClass("hidden"); // remove a specific class from each element
+     });
+     $("#"+data).removeClass("hidden");
+  } else {
+    // handle case where document does not exist
+    console.log("Document does not exist");
+  }
+});
+           
+          });
+        });
+
+
+
+
+      
+      });
+
+      
+    </script>
+</body>
+
+</html>

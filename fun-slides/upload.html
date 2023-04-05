@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>display</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body style="background: rgb(255,245,238);">
+    <div class="container" style="padding-top: 19px;margin-bottom: 32px;">
+        <h1 class="text-center text-warning" style="padding-bottom: 21px;">Fun Slides</h1><a
+            class="btn btn-success btn-lg d-inline-block" role="button" target="#add-slide-modal"
+            data-bs-target="#add-slide-modal" data-bs-toggle="modal">ADD SLIDE</a>
+    </div>
+    <div class="container">
+        <div class="row" id="slide-spot">
+           <!-- Slides come here -->
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="add-slide-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Add a Fun Slide</h4><button type="button" class="btn-close"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="row" style="padding: 12px;">
+                            <label class="form-label">Select Image</label>
+                            <input
+                                class="form-control" type="file" id="slide-image">
+                            </div>
+                        <div class="row" style="padding: 12px;">
+                            <label class="form-label">Enter title</label>
+                            <input id="slide-title"
+                                class="form-control" type="text"></div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-light" type="button"
+                        data-bs-dismiss="modal">Close</button>
+                        <button id="upload-slide" class="btn btn-primary" type="button">ADD
+                        +</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="toast align-items-center bg-success text-white position-absolute p-1 m-3 bottom-0 end-0" role="alert"
+      id="toast" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body" id="toast-body"></div>
+        <button id="close-toast" type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast"
+          aria-label="Close"></button>
+      </div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+.card {
+  margin-bottom: 1rem;
+}
+
+.card.active {
+  background-color: var(--bs-blue) !important;
+  color: var(--bs-body-bg);
+}
+
+
+
+.col-md-4 {
+  margin-bottom: 1rem;
+}
+
+.hidden{
+  display: none;
+}

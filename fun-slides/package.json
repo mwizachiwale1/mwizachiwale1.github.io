@@ -1,0 +1,25 @@
+{
+  "name": "fun-slides",
+  "version": "1.0.0",
+  "description": "Online phone controlled presentation application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FuntomInteractive/fun-slides.git"
+  },
+  "keywords": [
+    "Slids",
+    "presentation",
+    "phone",
+    "controlled"
+  ],
+  "author": "Mwiza Chiwale",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FuntomInteractive/fun-slides/issues"
+  },
+  "homepage": "https://github.com/FuntomInteractive/fun-slides#readme"
+}

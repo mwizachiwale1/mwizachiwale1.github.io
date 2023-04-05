@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>display</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body style="background: var(--bs-gray-900);">
+    <div class="container">
+        <h1 class="fs-1 text-center text-warning" style="padding-top: 25px;padding-bottom: 28px;color: var(--bs-pink);">Fun Slides</h1>
+        <p class="fs-6 fw-light text-center text-white"><em>Lets rock this show 🔥🔥🔥</em></p>
+    </div>
+    <div class="container">
+        <div class="row" id="slide-spot">
+            
+        </div>
+    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+    <!-- <script src="assets/js/main.js"></script> -->
+    <script defer type="text/javascript">
+        $(document).ready(function(){
+
+            const firebaseConfig = {
+
+    apiKey: "AIzaSyB-tEIY3LlVKA-bjslG_bJ2Yk3zb2YphG0",
+
+    authDomain: "unza-connect.firebaseapp.com",
+
+    projectId: "unza-connect",
+
+    storageBucket: "unza-connect.appspot.com",
+
+    messagingSenderId: "768834600387",
+
+    appId: "1:768834600387:web:f248e6d61cec0202505176"
+
+  };
+
+  const app = firebase.initializeApp(firebaseConfig);
+  const storage = firebase.storage().ref();
+
+  const db = firebase.firestore();
+
+    // when card is selected
+    $(".target").on("click", function () {
+                $(this).addClass("selected"); // add a class to the clicked element
+            });
+
+        // loading...
+        $("#slide-spot").html(" ");
+        db.collection("fun-slides").get().then((querySnapshot) => {
+          $("#slide-spot").html("");
+          querySnapshot.forEach((doc) => {
+            // doc.data() is never undefined for query doc snapshots
+            $("#slide-spot").append(`
+              <div class="col-md-4 col-6">
+                  <div class="card target" data-id="${doc.id}" style="cursor: pointer;">
+                      <div class="card-body active"><img width="100%" class="" height="auto" src="${doc.data().slideUrl}">
+                          <h5 class="card-title" style="padding-top: 8px;">${doc.data().title}</h5>
+                          </div>
+                  </div>
+              </div>
+            `);
+
+            $(".target").on("click", function () {
+                $(".target").each(function() {
+                    $(this).removeClass("active"); // remove a specific class from each element
+                });
+                $(this).addClass("active"); // add a class to the clicked element
+                let slideId = $(this).attr("data-id");
+
+                db.collection("active_slides").doc("active_slide").update({
+                id: slideId
+              }).then(() => {
+                    console.log("Updated succesfully")
+              
+               
+              }).catch((error) => {
+                console.log(error)
+              })
+            });
+          });
+        });
+
+
+      
+      });
+
+      
+    </script>
+</body>
+
+</html>

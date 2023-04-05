@@ -58,7 +58,7 @@
 
         // loading...
         $("#slide-spot").html(" ");
-        db.collection("fun-slides").get().then((querySnapshot) => {
+        db.collection("fun-slides").orderBy("date").get().then((querySnapshot) => {
           $("#slide-spot").html("");
           querySnapshot.forEach((doc) => {
             // doc.data() is never undefined for query doc snapshots

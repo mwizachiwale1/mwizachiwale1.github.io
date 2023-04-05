@@ -6,11 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>display</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body id="fun-spot" class="d-flex flex-column justify-content-center align-items-center" style="background: rgb(53, 53, 53);padding-top: 2rem; height:100vh; overflow: hidden;">
-    <img class="target" src="assets/img/bg2.png"  height="680vh">
+    <img class="target animate" src="assets/img/bg2.png" style="border-radius: 10px;"  height="680vh">
     
     <!-- <a href='https://pngtree.com/so/Creative'>Creative png from pngtree.com/</a> -->
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
@@ -56,7 +60,7 @@
           querySnapshot.forEach((doc) => {
             // doc.data() is never undefined for query doc snapshots
             $("#fun-spot").append(`
-            <img class="target hidden" id="${doc.id}" src="${doc.data().slideUrl}" height="680vh">
+            <img class="target hidden animate__animated" id="${doc.id}" src="${doc.data().slideUrl}" style="border-radius: 10px;" height="680vh">
             `);
             
 
@@ -68,8 +72,11 @@ docRef.onSnapshot(function(doc) {
     console.log(data);
     $(".target").each(function() {
         $(this).addClass("hidden"); // remove a specific class from each element
+        $(this).removeClass("animate"); // remove a specific class from each element
      });
-     $("#"+data).removeClass("hidden");
+    
+     $("#"+data).removeClass("hidden").addClass("animate");
+     
   } else {
     // handle case where document does not exist
     console.log("Document does not exist");

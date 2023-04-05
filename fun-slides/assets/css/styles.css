@@ -16,3 +16,15 @@
 .hidden{
   display: none;
 }
+
+@keyframes fade {
+  from {opacity: 0;}
+  to {opacity: 1rem;}
+}
+
+/* The element to apply the animation to */
+.animate {
+  animation: backInRight 0.8s;
+  animation-timing-function: ease-out;
+  
+} 

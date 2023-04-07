@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mckaziwe Media</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="/assets/favicon/favicon.ico" alt="" class="d-inline-block align-text-center"> Mckaziwe
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav navbar-nav-scroll" style="--bs-scroll-height: 100vh;">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Portfolio
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+              <li><a href="album-view.html?id=gtEownLsYsXsZ46vp01k&title=Creatove Design" id="creative-design"
+                  class="dropdown-item">Creative Design</a></li>
+              <li><a href="album-view.html?id=lYiSy5gxdtezUyWEIINR&title=Brand and Identity" id="brand-identity"
+                  class="dropdown-item">Brand & Identity</a></li>
+              <li><a href="album-view.html?id=37oPL1BrxtmcgqTGn2En&title=Company Profile" id="company-profile"
+                  class="dropdown-item">Company Profile</a></li>
+              <li><a href="album-view.html?id=KC7aDvrGS2SibAEFIeEq&title=Booklets" id="booklets"
+                  class="dropdown-item">Booklets</a></li>
+              <li><a href="album-view.html?id=8ArLZya77HX1Fluy8s4T&title=Photography" id="photography"
+                  class="dropdown-item">Photography</a></li>
+              <li><a href="album-view.html?id=JM6c2OIFYoBqJdrK6iMu&title=Videography" id="videography"
+                  class="dropdown-item">Videography</a></li>
+              <li><a href="album-view.html?id=fmqUL6kJwBZ7EP7Ku47w&title=Mockups" id="mockups"
+                  class="dropdown-item">Mockups</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="login-now">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="p-3 px-4 side-bar bg-dark" style="width: 18rem;">
+    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-white text-decoration-none">
+      <img src="assets/favicon/android-chrome-192x192.png"></img>
+    </a>
+    <ul class="list-unstyled ps-0 side-bar-menu">
+      <li class="mb-1 nav-item">
+        <a href="#" class="d-inline-flex align-items-center border-0 active" aria-expanded="true">
+          Home
+        </a>
+      </li>
+      <li class="mb-1">
+        <a href="#" id="collapsible" class="btn-toggle d-inline-flex align-items-center border-0 collapsed"
+          data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="true">
+          Portfolio
+        </a>
+        <div class="collapse show" id="dashboard-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small sub-items">
+            <li><a href="album-view.html?id=gtEownLsYsXsZ46vp01k&title=Creatove Design" id="creative-design"
+                class="d-inline-flex mb-1 text-decoration-none ">- Creative Design</a></li>
+            <li><a href="album-view.html?id=lYiSy5gxdtezUyWEIINR&title=Brand and Identity" id="brand-identity"
+                class="d-inline-flex mb-1 text-decoration-none ">- Brand & Identity</a></li>
+            <li><a href="album-view.html?id=37oPL1BrxtmcgqTGn2En&title=Company Profile" id="company-profile"
+                class="d-inline-flex mb-1 text-decoration-none ">- Company Profile</a></li>
+            <li><a href="album-view.html?id=KC7aDvrGS2SibAEFIeEq&title=Booklets" id="booklets"
+                class="d-inline-flex mb-1 text-decoration-none ">- Booklets</a></li>
+            <li><a href="album-view.html?id=8ArLZya77HX1Fluy8s4T&title=Photography" id="photography"
+                class="d-inline-flex mb-1 text-decoration-none ">- Photography</a></li>
+            <li><a href="album-view.html?id=JM6c2OIFYoBqJdrK6iMu&title=Videography" id="videography"
+                class="d-inline-flex mb-1 text-decoration-none ">- Videography</a></li>
+            <li><a href="album-view.html?id=fmqUL6kJwBZ7EP7Ku47w&title=Mockups" id="mockups"
+                class="d-inline-flex mb-1 text-decoration-none ">- Mockups</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1 nav-item">
+        <a href="#" class=" d-inline-flex align-items-center border-0" aria-expanded="true">
+          About
+        </a>
+      </li>
+      <li class="mb-1 nav-item">
+        <a href="#" id="login-now" class=" d-inline-flex align-items-center border-0" aria-expanded="true">
+          Login with google
+        </a>
+      </li>
+    </ul>
+  </div>
+  <main>
+    <div class="hero-section">
+      <div class="gradient">
+        <p class="m-0 p-0 part-1">Mckaziwe Media house</p>
+        <p class="p-0 dynamic" style="margin-top: -0.5rem;"><span id="dynamic-text"></span><span
+            class="cursor animate__infinite" style="font-size: 2rem;font-weight: 500;">|</span>
+        </p>
+        <div class="pb-5 mt-4">
+          <a href="book.html" class="btn book-button btn-lg">
+            <i class="fa-solid fa-calendar-plus mx-1"></i>
+            Book Appointment</a>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="hero-bottom">
+        <div class="level1">
+          <div class="mobile-icon-parent">
+            <div class="icon-span">
+              <i class="fa fa-phone app-icon phone"></i>
+
+            </div>
+          <div class="label mt-2">+260 964 684 516</div>
+
+          </div> 
+        </div>
+        <div class="level2">
+          <div class="socials">
+            <div class="icons">
+              <div>
+                <div class="icon-span">
+                  <i class="fa-brands fa-facebook app-icon facebook"></i>
+                </div> 
+              </div>
+              <div>
+                <div class="icon-span">
+                  <i class="fa-brands fa-instagram app-icon instagram"></i>
+                </div> 
+              </div>
+              <div>
+                <div class="icon-span">
+                  <i class="fa-brands fa-linkedin app-icon linkedin"></i>
+                </div> 
+              </div>  
+            </div>
+          <div class="mt-2 label">Socials</div>
+            
+          </div>
+          
+          </div>
+        </div> -->
+    </div>
+    <!-- <div class="quote-container">
+        <p class="lead quote">Mckaziwe media house handles Digital designs, print and graphic design, brand development and  social media management.
+        </p>
+        <div class="pb-5">
+          <a href="book.html" class="btn btn-warning btn-lg">Book Appointment</a>
+        </div>
+      </div> -->
+    <div class="container pt-3 mt-4 px-5">
+      <h3 class="text-white px-2">Portfolio</h3>
+    </div>
+    <div class="album pt-4 mt-1" id="photo-list">
+
+    </div>
+    <div class="album pt-4 mt-1" id="loaders">
+      <div class="shimmer-placeholder" style="height: 18rem;"></div>
+      <div class="shimmer-placeholder" style="height: 15rem;"></div>
+      <div class="shimmer-placeholder" style="height: 10rem;"></div>
+      <div class="shimmer-placeholder"></div>
+      <div class="shimmer-placeholder" style="height: 15rem;"></div>
+      <div class="shimmer-placeholder" style="height: 12rem;"></div>
+
+
+    </div>
+
+    <div class="loader"></div>
+    <div class="pt-5 text-center mb-4">
+      <p id="loading-message" class="text-center text-white"></p>
+      <button class="btn  btn-lg text-white" id="load-more" style="background-color: #60B99A;">Load More</button>
+    </div>
+
+
+  </main>
+  <footer class="container-fluid py-5 bg-light">
+    <div class="row">
+      <div class="col-12 col-md">
+        <img src="/assets/favicon/favicon.ico"></img>
+        <small class="d-block mb-3 text-muted">Mckaziwe Media House © 2014-2023</small>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Quick links</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="link-secondary text-decoration-none" href="#">Home</a></li>
+          <li><a class="link-secondary text-decoration-none" href="#">About</a></li>
+          <li><a class="link-secondary text-decoration-none" href="#">Contact</a></li>
+          <li><a class="link-secondary text-decoration-none" href="#">Company profile</a></li>
+
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Portfolio</h5>
+        <ul class="list-unstyled text-small">
+          <li><a href="album-view.html?id=gtEownLsYsXsZ46vp01k&title=Creatove Design"
+              class="d-inline-flex mb-1 text-decoration-none link-secondary">Creative Design</a></li>
+          <li><a href="album-view.html?id=lYiSy5gxdtezUyWEIINR&title=Brand and Identity"
+              class="d-inline-flex mb-1 text-decoration-none link-secondary">Brand & Identity</a></li>
+          <li><a href="album-view.html?id=37oPL1BrxtmcgqTGn2En&title=Company Profile"
+              class="d-inline-flex mb-1 text-decoration-none link-secondary">Company Profile</a></li>
+          <li><a href="album-view.html?id=KC7aDvrGS2SibAEFIeEq&title=Booklets"
+              class="d-inline-flex mb-1 text-decoration-none link-secondary">Booklets</a></li>
+          <li><a href="album-view.html?id=8ArLZya77HX1Fluy8s4T&title=Photography"
+              class="d-inline-flex mb-1 text-decoration-none link-secondary">Photography</a></li>
+          <li><a href="album-view.html?id=JM6c2OIFYoBqJdrK6iMu&title=Videography"
+              class="d-inline-flex mb-1 text-decoration-none link-secondary">Videography</a></li>
+          <li><a href="album-view.html?id=fmqUL6kJwBZ7EP7Ku47w&title=Mockups"
+              class="d-inline-flex mb-1 text-decoration-none link-secondary">Mockups</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+
+  <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+
+
+  <script>
+    $(document).ready(function () {
+      var startAt = 0, lastVisible = 0; limit = 6, maxReached = false, prevDate = 0, currentDate = 0;
+      const firebaseConfig = {
+
+        apiKey: "AIzaSyB-tEIY3LlVKA-bjslG_bJ2Yk3zb2YphG0",
+
+        authDomain: "unza-connect.firebaseapp.com",
+
+        projectId: "unza-connect",
+
+        storageBucket: "unza-connect.appspot.com",
+
+        messagingSenderId: "768834600387",
+
+        appId: "1:768834600387:web:f248e6d61cec0202505176"
+
+      };
+
+      const app = firebase.initializeApp(firebaseConfig);
+      const storage = firebase.storage().ref();
+
+      const db = firebase.firestore();
+
+      // Authentication
+      const provider = new firebase.auth.GoogleAuthProvider();
+      provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+      // get  photo albums
+      // getPhotoAlbums();
+      let field = "date";
+
+      getPhotos(); // initial load
+      function getPhotos() {
+        // loading...
+        db.collection("mckaziwe-photos").orderBy(field).startAfter(lastVisible).limit(limit).get().then((querySnapshot) => {
+          console.log(startAt);
+          querySnapshot.forEach((doc) => {
+            // doc.data() is never undefined for query doc snapshots
+            $("#photo-list").append(`
+                  <div class="album-item">
+                    <img width="100%" src="${doc.data().fileName}" alt="${doc.data().title}">
+                </div>
+              `);
+            currentDate = doc.data().date;
+            $("#loaders").addClass("hidden");
+          });
+          if (prevDate == currentDate) {
+            $("#load-more").attr("disabled", true);
+            $("#loaders").addClass("hidden");
+            $("#loading-message").html("You have reached the end!!");
+            maxReached = true;
+          } else {
+            prevDate = currentDate;
+            lastVisible = querySnapshot.docs[querySnapshot.docs.length - 1];
+
+          }
+
+        });
+      }
+      $("#load-more").on("click", function () {
+        if (!maxReached) {
+          $("#loaders").removeClass("hidden");
+          getPhotos();
+          startAt += limit;
+        }
+
+      });
+
+      // extract id from url
+      function extractUrl() {
+        var url = document.URL;
+        var id = url.substring(url.lastIndexOf('=') + 1);
+        return id;
+
+      }
+
+      // description: handles login of admin using google sign in
+      $('#login-now').on('click', function () {
+        firebase.auth()
+          .signInWithPopup(provider)
+          .then((result) => {
+            /** @type {firebase.auth.OAuthCredential} */
+            var credential = result.credential;
+
+            // This gives you a Google Access Token. You can use it to access the Google API.
+            var token = credential.accessToken;
+            // The signed-in user info.
+            var user = result.user;
+            window.location.href('admin-home.html');
+            // IdP data available in result.additionalUserInfo.profile.
+            // ...
+          }).catch((error) => {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            console.log(errorMessage);
+            // ...
+          });
+      })
+    });
+
+
+
+  </script>
+</body>
+
+</html>

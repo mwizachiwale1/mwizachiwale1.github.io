@@ -332,7 +332,7 @@
             var token = credential.accessToken;
             // The signed-in user info.
             var user = result.user;
-            window.location.href('admin-home.html');
+            window.location.href = 'admin-home.html';
             // IdP data available in result.additionalUserInfo.profile.
             // ...
           }).catch((error) => {

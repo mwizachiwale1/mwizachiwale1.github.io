@@ -5,15 +5,32 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mckaziwe Media</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
   <link href="../assets/css/style.css" rel="stylesheet">
 
 </head>
 
 <body>
+  <div class="modal fade modal-sm"  id="positive-feedback" data-bs-backdrop="static" tabindex="-1" aria-labelledby="Success" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content pt-4">
+        <div class="modal-body pt-4">
+          <div class="text-center">
+            <i class="fa-solid text-success fa-envelope-circle-check fa-2xl hidden" id="email-success-icon"></i>
+          </div>
+          <p class="text-center mt-3">You appointment request regarding <span id="service-type-here"></span> has been recieved, we will get back to you in a moment.</p>
+        </div>
+        <div class="modal-footer text-center" style="text-align: center !important;">
+          <a href="../" class="btn btn-primary" style="width: 100%;" id="update">Ok, take me home</a>
+          
+        </div>
+      </div>
+    </div>
+  </div>
   <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
@@ -107,7 +124,7 @@
       </li>
     </ul>
   </div>
-  <main class="bg-light pb-3 ">
+  <main class="bg-white pb-3 ">
     <form id="appointment-form" method="post" class="card container mt-4 p-3">
       <h1>Book Appointment</h1>
       <div class="separator bt-1 mb-2"></div>
@@ -128,7 +145,8 @@
 
         <div class="card container py-2 mb-2 bg-light">
           <div class="form-check">
-            <input id="photography-videography" value="Photography/Videography" name="chooseService" type="radio" class="form-check-input" required>
+            <input id="photography-videography" value="Photography/Videography" name="chooseService" type="radio"
+              class="form-check-input" required>
             <label class="form-check-label" for="photography-videography"><strong>Photography & Videography</strong>
               <p><small><em>Includes Weddings, Kitchen parties etc...</em> </small> </p>
 
@@ -138,14 +156,16 @@
         </div>
         <div class="card container py-2 mb-2 bg-light">
           <div class="form-check">
-            <input id="Social-media-management" value="Social Media Management" name="chooseService" type="radio" class="form-check-input" required>
+            <input id="Social-media-management" value="Social Media Management" name="chooseService" type="radio"
+              class="form-check-input" required>
             <label class="form-check-label" for="Social-media-management"><strong>Social Media Management</strong>
             </label>
           </div>
         </div>
         <div class="card container py-2 mb-2 bg-light">
           <div class="form-check">
-            <input id="Printing-and-supply" value="Printing and Supply" name="chooseService" type="radio" class="form-check-input" required>
+            <input id="Printing-and-supply" value="Printing and Supply" name="chooseService" type="radio"
+              class="form-check-input" required>
             <label class="form-check-label" for="Printing-and-supply"><strong>Printing and Supply</strong>
               <p><small><em>Includes Pens, Banners, Pop up banners, Backdrops, T-shirts, Diaries, Calendars,
                     Billboards</em> </small> </p>
@@ -194,6 +214,7 @@
 
       </div>
       <p style="text-align: right;">
+        <button id="open-modal">Show</button>
         <button class="btn btn--outline-secondary btn-lg" id="previous-button">Previous</button>
         <button class="btn btn-primary btn-lg" id="next-button">Next</button>
 
@@ -313,6 +334,22 @@
         window.currentPage = 1;
       }
     });
+
+    var positiveFeedbackModal = new bootstrap.Modal(document.getElementById('positive-feedback'), {
+      keyboard: false
+    })
+    $('#open-modal').on('click', function (e) {
+      e.preventDefault();
+      positiveFeedbackModal.show();
+      setTimeout(function(){
+        $('#email-success-icon').removeClass('fa-bounce');
+        $('#email-success-icon').removeClass('hidden').addClass('fa-bounce');
+      }, 200);
+      
+      setTimeout(function(){
+        $('#email-success-icon').removeClass('fa-bounce');
+      }, 1800);
+    })
 
   </script>
 </body>

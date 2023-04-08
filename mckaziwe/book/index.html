@@ -152,7 +152,8 @@
 
         <div class="card container py-2 mb-2 bg-light mt-4">
           <div class="form-check">
-            <input id="creative-design" name="chooseService" value="Creative Design" type="radio" class="form-check-input" checked required>
+            <input id="creative-design" name="chooseService" value="Creative Design" type="radio"
+              class="form-check-input" checked required>
             <label class="form-check-label" for="creative-design"><strong>Creative Design</strong>
               <p><small><em>Includes Logo design and 3D mockups</em> </small> </p>
 
@@ -211,20 +212,25 @@
         <div class="my-3 row">
           <div class="col-12 col-sm-12 col-md-7">
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Full names">
+              <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Full names" required>
               <label for="fullName">Full names</label>
             </div>
           </div>
           <div class="col-12 col-sm-12 col-md-5">
             <div class="form-floating mb-3">
-              <input type="tel" class="form-control" id="phone-number" name="phoneNumber" placeholder="Full names">
+              <input type="tel" class="form-control" id="phone-number" name="phoneNumber" placeholder="Full names"
+                required>
               <label for="phone-number">Phone number</label>
             </div>
           </div>
           <div class="col-12 col-sm-12 col-md-12">
             <div class="form-floating mb-3">
-              <input type="tel" class="form-control" id="email" name="email" placeholder="Full names">
+              <input type="email" class="form-control" id="email" name="email" placeholder="Full names" required>
               <label for="phone-number">Email</label>
+              <div class="invalid-feedback hidden" id="email-error-text">
+                Hey! it looks like you made a typo in your email.
+              </div>
+          
             </div>
           </div>
 
@@ -252,7 +258,7 @@
       </div>
       <p style="text-align: right;">
         <button type="button" class="btn btn--outline-secondary btn-lg" id="previous-button">Previous</button>
-        <button type="button" class="btn btn-primary btn-lg" id="next-button">Next</button>
+        <button type="submit" class="btn btn-primary btn-lg" id="next-button">Next</button>
 
       </p>
     </form>
@@ -326,9 +332,24 @@
           $("#page-3").removeClass("hidden");
           //$("#next-button").addClass("hidden");
           //$("#submit").removeClass("hidden");
+
+        
           window.currentPage = 2;
 
         } else if (window.currentPage == 2) {
+
+            // check email here
+            if (!ValidateEmail($('#email').val())) {
+            console.log("You have entered an invalid email address!");
+            $('#email').focus().addClass("is-invalid");
+            $('#email-error-text').removeClass("hidden");
+            return;
+          } else {
+            console.log("Valid email address!");
+            $('#email').removeClass("is-invalid");
+            $('#email-error-text').addClass("hidden");
+          }
+
           $("#page-3").addClass("hidden");
           $("#page-4").removeClass("hidden");
 
@@ -414,6 +435,17 @@
           window.currentPage = 2;
         }
       });
+
+
+      function ValidateEmail(inputText) {
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (inputText.match(mailformat)) {
+          return true;
+        }
+        else {
+          return false;
+        }
+      }
 
 
 

@@ -3,7 +3,9 @@ var statmentStage = 0;
 var index = 0;
 $(document).ready(function() {
   const text = $('#dynamic-text'); // where text is displayed
-  let sentence0 = ['B', 'r', 'e', 'a', 't', 'h', 'i', 'n', 'g',' ', 'i', 'n', ' ', 'y', 'o', 'u', 'r', ' ', 'm', 'o', 'm', 'e', 'n', 't'];
+  let sentence0 = ['B', 'r', 'e', 'a', 't', 'h', 'i', 'n', 'g','.','.','.'];
+  let sentence1 = ['','In', ' ', 'y', 'o', 'u', 'r', '.','.','.'];
+  let sentence2 = ['', 'M','o', 'm', 'e', 'n', 't', '.'];
   // Creation and destruction of tags
 
   function write(len, sentence){
@@ -25,7 +27,7 @@ $(document).ready(function() {
           setTimeout(function(){
             $("#id"+(len - (index - len) - 1)).remove();
             index++;
-          }, 1200);
+          }, 1000);
         } else {
             $("#id"+(len - (index - len) - 1)).remove();
             index++;
@@ -46,13 +48,21 @@ $(document).ready(function() {
       let len = sentence0.length;
       write(len, sentence0);
 
+    } else if(statementNo == 1){
+       // statment 1
+       let len = sentence1.length;
+        write(len, sentence1);
+    } else if(statementNo == 2){
+      // statment 2
+      let len = sentence2.length;
+      write(len, sentence2);
     } else{
         statementNo = 0;
         statmentStage = 0;
     }
   }
   
-  var r = setInterval(print, 230, window.column);
+  var r = setInterval(print, 220, window.column);
   
   // text.innerHTML += sentence[window.row][window.column];
 })

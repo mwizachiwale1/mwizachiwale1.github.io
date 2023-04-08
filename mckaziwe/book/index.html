@@ -15,18 +15,37 @@
 </head>
 
 <body>
-  <div class="modal fade modal-sm"  id="positive-feedback" data-bs-backdrop="static" tabindex="-1" aria-labelledby="Success" aria-hidden="true">
+  <div class="modal fade modal-sm" id="positive-feedback" data-bs-backdrop="static" tabindex="-1"
+    aria-labelledby="Success" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content pt-4">
         <div class="modal-body pt-4">
           <div class="text-center">
             <i class="fa-solid text-success fa-envelope-circle-check fa-2xl hidden" id="email-success-icon"></i>
           </div>
-          <p class="text-center mt-3">You appointment request regarding <span id="service-type-here"></span> has been recieved, we will get back to you in a moment.</p>
+          <p class="text-center mt-3">Your appointment request regarding <span id="service-type-here"></span> has been
+            recieved, we will get back to you in a moment.</p>
         </div>
         <div class="modal-footer text-center" style="text-align: center !important;">
           <a href="../" class="btn btn-primary" style="width: 100%;" id="update">Ok, take me home</a>
-          
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade modal-sm" id="negaitive-feedback" data-bs-backdrop="static" tabindex="-1"
+    aria-labelledby="Success" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content pt-4">
+        <div class="modal-body pt-4">
+          <div class="text-center">
+            <i class="fa-solid text-danger fa-envelope fa-2xl hidden" id="email-error-icon"></i>
+          </div>
+          <p class="text-center mt-3">Something went long on our end, please try again in a while.</p>
+        </div>
+        <div class="modal-footer text-center" style="text-align: center !important;">
+          <a href="../" class="btn btn-primary" style="width: 100%;" id="update">Ok, take me home</a>
+
         </div>
       </div>
     </div>
@@ -133,7 +152,7 @@
 
         <div class="card container py-2 mb-2 bg-light mt-4">
           <div class="form-check">
-            <input id="creative-design" name="chooseService" type="radio" class="form-check-input" checked required>
+            <input id="creative-design" name="chooseService" value="Creative Design" type="radio" class="form-check-input" checked required>
             <label class="form-check-label" for="creative-design"><strong>Creative Design</strong>
               <p><small><em>Includes Logo design and 3D mockups</em> </small> </p>
 
@@ -213,10 +232,27 @@
         </div>
 
       </div>
+      <div class="my-3 hidden" id="page-4">
+        <h3>Please confirm your details</h3>
+
+        <div class="my-3 row">
+          <div class="col-12 col-sm-12 col-md-12">
+            <div class="form-floating mb-3">
+              <p><strong class="primary-text">Full Names:</strong> <span id="full-names-confirmation"></span></p>
+              <p><strong>Phone Number:</strong> <span id="phone-number-confirmation"></span></p>
+              <p><strong>Email Address:</strong> <span id="email-address-confirmation"></span></p>
+              <p><strong>Service type:</strong> <span id="service-type-confirmation"></span></p>
+              <p><strong>Details:</strong> <span id="details-confirmation"></span></p>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
       <p style="text-align: right;">
-        <button id="open-modal">Show</button>
-        <button class="btn btn--outline-secondary btn-lg" id="previous-button">Previous</button>
-        <button class="btn btn-primary btn-lg" id="next-button">Next</button>
+        <button type="button" class="btn btn--outline-secondary btn-lg" id="previous-button">Previous</button>
+        <button type="button" class="btn btn-primary btn-lg" id="next-button">Next</button>
 
       </p>
     </form>
@@ -268,88 +304,123 @@
     crossorigin="anonymous"></script>
   <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
   <script type="text/javascript" src="../assets/js/jquery.js"></script>
-  <script>
-    window.currentPage = 0; // keeps track of the page user is on
-    window.postUrl = "https://mckaziwe-media-server.up.railway.app/appointment/"
-    $("#next-button").click(function (event) { //  controls forward form navigation
-      event.preventDefault();
-      if (currentPage == 0) {
-        // show page 2
-        // hide page 1
-        $("#page-1").addClass("hidden");
-        $("#page-2").removeClass("hidden");
+  <script type="text/javascript">
+    $(document).ready(function () {
+
+      window.currentPage = 0; // keeps track of the page user is on
+      window.postUrl = "https://mckaziwe-media-server.up.railway.app/appointment/";
+      $("#next-button").on('click', function (event) { //  controls forward form navigation
+        event.preventDefault();
+        if (window.currentPage == 0) {
+          // show page 2
+          // hide page 1
+          $("#page-1").addClass("hidden");
+          $("#page-2").removeClass("hidden");
 
 
-        //$("#next-button").removeClass("hidden");
-        window.currentPage = 1;
-      } else if (currentPage == 1) {
-        // hide page 2 show page 3
-        $("#page-2").addClass("hidden");
-        $("#page-3").removeClass("hidden");
-        $("#next-button").html("Submit")
-        //$("#next-button").addClass("hidden");
-        //$("#submit").removeClass("hidden");
-        window.currentPage = 2;
+          //$("#next-button").removeClass("hidden");
+          window.currentPage = 1;
+        } else if (window.currentPage == 1) {
+          // hide page 2 show page 3
+          $("#page-2").addClass("hidden");
+          $("#page-3").removeClass("hidden");
+          //$("#next-button").addClass("hidden");
+          //$("#submit").removeClass("hidden");
+          window.currentPage = 2;
 
-      } else if (currentPage == 2) {
-        // submit form
-        var data_dirty = $("#appointment-form").serializeArray()
-        var data = {}
-        data_dirty.forEach(element => {
-          data[element.name] = element.value
-        });
-        console.log(data.chooseService);
-        data.credentials = 'include'
-        console.log("Submiting from")
-        let xhr = new XMLHttpRequest();
-        $('#next-button').prop('disabled', true);
-        xhr.onload = function () {
-          if (xhr.status != 200) { // analyze HTTP status of the response
-            alert(`Error ${xhr.status}: ${xhr.statusText}`); // e.g. 404: Not Found
-          } else { // show the result
-            alert(`Appointment Sent Successfully, Check your email`); // response is the server response
-          }
-        };
+        } else if (window.currentPage == 2) {
+          $("#page-3").addClass("hidden");
+          $("#page-4").removeClass("hidden");
 
-        xhr.open("POST", window.postUrl)
-        xhr.send(JSON.stringify(data))
-      }
-    });
+          $('#full-names-confirmation').html($('#fullName').val());
+          $('#phone-number-confirmation').html($('#phone-number').val());
+          $('#email-address-confirmation').html($('#email').val());
+          $('#service-type-confirmation').html($('input[name="chooseService"]:checked').val());
+          $('#details-confirmation').html($('#description').val());
+          $('#service-type-here').html($('input[name="chooseService"]:checked').val());
+          $("#next-button").html("Submit")
+          window.currentPage = 3;
+        } else if (window.currentPage == 3) {
+          // submit form
+          var data_dirty = $("#appointment-form").serializeArray()
+          var data = {}
+          data_dirty.forEach(element => {
+            data[element.name] = element.value
+          });
+          console.log(data.chooseService);
+          data.credentials = 'include'
+          console.log("Submiting from")
+          let xhr = new XMLHttpRequest();
+          $('#next-button').prop('disabled', true);
+          $('#next-button').html('Submiting ...');
+          xhr.onload = function () {
+            if (xhr.status != 200) { // analyze HTTP status of the response
+              console.log(`Error ${xhr.status}: ${xhr.statusText}`); // e.g. 404: Not Found
+              var negativeFeedbackModal = new bootstrap.Modal(document.getElementById('negative-feedback'), {
+                keyboard: false
+              });
+              negativeFeedbackModal.show();
+              setTimeout(function () {
+                $('#email-error-icon').removeClass('fa-bounce');
+                $('#email-error-icon').removeClass('hidden').addClass('fa-bounce');
+              }, 200);
 
-    $("#previous-button").click(function (event) { //  controls backward form navigation
-      event.preventDefault();
-      if (currentPage == 0) {
-        // do nothing
-      } else if (currentPage == 1) {
-        // show page 1
-        // hide page 2
-        $("#page-1").removeClass("hidden");
-        $("#page-2").addClass("hidden");
-        window.currentPage = 0;
-      } else if (currentPage === 2) {
-        // show page 2 hide page 3
-        $("#page-2").removeClass("hidden");
-        $("#page-3").addClass("hidden");
-        $("#next-button").html("Next")
-        window.currentPage = 1;
-      }
-    });
+              setTimeout(function () {
+                $('#email-error-icon').removeClass('fa-bounce');
+              }, 1800);
+            } else { // show the result
+              var positiveFeedbackModal = new bootstrap.Modal(document.getElementById('positive-feedback'), {
+                keyboard: false
+              });
+              positiveFeedbackModal.show();
+              setTimeout(function () {
+                $('#email-success-icon').removeClass('fa-bounce');
+                $('#email-success-icon').removeClass('hidden').addClass('fa-bounce');
+              }, 200);
 
-    var positiveFeedbackModal = new bootstrap.Modal(document.getElementById('positive-feedback'), {
-      keyboard: false
+              setTimeout(function () {
+                $('#email-success-icon').removeClass('fa-bounce');
+              }, 1800);
+            }
+          };
+
+          xhr.open("POST", window.postUrl)
+          xhr.send(JSON.stringify(data))
+        }
+      });
+
+      $("#previous-button").click(function (event) { //  controls backward form navigation
+        event.preventDefault();
+        if (window.currentPage == 0) {
+          // do nothing
+        } else if (window.currentPage == 1) {
+          // show page 1
+          // hide page 2
+          $("#page-1").removeClass("hidden");
+          $("#page-2").addClass("hidden");
+          window.currentPage = 0;
+        } else if (window.currentPage === 2) {
+          // show page 2 hide page 3
+          $("#page-2").removeClass("hidden");
+          $("#page-3").addClass("hidden");
+          $("#next-button").html("Next")
+          window.currentPage = 1;
+        }
+        else if (window.currentPage === 3) {
+          // show page 2 hide page 3
+          $("#page-3").removeClass("hidden");
+          $("#page-4").addClass("hidden");
+          $("#next-button").html("Next")
+          window.currentPage = 2;
+        }
+      });
+
+
+
     })
-    $('#open-modal').on('click', function (e) {
-      e.preventDefault();
-      positiveFeedbackModal.show();
-      setTimeout(function(){
-        $('#email-success-icon').removeClass('fa-bounce');
-        $('#email-success-icon').removeClass('hidden').addClass('fa-bounce');
-      }, 200);
-      
-      setTimeout(function(){
-        $('#email-success-icon').removeClass('fa-bounce');
-      }, 1800);
-    })
+
+
+
 
   </script>
 </body>

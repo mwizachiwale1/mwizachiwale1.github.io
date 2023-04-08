@@ -11,10 +11,20 @@
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/sidebars/">
   <link href="../assets/css/style.css" rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="../assets/favicon/site.webmanifest">
+  <!-- Chrome, Firefox OS and Opera -->
+  <meta name="theme-color" content="#22A9B1">
+  <!-- Windows Phone -->
+  <meta name="msapplication-navbutton-color" content="#22A9B1">
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="#22A9B1">
 
 </head>
 
-<body>
+<body class="bg-white">
   <div class="modal fade modal-sm" id="positive-feedback" data-bs-backdrop="static" tabindex="-1"
     aria-labelledby="Success" aria-hidden="true">
     <div class="modal-dialog">
@@ -53,7 +63,7 @@
   <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">
-        <img src="assets/favicon/favicon.ico" alt="" class="d-inline-block align-text-center"> Mckaziwe
+        <img src="../assets/favicon/favicon.ico" alt="" class="d-inline-block align-text-center"> Mckaziwe
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -145,10 +155,10 @@
   </div>
   <main class="bg-white pb-3 ">
     <form id="appointment-form" method="post" class="card container mt-4 p-3">
-      <h1>Book Appointment</h1>
+      <h1 class="heading">Book Appointment</h1>
       <div class="separator bt-1 mb-2"></div>
       <div class="my-3" id="page-1">
-        <h3>What type service do you want?</h3>
+        <h3 class="heading">What type service do you want?</h3>
 
         <div class="card container py-2 mb-2 bg-light mt-4">
           <div class="form-check">
@@ -197,7 +207,7 @@
 
       </div>
       <div class="my-3 hidden" id="page-2">
-        <h3>Provide a brief description of what you need.</h3>
+        <h3 class="heading">Provide a brief description of what you need.</h3>
 
         <div class="card container py-2 mb-2 bg-light mt-4">
           <textarea name="description" id="description" rows="3" style="width:100%">Type here...</textarea>
@@ -230,7 +240,7 @@
               <div class="invalid-feedback hidden" id="email-error-text">
                 Hey! it looks like you made a typo in your email.
               </div>
-          
+
             </div>
           </div>
 
@@ -239,7 +249,7 @@
 
       </div>
       <div class="my-3 hidden" id="page-4">
-        <h3>Please confirm your details</h3>
+        <h3 class="heading">Please confirm your details</h3>
 
         <div class="my-3 row">
           <div class="col-12 col-sm-12 col-md-12">
@@ -258,7 +268,7 @@
       </div>
       <p style="text-align: right;">
         <button type="button" class="btn btn--outline-secondary btn-lg" id="previous-button">Previous</button>
-        <button type="submit" class="btn btn-primary btn-lg" id="next-button">Next</button>
+        <button type="submit" class="btn btn-primary btn-md book-button" id="next-button">Next</button>
 
       </p>
     </form>
@@ -268,7 +278,7 @@
 
 
   </main>
-  <footer class="container-fluid bg-light" style="margin-top: 0.02rem !important;">
+  <footer class="container-fluid bg-light" style="margin-top: 7rem !important;">
     <div class="row">
       <div class="col-12 col-md">
         <img src="../assets/favicon/favicon.ico"></img>
@@ -333,13 +343,13 @@
           //$("#next-button").addClass("hidden");
           //$("#submit").removeClass("hidden");
 
-        
+
           window.currentPage = 2;
 
         } else if (window.currentPage == 2) {
 
-            // check email here
-            if (!ValidateEmail($('#email').val())) {
+          // check email here
+          if (!ValidateEmail($('#email').val())) {
             console.log("You have entered an invalid email address!");
             $('#email').focus().addClass("is-invalid");
             $('#email-error-text').removeClass("hidden");

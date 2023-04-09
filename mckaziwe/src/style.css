@@ -1,0 +1,31 @@
+@import "reset.css";
+@import "layout.css";
+@import "theme.css";
+@import "new-header.css";
+@import "typography.css";
+@import "buttons.css";
+@import "footer.css";
+@import "forms.css";
+@import "cover.css";
+@import "spinner.css";
+@import "screens.css";
+@import "check_box.css";
+@import "progressBar.css";
+@import "greeting.css";
+@import "messages.css";
+@import "back-drop.css";
+@import "search-bar.css";
+@import "category-card.css";
+@import "search-bar.css";
+@import "category-card.css";
+@import "cart.css";
+@import "cart-items.css";
+@import "department-carousel.css";
+@import "newfooter.css";
+@import "prompt.css";
+.helper-text{
+    font-size:14px;
+}
+.hidden{
+    display: none;
+}

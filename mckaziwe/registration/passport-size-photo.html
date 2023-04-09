@@ -1,0 +1,18 @@
+<form class="registration hidden animate__animated" id="form2" next_form="done-3" input_name="passport_size_photo">
+    <p>
+        <label>Passport size photo</label>
+        <div class="select_image_button" onclick="saveLocal_passport_size_photo_image();">
+            <div class="image"><img src="src/assets/gallery.png" alt="" id="preview_password_size_photo" class="form-image-preview"></div>
+            <div class="label">Open gallery</div>
+        </div>
+        <input type="text" class="hidden" id="check-box-2">
+    </p>
+   
+    <span id="help" class="muted-text"><i>Photo of student ID must match with your passport size photo</i></span>
+    <br><br>
+    <div class="button-container" style="width:100%">
+        <button id="submit-btn" type="submit" class="button button-short primary-btn button-font-size primary-bg on-primary disabled-btn">Next</button>
+        <button type="button" onclick="window.history.go(-2);" class="button button-short button-font-size muted-btn  on-muted">Back</button>
+    </div> 
+     
+</form>

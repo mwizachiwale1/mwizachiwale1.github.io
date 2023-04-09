@@ -1,0 +1,65 @@
+:root{
+    /* colors */
+    --primary: #2f6dd7;
+    --primary-dark: #2352a1;
+    --primary-light: #2b64c5;
+    --secondary: #d70930;
+    --tetiary: #00960c;
+    --error: #ff9800;
+    --muted: #cccccc;
+    --disabled-primary: #93afe1;
+    --disabled-secondary: #f59790;
+    --on-primary: #FFF;
+    --on-secondary: #FFF;
+    --on-tetiary: #444444;
+    --on-error: #000000;
+    --on-muted: #939393;
+    --background-color: #f5f5f5;
+    --hover-brightness: 0.90;
+    --active-brightness: 0.65;
+    --surface-1: rgb(241, 241, 241);
+    --on-surface-1: #000;
+}
+.primary-bg{
+    background-color: var(--primary);
+}
+.secondary-bg{
+    background-color: var(--secondary);
+}
+.on-primary{
+    color: #FFF;
+    
+}
+.on-secondary{
+    color: #FFF;
+}
+.tetiary-bg{
+    background-color: #84BF9E;
+}
+.on-tetiary-bg{
+    color: #444444;
+}
+.primary-text{
+    color: #2f6dd7;
+}
+.secondary-text{
+    color: var(--secondary);
+}
+.tetiary-text{
+    color: var(--tetiary);
+}
+.muted-text{
+    color: #000000e3;
+}
+.muted-bg{
+    background-color: #F2F2F2;
+}
+.on-muted{
+    color: #444444;
+}
+.error-text{
+    color: #ff9800;
+}
+a:hover{
+    filter: brightness(var(--hover-brightness));
+}

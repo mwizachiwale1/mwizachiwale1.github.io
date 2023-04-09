@@ -1,0 +1,35 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (min-width: 600px){
+    html, body{
+        overflow: hidden;
+    }
+}
+.container-fluid {
+    height: 90%;
+}
+
+.row {
+    height: 100%;
+}
+
+@media screen and (max-device-width: 800px) {
+    #col2 {
+        display: none;
+    }
+}
+
+#img img {
+    object-fit: cover;
+    height: 100%;
+}
+
+#message2 {
+    display: hidden !important;
+}

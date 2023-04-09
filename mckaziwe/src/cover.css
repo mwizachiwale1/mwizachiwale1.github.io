@@ -1,0 +1,19 @@
+.cover{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    background-color: #ffffffbf;
+    z-index: 10;
+    pointer-events: none;
+}
+.disabled{
+    pointer-events: none;
+}
+.progress-container{
+    position: relative;
+    margin-left: -50%;
+    width: 80%;
+    margin: 0px auto;
+    top: 40% !important;
+    text-align: center;
+}

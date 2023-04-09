@@ -1,0 +1,54 @@
+.department{
+    height: 245px;
+    background-image: linear-gradient(#11B4D1, #11b4d100);
+    padding-block-start: 37px;
+    position: relative;
+}
+.department .owl-carouse .item-wrapper{
+    box-sizing: border-box;
+    padding: 5px;
+}
+.department .owl-carousel .item{
+    margin: 10px;
+    width: 140px;
+    height: 153px;
+    background-color: #ffff;
+    border: .1px solid #c1c1c1;
+    padding: 0px;
+    border-radius: 3px;
+}
+
+.department .department-title{
+    font-size: 24px;
+    font-weight: bold;
+    padding-inline-start: 20px;
+}
+.department .department-background{
+    background-position: top right;
+    background-size: 100;
+    background-repeat: no-repeat;
+    height: 280px;
+    width: 100%;
+    position: absolute;
+    right:0;
+    top:0;
+}
+.department .owl-carousel{
+    margin-top: 37px;
+    
+}
+.department .owl-carousel .item .image-container{
+    width: 140px;
+    height: 119px;
+    background-color: #bababa00;
+    margin-bottom: 10px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.department .owl-carousel .item .label{
+    font-size: 14px;
+    font-weight: 600;
+    width: 140px;
+    padding-inline: 10px;
+}

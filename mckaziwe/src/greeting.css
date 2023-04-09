@@ -1,0 +1,19 @@
+.greeting{
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #515151;
+    overflow-wrap: break-word;
+    text-align: center;
+}
+.greeting .icon{
+    font-size: 30px;
+}
+.greeting #email-address{
+    color: #2f6dd7;
+}
+@media (min-width: 1024px){
+    .greeting{
+        margin-left: 10px;
+    }
+}

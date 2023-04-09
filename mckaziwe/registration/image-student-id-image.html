@@ -1,0 +1,21 @@
+<form class="registration hidden animate__animated" id="form7" next_form="passport-size-photo.html" input_name="image_student_id_image">
+    <div class="input-container">
+        <p>
+            <label for="password">Image of student ID</label>
+            <div class="select_image_button" onclick="saveLocalImg_student_id_image();">
+                <div class="image"><img src="src/assets/gallery.png" alt="" id="preview_student_id" class="form-image-preview"></div>
+               <div class="label">Open gallery</div>
+            </div>
+            <input type="text" class="hidden" id="check-box-1">
+            </p>
+           
+            <span id="password-help" class="muted-text"><i>Only images are allowed</i></span>
+            <br><br>
+    </div>
+    
+    <div class="button-container" style="width:100%">
+        <button id="submit-btn" type="button" onclick="switchToP8();"  class="button button-short primary-btn button-font-size primary-bg on-primary disabled-btn">Next</button>
+        <button type="button" onclick="window.history.go(-2);" class="button button-short button-font-size muted-btn on-muted">Back</button>
+    </div> 
+     
+</form>

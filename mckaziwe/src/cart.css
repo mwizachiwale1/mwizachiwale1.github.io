@@ -1,0 +1,28 @@
+.icon-button{
+    position: relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    left: 100px;
+    top:100px;
+    width:60px;
+    height:60px;
+    border: none;
+    outline:none;
+    border-radius: 100%;
+}
+.icon-button__badge{
+    position: absolute;
+    top: -1px;
+    left: 45px;
+    Width: 25px;
+    height: 25px;
+    color: white;
+    background-color: red;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-size:13px;
+}

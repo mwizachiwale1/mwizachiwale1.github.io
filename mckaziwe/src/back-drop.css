@@ -1,0 +1,56 @@
+#back-drop{
+    width: 100%;
+    height: 260px;
+    display: grid;
+    grid-template-rows: 50%;
+    align-content: center;
+    background-position: top;
+    background-size: cover;
+    align-items: center;
+    justify-items: center;
+    z-index: -2;
+    color: #fff;
+    background-image: url("assets/bg/b1-slim.jpeg");
+
+}
+#back-drop-wrapper{
+    position: absolute;
+    background-image: linear-gradient(to bottom left, rgb(0 0 0 / 19%), rgba(0, 0, 0, 0.151));
+    width: 100%;
+    height: inherit;
+    z-index: -1;
+}
+#back-drop .child{
+    width: 80%;
+    margin: 0px auto;
+    text-align: center;
+    font-size: 18px;
+    margin-top: 40px;
+    z-index: 3;
+}
+
+@media screen and (max-width: 460px){
+    #back-drop{
+        height: 250px;
+    }
+}
+@media screen and (max-width: 330px){
+    #back-drop{
+        height: 220px;
+    }
+}
+@media screen and (min-width: 760px){
+    #back-drop{
+        height: 300px;
+    }
+}
+@media screen and (min-width: 1024px){
+    #back-drop{
+        height: 350px;
+    }
+}
+@media screen and (min-width: 1200px){
+    #back-drop{
+        height: 450px;
+    }
+}

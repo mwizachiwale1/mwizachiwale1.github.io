@@ -1,0 +1,36 @@
+:root{
+    --error-bg: #ffb23f;
+}
+
+.message{
+    margin-block: 1rem;
+    padding-inline: 1rem;
+    font-size: 1;
+    padding-block: 1rem;
+    border-radius: 3px;
+}
+.message.error{
+    background-color: var(--error-bg);
+    color:var(--on-muted) !important;
+}
+.message.success{
+    background-color: var(--tetiary);
+    color:var(--on-tetiary) !important;
+}
+.message.success .button{
+    background-color: #469167;
+    border: none;
+    color:var(--on-primary) !important;
+    margin-block-start: 1rem !important;
+    margin-block-end: 0px !important;
+}
+.message.error .button{
+    background-color: #c37b11;
+    border: none;
+    color: #000;
+}
+.message i{
+    float: left;
+    margin-right: 1rem;
+    margin-block: -4px;
+}

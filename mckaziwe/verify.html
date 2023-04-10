@@ -165,6 +165,7 @@
       var mode = getParameterByName(window.location, 'mode');
       // Get the one-time code from the query parameter.
       var actionCode = getParameterByName(window.location, 'oobCode');
+      console.log(actionCode);
       // (Optional) Get the continue URL from the query parameter if available.
       // (Optional) Get the language code if available.
       var lang = getParameterByName(window.location, 'lang') || 'en';
@@ -188,6 +189,7 @@
           break;
         case 'verifyEmail':
           // Display email verification handler and UI.
+          console.log("Verifying..");
           auth.applyActionCode(actionCode).then((resp) => {
             $('#message-success').removeClass('hidden');
           }).catch((error)=>{

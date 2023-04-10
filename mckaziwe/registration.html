@@ -168,7 +168,7 @@
           createAccount(email, password).then((userCredential) => {
             const user = userCredential.user; // user data is here.
             user.sendEmailVerification(); // send verification
-            window.alert("A verification email has been end to " + email + ". Click on the email to confirm that this is your email.");
+            window.alert("A verification email has been sent to " + email + ". Click on the email to confirm that this is your email.");
           }).catch((error) =>{
             console.log(error.message);
             $('#message').removeClass('hidden');

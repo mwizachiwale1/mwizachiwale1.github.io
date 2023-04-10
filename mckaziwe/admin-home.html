@@ -75,9 +75,9 @@
     </div>
   </nav>
   <div class="p-3 px-4 side-bar bg-dark" style="width: 18rem;">
-    <a href="/" class="align-items-center pb-3 mb-4 link-white text-decoration-none">
-      <img src="assets/favicon/favicon-32x32.png" style="max-width: 50px"></img>
-      <div class="text-white">Loged in as Gideon Mwale</div>
+    <a href="#" class="align-items-center pb-3 mb-4 link-white text-decoration-none">
+      <img src="assets/favicon/android-chrome-512x512.png" style="max-width: 50px"></img>
+      <div class="text-white">Loged in as <span class="loged-in-user"></span></div>
     </a>
 
 
@@ -96,6 +96,10 @@
   </div>
   <main class="bg-light white-text">
     <div class="quote-container pt-5">
+      <div class="py-3">
+        Loged in as <strong class="loged-in-user text-primary"></strong>
+
+      </div>
       <h1  class="heading">Portifolio Manager</h1>
       <h3 class="mt-5 heading">Sections</h3>
       <!-- 
@@ -180,7 +184,8 @@
           // this value to authenticate with your backend server, if
           // you have one. Use User.getIdToken() instead.
           const uid = user.uid;
-          console.log(displayName);
+
+          $('.loged-in-user').html(email);
         } else {
           // user not signed in
           window.location.href = './';

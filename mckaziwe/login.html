@@ -58,7 +58,7 @@
   <main class="container py-4">
     <div class="card bg-light">
       <div class="card-body">
-        <h1>Register</h1>
+        <h1>Login</h1>
 
         <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
           <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
@@ -75,7 +75,7 @@
           <div class="alert alert-danger d-flex align-items-center" role="alert">
             <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
             <div>
-              Something went long on our side, please try again sometime later
+              You've entered an incorrect email or password.
             </div>
           </div>
         </div>
@@ -86,16 +86,11 @@
             <input type="email" class="form-control" name="email" id="email">
           </fieldset>
           <fieldset class="my-3 has-validation">
-            <label for="new-password">New password</label>
-            <input type="password" class="form-control" autocomplete="off" name="new-password" id="new-password">
-          </fieldset>
-          <fieldset class="my-3  has-validation">
-            <label for="confirm-password">Confirm password</label>
-            <input type="password" class="form-control" autocomplete="off" name="confirm-password" id="confirm-password">
-            <span class="invalid-feedback" id="password-invalid">*Passwords do not match*</span>
+            <label for="password">Password password</label>
+            <input type="password" class="form-control" autocomplete="off" name="password" id="password">
           </fieldset>
           <div class="text-right">
-            <button id="submit-button" type="submit" class="btn btn-primary">Register</button>
+            <button id="submit-button" type="submit" class="btn btn-primary">Login</button>
           </div>
         </form>
       </div>
@@ -145,36 +140,26 @@
       $('#registration-form').submit(function (e) {
         e.preventDefault();
         let email = $("#email").val();
-        let password = $("#new-password").val();
-        let confirmPassword = $("#confirm-password").val();
-
-        if (!isEqual(password, confirmPassword)) {
-          $('#confirm-password').focus();
-          $('#password-invalid').addClass('show');
-          $('#confirm-password').addClass('is-invalid');
-          $('#new-password').addClass('is-invalid');
-          // add shake
-        } else {
-
+        let password = $("#password").val();
           // reverse changes
-          $('#password-invalid').removeClass('show');
-          $('#confirm-password').removeClass('is-invalid');
-          $('#new-password').removeClass('is-invalid');
+          $('#password').removeClass('is-invalid');
+          $('#email').removeClass('is-invalid');
           $('#message').addClass('hidden');
           // disbaled button
           $('#submit-button').attr('disabled', true).html('Loading...');
 
-          // submit form
-          createAccount(email, password).then((userCredential) => {
-            const user = userCredential.user; // user data is here.
-            user.sendEmailVerification(); // send verification
-            window.alert("A verification email has been sent to " + email + ". Click on the email to confirm that this is your email.");
+          // Login
+        
+          login(email, password).then((userCredential) => {
+            window.location.href = 'admin-home.html';
           }).catch((error) =>{
             console.log(error.message);
             $('#message').removeClass('hidden');
-            $('#submit-button').removeAttr('disabled').html('Register');
+            $('#submit-button').removeAttr('disabled').html('Login');
+            $('#password').addClass('is-invalid');
+            $('#email').addClass('is-invalid');
           })
-        }
+        
       })
 
       //@description: checks if two parameters are equal
@@ -183,18 +168,19 @@
       }
 
 
-      // function for registration
-      function createAccount(email, password) {
-        return new Promise((resolve, reject) => {
-          firebase.auth().createUserWithEmailAndPassword(email, password).then((userCredential) => {
-            resolve(userCredential);
-          }).catch((error) => {
-            reject(error);
-           
-          })
-        })
-
-      }
+      // function for login
+      function login(email, password) {
+            return new Promise((resolve, reject) => {
+                firebase.auth().signInWithEmailAndPassword(email, password).then((userCredential) => {
+                    // signed in
+                    const user = userCredential.user;
+                    resolve("success");
+                }).catch((error) => {
+                    // you can view either error.code or error.message
+                    reject(error);
+                });
+            });
+        }
     });
 
 

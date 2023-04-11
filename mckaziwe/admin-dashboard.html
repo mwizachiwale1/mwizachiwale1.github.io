@@ -90,7 +90,7 @@
     </div>
   </div>
 
-  <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand heading bold text-muted href="#">
         <img src="assets/favicon/favicon.ico" alt="" class="d-inline-block align-text-center"> Mckaziwe
@@ -102,78 +102,41 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav navbar-nav-scroll" style="--bs-scroll-height: 100vh;">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="./">Home</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              Portfolio
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-
-              <li><a href="portifolio.html?id=gtEownLsYsXsZ46vp01k&title=Creative Design" id="creative-design"
-                  class="dropdown-item">Creative Design</a></li>
-              <li><a href="portifolio.html?id=lYiSy5gxdtezUyWEIINR&title=Brand and Identity" id="brand-identity"
-                  class="dropdown-item">Brand & Identity</a></li>
-              <li><a href="portifolio.html?id=37oPL1BrxtmcgqTGn2En&title=Company Profile" id="company-profile"
-                  class="dropdown-item">Company Profile</a></li>
-              <li><a href="portifolio.html?id=KC7aDvrGS2SibAEFIeEq&title=Booklets" id="booklets"
-                  class="dropdown-item">Booklets</a></li>
-              <li><a href="portifolio.html?id=8ArLZya77HX1Fluy8s4T&title=Photography" id="photography"
-                  class="dropdown-item">Photography</a></li>
-              <li><a href="portifolio.html?id=JM6c2OIFYoBqJdrK6iMu&title=Videography" id="videography"
-                  class="dropdown-item">Videography</a></li>
-              <li><a href="portifolio.html?id=fmqUL6kJwBZ7EP7Ku47w&title=Mockups" id="mockups"
-                  class="dropdown-item">Mockups</a></li>
-            </ul>
-          </li>
+      
+        
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link login-now" href="#">Login</a>
+            <a class="nav-link login-out" href="#">Logout</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   <div class="p-3 px-4 side-bar bg-dark" style="width: 18rem;">
-    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-white text-decoration-none">
-      <div class="bi pe-none side-nav-menu"></div>
+    <a href="#" class="align-items-center pb-3 mb-4 link-white text-decoration-none">
+      <img src="assets/favicon/android-chrome-512x512.png" style="max-width: 50px"></img>
+      <div class="text-white">Loged in as <span class="loged-in-user"></span></div>
     </a>
-    <ul class="list-unstyled ps-0 side-bar-menu">
+
+
+    <ul class="list-unstyled ps-0 side-bar-menu mt-3">
       <li class="mb-1 nav-item">
-        <a href="#" class="d-inline-flex align-items-center border-0 active" aria-expanded="true">
+        <a href="./" class="d-inline-flex align-items-center border-0 active" aria-expanded="true">
           Home
         </a>
       </li>
-      <li class="mb-1">
-        <a href="#" id="collapsible" class="btn-toggle d-inline-flex align-items-center border-0 collapsed"
-          data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-          Gallery
-        </a>
-        <div class="collapse" id="dashboard-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small sub-items">
-            <li><a href="#" class="d-inline-flex mb-1 text-decoration-none ">- Creative Design</a></li>
-            <li><a href="#" class="d-inline-flex mb-1 text-decoration-none ">- Brand & Identity</a></li>
-            <li><a href="#" class="d-inline-flex mb-1 text-decoration-none ">- Company Profile</a></li>
-            <li><a href="#" class="d-inline-flex mb-1 text-decoration-none ">- Booklets</a></li>
-            <li><a href="#" class="d-inline-flex mb-1 text-decoration-none ">- Photography</a></li>
-            <li><a href="#" class="d-inline-flex mb-1 text-decoration-none ">- Videography</a></li>
-            <li><a href="#" class="d-inline-flex mb-1 text-decoration-none ">- Mockups</a></li>
-          </ul>
-        </div>
-      </li>
       <li class="mb-1 nav-item">
-        <a href="#" class=" d-inline-flex align-items-center border-0" aria-expanded="true">
-          About
+        <a href="#" class="log-out d-inline-flex align-items-center border-0" aria-expanded="true">
+          Logout
         </a>
       </li>
     </ul>
   </div>
   <main>
     <div class="quote-container pt-5 text-white">
-      <h1 class="heading" id="title">Photography</h1>
+      <h1 class="heading" id="title"></h1>
+      <br>
 
       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#uploadModal">Upload
         photo</button>
@@ -239,24 +202,29 @@
       const db = firebase.firestore();
 
       // code for authentication
-      // Code for authentication
-      const user = firebase.auth().currentUser;
-      if (user !== null) {
-        // The user object has basic properties such as display name, email, etc.
-        const displayName = user.displayName;
-        const email = user.email;
-        const photoURL = user.photoURL;
-        const emailVerified = user.emailVerified;
+       // Code for authentication
+       firebase.auth().onAuthStateChanged((user) => {
+        if (user !== null) {
+          // The user object has basic properties such as display name, email, etc.
+          const displayName = user.displayName;
+          const email = user.email;
+          const photoURL = user.photoURL;
+          const emailVerified = user.emailVerified;
 
-        // The user's ID, unique to the Firebase project. Do NOT use
-        // this value to authenticate with your backend server, if
-        // you have one. Use User.getIdToken() instead.
-        const uid = user.uid;
-        console.log(displayName);
-      } else {
-        // user not signed in
-        window.location.href = './';
-      }
+          // The user's ID, unique to the Firebase project. Do NOT use
+          // this value to authenticate with your backend server, if
+          // you have one. Use User.getIdToken() instead.
+          const uid = user.uid;
+
+          $('.loged-in-user').html(email);
+        } else {
+          // user not signed in
+          window.location.href = './';
+          console.log("Failed to verify");
+        }
+
+      });
+
 
 
       var downloadUrl;
@@ -289,11 +257,20 @@
       // extract id from url
       function extractUrl() {
         var url = document.URL;
-        var id = url.substring(url.lastIndexOf('=') + 1);
+        let params = (new URL(url)).searchParams;
+        var id = params.get('id');
         return id;
 
       }
+      // title to show
+       extractTitle();
+      function extractTitle() {
+        var url = document.URL;
+        let params = (new URL(url)).searchParams;
+        console.log(params.get('title'))
+        $("#title").html(params.get('title'));
 
+      }
       $("#upload-photo").on("click", function (event) {
         event.preventDefault();
         uploadPhoto();

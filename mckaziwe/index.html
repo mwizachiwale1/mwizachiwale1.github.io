@@ -31,7 +31,7 @@
 <body>
   <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand heading bold text-muted href="#">
+      <a class="navbar-brand heading bold text-muted" href="./">
         <img src="assets/favicon/favicon.ico" alt="" class="d-inline-block align-text-center"> Mckaziwe
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -41,7 +41,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav navbar-nav-scroll" style="--bs-scroll-height: 100vh;">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="./">Home</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
@@ -67,17 +67,20 @@
             </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="about.html">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link login-now" href="#">Login</a>
+            <a class="nav-link" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link login-now" href="login.html">Login</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   <div class="p-3 px-4 side-bar bg-dark" style="width: 18rem;">
-    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-white text-decoration-none">
+    <a href="/" style="min-height: 6rem;" class="d-flex align-items-center pb-3 mb-1 link-white text-decoration-none">
       <img src="assets/favicon/android-chrome-192x192.png"></img>
     </a>
     <ul class="list-unstyled ps-0 side-bar-menu">
@@ -88,10 +91,10 @@
       </li>
       <li class="mb-1">
         <a href="#" id="collapsible" class="btn-toggle d-inline-flex align-items-center border-0 collapsed"
-          data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="true">
+          data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
           Portfolio
         </a>
-        <div class="collapse show" id="dashboard-collapse">
+        <div class="collapse" id="dashboard-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small sub-items">
             <li><a href="portifolio.html?id=gtEownLsYsXsZ46vp01k&title=Creative Design" id="creative-design"
                 class="d-inline-flex mb-1 text-decoration-none ">- Creative Design</a></li>
@@ -111,16 +114,39 @@
         </div>
       </li>
       <li class="mb-1 nav-item">
-        <a href="#" class=" d-inline-flex align-items-center border-0" aria-expanded="true">
+        <a href="about.html" class=" d-inline-flex align-items-center border-0" aria-expanded="true">
           About
         </a>
       </li>
       <li class="mb-1 nav-item">
-        <a href="#" class="login-now d-inline-flex align-items-center border-0" aria-expanded="true">
+        <a href="contact.html" class=" d-inline-flex align-items-center border-0" aria-expanded="true">
+          Contact
+        </a>
+      </li>
+      <li class="mb-1 nav-item">
+        <a href="login.html" class="login-now d-inline-flex align-items-center border-0" aria-expanded="true">
           Login
         </a>
       </li>
     </ul>
+
+    <div class="icons text-white" style="display: flex;gap: 1rem;font-size: 1.3rem;">
+              <div>
+                <div class="icon-span">
+                  <i class="fa-brands fa-facebook app-icon facebook"></i>
+                </div> 
+              </div>
+              <div>
+                <div class="icon-span">
+                  <i class="fa-brands fa-instagram app-icon instagram"></i>
+                </div> 
+              </div>
+              <div>
+                <div class="icon-span">
+                  <i class="fa-brands fa-linkedin app-icon linkedin"></i>
+                </div> 
+              </div>  
+            </div>
   </div>
   <main>
     <div class="hero-section">
@@ -205,26 +231,50 @@
 
 
   </main>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
   <footer class="container-fluid py-5 bg-light">
     <div class="row">
       <div class="col-12 col-md">
         <img src="assets/favicon/favicon.ico"></img>
         <small class="d-block mb-3 text-muted">Mckaziwe Media House © 2014-2023</small>
+        <div class="icons" style="display: flex;gap: 1rem;font-size: 1.3rem;">
+          <div>
+            <div class="icon-span">
+              <i class="fa-brands fa-facebook app-icon facebook text-primary"></i>
+            </div> 
+          </div>
+          <div>
+            <div class="icon-span">
+              <i class="fa-brands fa-instagram app-icon instagram text-danger"></i>
+            </div> 
+          </div>
+          <div>
+            <div class="icon-span text-info">
+              <i class="fa-brands fa-linkedin app-icon linkedin"></i>
+            </div> 
+          </div>  
+        </div>
+        <br>
       </div>
       <div class="col-6 col-md">
         <h5>Quick links</h5>
         <ul class="list-unstyled text-small">
           <li><a class="link-secondary text-decoration-none" href="./">Home</a></li>
-          <li><a class="link-secondary text-decoration-none" href="#">About</a></li>
-          <li><a class="link-secondary text-decoration-none" href="#">Contact</a></li>
-          <li><a class="link-secondary text-decoration-none" href="#">Company profile</a></li>
+          <li><a class="link-secondary text-decoration-none" href="about.html">About</a></li>
+          <li><a class="link-secondary text-decoration-none" href="contact.html">Contact</a></li>
+          <li><a class="link-secondary text-decoration-none" href="assets/profile.pdf">Company profile</a></li>
 
         </ul>
       </div>
       <div class="col-6 col-md">
         <h5>Portfolio</h5>
         <ul class="list-unstyled text-small">
-          <li><a href="portifolio.html?id=gtEownLsYsXsZ46vp01k&title=Creatove Design"
+          <li><a href="portifolio.html?id=gtEownLsYsXsZ46vp01k&title=Creative Design"
               class="d-inline-flex mb-1 text-decoration-none link-secondary">Creative Design</a></li>
           <li><a href="portifolio.html?id=lYiSy5gxdtezUyWEIINR&title=Brand and Identity"
               class="d-inline-flex mb-1 text-decoration-none link-secondary">Brand & Identity</a></li>

@@ -27,7 +27,7 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand heading bold text-muted href="#">
         <img src="assets/favicon/favicon.ico" alt="" class="d-inline-block align-text-center"> Mckaziwe
@@ -39,36 +39,12 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav navbar-nav-scroll" style="--bs-scroll-height: 100vh;">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="./">Home</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              Portfolio
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-
-              <li><a href="portifolio.html?id=gtEownLsYsXsZ46vp01k&title=Creative Design" id="creative-design"
-                  class="dropdown-item">Creative Design</a></li>
-              <li><a href="portifolio.html?id=lYiSy5gxdtezUyWEIINR&title=Brand and Identity" id="brand-identity"
-                  class="dropdown-item">Brand & Identity</a></li>
-              <li><a href="portifolio.html?id=37oPL1BrxtmcgqTGn2En&title=Company Profile" id="company-profile"
-                  class="dropdown-item">Company Profile</a></li>
-              <li><a href="portifolio.html?id=KC7aDvrGS2SibAEFIeEq&title=Booklets" id="booklets"
-                  class="dropdown-item">Booklets</a></li>
-              <li><a href="portifolio.html?id=8ArLZya77HX1Fluy8s4T&title=Photography" id="photography"
-                  class="dropdown-item">Photography</a></li>
-              <li><a href="portifolio.html?id=JM6c2OIFYoBqJdrK6iMu&title=Videography" id="videography"
-                  class="dropdown-item">Videography</a></li>
-              <li><a href="portifolio.html?id=fmqUL6kJwBZ7EP7Ku47w&title=Mockups" id="mockups"
-                  class="dropdown-item">Mockups</a></li>
-            </ul>
-          </li>
+      
+        
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link login-now" href="#">Login</a>
+            <a class="nav-link login-out" href="#">Logout</a>
           </li>
         </ul>
       </div>
@@ -83,12 +59,12 @@
 
     <ul class="list-unstyled ps-0 side-bar-menu mt-3">
       <li class="mb-1 nav-item">
-        <a href="#" class="d-inline-flex align-items-center border-0 active" aria-expanded="true">
+        <a href="./" class="d-inline-flex align-items-center border-0 active" aria-expanded="true">
           Home
         </a>
       </li>
       <li class="mb-1 nav-item">
-        <a href="#" id="log-out" class=" d-inline-flex align-items-center border-0" aria-expanded="true">
+        <a href="#" class="log-out d-inline-flex align-items-center border-0" aria-expanded="true">
           Logout
         </a>
       </li>
@@ -231,9 +207,9 @@
           querySnapshot.forEach((doc) => {
             // doc.data() is never undefined for query doc snapshots
             $("#album-list").append(`
-            <a href="album.html?id=${doc.id}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+            <a href="admin-dashboard.html?id=${doc.id}&title=${doc.data().albumName}" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
               ${doc.data().albumName}
-              <span class="badge bg-primary rounded-pill">${doc.data().numPhotos}</span>
+              <!-- <span class="badge bg-primary rounded-pill">${doc.data().numPhotos}</span> -->
             </a>
             `);
           });
@@ -241,7 +217,7 @@
       }
 
       // signout user
-      $('#log-out').on('click', function () {
+      $('.log-out').on('click', function () {
         firebase.auth().signOut().then(() => {
           // Sign-out successful.
           window.location.href = './';

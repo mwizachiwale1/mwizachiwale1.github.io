@@ -72,8 +72,11 @@
               d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
           </symbol>
         </svg>
-        <h1>Working on it ....</h1>
-        <p>This might take a moment</p>
+        <div id="initial-content">
+          <h1>Working on it ....</h1>
+          <p>This might take a moment</p>
+        </div>
+        
         <div class="hidden" id="message-failure">
           <h1>Opps</h1>
           <div class="alert alert-danger d-flex align-items-center mt-3" role="alert">
@@ -86,6 +89,20 @@
           </div>
           <p class="text-center">
             <a href="registration.html" class="btn btn-primary d-block">Try again</a>
+          </p>
+        </div>
+        <div class="hidden" id="reset-password-success">
+          <h1>Horray!!</h1>
+          <div class="alert alert-success d-flex align-items-center" role="alert">
+            <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:">
+              <use xlink:href="#check-circle-fill" />
+            </svg>
+            <div>
+              Your password have been reseted successfully.
+            </div>
+          </div>
+          <p class="text-center">
+            <a href="admin-home.html" class="btn btn-primary d-block">Go to Admin Dashboard</a>
           </p>
         </div>
         <div class="hidden" id="message-success">
@@ -103,11 +120,7 @@
           </p>
         </div>
 
-        <form id="registration-form" class="hidden">
-          <fieldset class="my-3 has-validation">
-            <label for="email">Email address</label>
-            <input type="email" class="form-control" name="email" id="email">
-          </fieldset>
+        <form id="reset-password-form" class="hidden">
           <fieldset class="my-3 has-validation">
             <label for="new-password">New password</label>
             <input type="password" class="form-control" autocomplete="off" name="new-password" id="new-password">
@@ -180,6 +193,8 @@
       switch (mode) {
         case 'resetPassword':
           // Display reset password handler and UI.
+          $('#initial-content').addClass('hidden');
+          $("#reset-password-form").removeClass('hidden');
          
           break;
         case 'recoverEmail':
@@ -201,7 +216,71 @@
         // Error: invalid mode.
       }
 
+      $('#reset-password-form').submit(function (e) {
+        e.preventDefault();
+        let password = $("#new-password").val();
+        let confirmPassword = $("#confirm-password").val();
 
+        if (!isEqual(password, confirmPassword)) {
+          $('#confirm-password').focus();
+          $('#password-invalid').addClass('show');
+          $('#confirm-password').addClass('is-invalid');
+          $('#new-password').addClass('is-invalid');
+          // add shake
+        } else {
+
+          // reverse changes
+          $('#password-invalid').removeClass('show');
+          $('#confirm-password').removeClass('is-invalid');
+          $('#new-password').removeClass('is-invalid');
+          $('#message').addClass('hidden');
+          // disbaled button
+          $('#submit-button').attr('disabled', true).html('Loading...');
+          
+
+
+          // verify password
+
+            // Verify the password reset code is valid.
+  auth.verifyPasswordResetCode(actionCode).then((email) => {
+    var accountEmail = email;
+
+    // TODO: Show the reset screen with the user's email and ask the user for
+    // the new password.
+
+    // Save the new password.
+    auth.confirmPasswordReset(actionCode, password).then((resp) => {
+      $("#reset-password-form").addClass('hidden');
+      $("#reset-password-success").removeClass('hidden');
+      
+    }).catch((error) =>{
+      console.log(error.message);
+      $("#reset-password-form").addClass('hidden');
+      $('#message-failure').removeClass('hidden');
+      console.log(error.message);
+    })
+  }).catch((error) =>{
+    console.log(error.message);
+  })
+          // submit form
+          createAccount(email, password).then((userCredential) => {
+            const user = userCredential.user; // user data is here.
+            user.sendEmailVerification(); // send verification
+            window.alert("A verification email has been sent to " + email + ". Click on the email to confirm that this is your email.");
+          }).catch((error) =>{
+            console.log(error.message);
+            $('#message').removeClass('hidden');
+            $('#submit-button').removeAttr('disabled').html('Register');
+          })
+        }
+      })
+
+      //@description: checks if two parameters are equal
+      function isEqual(input1, input2) {
+        return (input1 == input2) ? true : false;
+      }
+
+      
 
     });
 

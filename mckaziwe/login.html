@@ -89,9 +89,15 @@
             <label for="password">Password password</label>
             <input type="password" class="form-control" autocomplete="off" name="password" id="password">
           </fieldset>
-          <div class="text-right">
-            <button id="submit-button" type="submit" class="btn btn-primary">Login</button>
+          <div class="row mt-4">
+            <div class="col-6">
+              <a href="#" id="forgot-password">Forgot Password?</a>
+            </div>
+            <div class="col-6" style="text-align: right">
+              <button id="submit-button" type="submit" class="btn btn-primary">Login</button>
+            </div>
           </div>
+          
         </form>
       </div>
     </div>
@@ -181,7 +187,23 @@
                 });
             });
         }
+
+        $('#forgot-password').on('click', function(e){
+          e.preventDefault();
+          // Send message
+          forgotPassword("mwizachombachiwale@gmail.com");
+        })
+        // for sending forgot password link
+        function forgotPassword(email){
+          firebase.auth().sendPasswordResetEmail(email).then((responce) => {
+            window.alert(`An email containing instructions for resulting your password has been sent to ${email}`);
+          }).catch((error)=>{
+            console.log(error.message);
+          })
+        }
     });
+
+    // 
 
 
 

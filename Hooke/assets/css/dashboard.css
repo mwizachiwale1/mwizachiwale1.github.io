@@ -1,0 +1,90 @@
+html, body{
+  /* background-color: #170614; */
+  /* color: #dfb3d4; */
+}
+.instructions{
+  list-style: none;
+  margin-block: 1rem;
+}
+.instructions .fa-solid{
+  margin-right: 0.5rem;
+}
+.card{
+  width: 80%;
+  min-height: 20rem;
+  position: absolute;
+  left: 10%;
+  text-align: center;
+  border-radius: 20px;
+}
+.card h5{
+  margin-top: .5rem;
+}
+.card p{
+  margin-top: .5rem;
+}
+
+.card .image{
+  width: 6rem;
+  height: 6rem;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-top: .5rem;
+}
+.card-1{
+  width: 80%;
+  min-height: 20rem;
+  position: absolute;
+  left: 10%;
+  z-index: 3;
+
+}
+.card-2{
+  top: -0.5rem;
+  width: 75%;
+  left: 12.5%;
+  z-index: 2;
+}
+.card-3{
+  top: -0.8rem;
+  width: 70%;
+  left: 15%;
+  z-index: 1;
+}
+.main-section{
+  margin-top: 3rem;
+  position: relative;
+}
+
+
+/* end demo only */
+.mobile-bottom-nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  will-change: transform;
+  transform: translateZ(0);
+  display: flex;
+  height: 4rem;
+}
+.mobile-bottom-nav__item {
+  flex-grow: 1;
+  text-align: center;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.mobile-bottom-nav__item .fa-solid{
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+
+.mobile-bottom-nav__item-content {
+  display: flex;
+  flex-direction: column;
+}

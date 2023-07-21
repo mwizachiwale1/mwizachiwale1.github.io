@@ -131,6 +131,7 @@ img {
 
 .contact-info {
   text-align: right;
+  font-size: 14px;
 }
 .phone, .email {
   margin-left: 20px;
@@ -142,4 +143,33 @@ img {
   background-position: center;
   background-repeat: no-repeat;
   color: #fff;
+}
+
+.detail-section{
+  display: flex;
+  background-color: #047D09;
+  flex-direction: row;
+
+}
+.detail-section .details{
+  flex-grow: 2;
+  color: #fff;
+}
+.detail-section .details ul{
+  font-size: 17px;
+  font-weight: 600;
+}
+.detail-section .image{
+  background-image: url('../img/program.jpg');
+  min-height: 10rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex-grow: 4;
+
+}
+@media (max-width: 587px) {
+  .detail-section{
+    flex-direction: column-reverse;
+  
+  }
 }

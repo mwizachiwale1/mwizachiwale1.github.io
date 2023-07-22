@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+html, body{
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 200%;
+  color: #010B13;
+}
+.h1 {
+  /* H1 */
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.h2 {
+  /* H2 */
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.h3 {
+  /* H3 */
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.h4 {
+  /* H4 */
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.paragraph {
+  /* Paragraph */
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 200%;
+  /* 2rem */
+}
+
+.nav-type {
+
+  /* Navigation */
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  
+}
+.article-heading{
+  color: #1E1E1E;
+/* Article heading */
+font-family: 'Roboto', sans-serif;
+font-size: 1rem;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+}
+.meta-text {
+  /* Addional info */
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}

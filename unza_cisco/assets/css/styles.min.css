@@ -149,11 +149,15 @@ img {
   display: flex;
   background-color: #047D09;
   flex-direction: row;
+  align-items: center;
+  /* For laptop */
+  min-height: 22.1875rem; 
 
 }
 .detail-section .details{
   flex-grow: 2;
   color: #fff;
+  padding-inline: 3rem;
 }
 .detail-section .details ul{
   font-size: 17px;
@@ -161,15 +165,76 @@ img {
 }
 .detail-section .image{
   background-image: url('../img/program.jpg');
-  min-height: 10rem;
+  min-height: 23rem;
   background-position: center;
   background-repeat: no-repeat;
   flex-grow: 4;
 
 }
-@media (max-width: 587px) {
+.about-course{
+  margin-bottom: 4rem;
+
+}
+@media (max-width: 687px) {
   .detail-section{
     flex-direction: column-reverse;
+    align-items: start;
+  
+  }
+  .detail-section .image{
+    flex-grow: 4;
+    min-height: 16rem;
+    width: 100%;
+    background-position: center;
+  
+  }
+
+  .detail-section .details{
+    flex-grow: 2;
+    color: #fff;
+    padding-block: 1rem;
+    padding-inline: 1rem;
+  }
+}
+
+.mr-3{
+  margin-right: 0.6rem;
+  width: 1.3rem;
+  color: #BEFF06;
+  margin-top: .9rem;
+}
+
+.info-card{
+  display: flex;
+  margin-right: 0 auto;
+  border-radius: 1.5625rem;
+  background: #C0FFC3;
+  padding: 1rem;
+  align-items: center;
+  gap: 1.69rem;
+  color: #033105;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+.info-card .fa{
+  color: #0C8B12;
+}
+
+@media (min-width: 687px) {
+  .about-course{
+    padding-right: inherit;
+  
+  }
+}
+@media (min-width: 1000px) {
+  .about-course{
+    padding-right: 5rem !important;
+  
+  }
+}
+@media (min-width: 1400px) {
+  .about-course{
+    padding-right: 15rem !important;
   
   }
 }

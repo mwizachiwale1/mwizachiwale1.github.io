@@ -138,7 +138,7 @@ img {
 }
 
 #cisco-background-image{
-  background-image: url('../img/page_cisco2.jpg');
+  background-image: url('../img/cover2.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -148,7 +148,7 @@ img {
 
 .detail-section{
   display: flex;
-  background-color: #047D09;
+  background-color: #0d274d;
   flex-direction: row;
   align-items: center;
   /* For laptop */
@@ -175,6 +175,10 @@ img {
 .about-course{
   margin-bottom: 4rem;
 
+}
+.card-img-top{
+  object-fit: cover;
+  height: 12rem;
 }
 @media (max-width: 687px) {
   .detail-section{

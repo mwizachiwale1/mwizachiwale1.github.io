@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,700;1,700&display=swap"
+    rel="stylesheet">
+  <!-- <link rel="stylesheet" type="text/css" href="typography.css"> -->
+
+  <link rel="stylesheet" type="text/css" href="components/styles.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <title>Artcile Polisher</title>
+</head>
+
+<body>
+  <header>
+    <nav class="nav">
+      <div class="brand">
+        <img src="img/Logo Placeholder.png" alt="">
+      </div>
+      <div class="links nav-type">
+        <button href="#" class="btn primary">Polish Article</button>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <div class="rounded-input">
+        <textarea name="" id="textarea" oninput="autoResize(this)" style="max-width: 100%;"
+          placeholder="Breaking News: [Your Headline Here]"></textarea>
+        <label for="textarea">Article Title</label>
+      </div>
+    </section>
+    <section class="options-area">
+      <div class="rounded-input">
+        <select name="select" id="select-input">
+          <option disabled selected>Pick Beat</option>
+          <option value="news">News Journalism</option>
+          <option value="feature">Feature Writing</option>
+          <option value="opinion">Opinion Journalism</option>
+          <option value="investigative">Investigative Journalism</option>
+          <option value="review">Review Writing</option>
+          <option value="editorial">Editorial Writing</option>
+          <option value="data">Data Journalism</option>
+          <option value="photojournalism">Photojournalism</option>
+        </select>
+        <label for="input">News Beat</label>
+      </div>
+      <div class="rounded-input">
+        <select name="select" id="select-input">
+          <option disabled selected>Pick Category</option>
+          <option value="politics">Politics</option>
+          <option value="business">Business</option>
+          <option value="technology">Technology</option>
+          <option value="health">Health</option>
+          <option value="science">Science</option>
+          <option value="entertainment">Entertainment</option>
+          <option value="sports">Sports</option>
+          <option value="environment">Environment</option>
+          <option value="education">Education</option>
+          <option value="lifestyle">Lifestyle</option>
+          <option value="travel">Travel</option>
+          <option value="opinion">Opinion</option>
+          <option value="weather">Weather</option>
+        </select>
+        <label for="input">Category</label>
+      </div>
+    </section>
+
+    <section class="body-section">
+      <div class="rounded-input">
+        <textarea name="" id="textarea" oninput="autoResize(this)" style="max-width: 100%;min-height: 8rem;"
+          placeholder="Enter the latest updates, insights, and details here. Your compelling news story unfolds in this space..."></textarea>
+        <label for="textarea">Article Body</label>
+      </div>
+    </section>
+  </main>
+
+
+  <script type="text/javascript">
+    // document.addEventListener("DOMContentLoaded", function () {
+    console.log("Js is working");
+    function autoResize(element) {
+      element.style.height = 'auto';
+      element.style.height = (element.scrollHeight) + 'px';
+    }
+
+
+    // });
+  </script>
+</body>
+
+</html>

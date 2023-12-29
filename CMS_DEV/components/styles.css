@@ -1,0 +1,147 @@
+/* HELPERS */
+.hidden{
+  display: none;
+}
+body,html{
+  --xss: 1px;
+  --xs: 2px;
+  --sm: 5px;
+  --md: 8px;
+  --lg: 13px;
+  --xlg: 21px;
+  
+  --w-xss: 1rem;
+  --w-xs: 2rem;
+  --w-sm: 5rem;
+  --w-md: 8rem;
+  --w-lg: 13rem;
+  --w-xlg: 21rem;
+
+
+}
+
+/* PART #1: THE THEME */
+
+/* LIGHT THENE */
+:root{
+  --primary-color-h: 205;
+  --primary-color-s: 89%;
+  --primary-color-l: 38%;
+
+  --secondary-color-h: 124;
+  --secondary-color-s: 100%;
+  --secondary-color-l: 43%;
+
+  --tetiary-color-h: 106;
+  --tetiary-color-s: 100%;
+  --tetiary-color-l: 38%;
+
+  --surface-color-h: 0;
+  --surface-color-s: 0%;
+  --surface-color-l: 100%;
+
+  --border-color-h: 0;
+  --border-color-s: 0%;
+  --border-color-l: 50%;
+
+  --info-color-h: 184;
+  --info-color-s: 100%;
+  --info-color-l: 43%;
+
+  --text-color-h: 207;
+  --text-color-s: 90%;
+  --text-color-l: 4%;
+
+  --helper-text-color-h: 0;
+  --helper-text-color-s: 0%;
+  --helper-text-color-l: 50%;
+
+  --error-color-h: 334;
+  --error-color-s: 100%;
+  --error-color-l: 43%;
+
+  /* bg */
+  --background-color-h: 100;
+  --background-color-s: 100%;
+  --background-color-l: 100%;
+
+
+   /* Contrast */
+   --deem-value: 10%;
+   --super-deem-value: 20%;
+
+
+ 
+
+  /* Background-colors */
+  --primary-color: hsl(var(--primary-color-h), var(--primary-color-s), var(--primary-color-l));
+  --secondary-color: hsl(var(--secondary-color-h), var(--secondary-color-s), var(--secondary-color-l));
+  --tetiary-color: hsl(var(--tetiary-color-h), var(--tetiary-color-s), var(--tetiary-color-l));
+  --info-color: hsl(var(--info-color-h), var(--info-color-s), var(--info-color-l));
+  --background-color: hsl(var(--background-color-h), var(--background-color-s), var(--background-color-l));
+  --surface-color: hsl(var(--surface-color-h), var(--surface-color-s), var(--surface-color-l));
+  --error-color: hsl(var(--error-color-h), var(--error-color-s), var(--error-color-l));
+  --text-color: hsl(var(--text-color-h), var(--text-color-s), var(--text-color-l));
+  --border-color: hsl(var(--border-color-h), var(--border-color-s), var(--border-color-l));
+  --helper-text-color: hsl(var(--helper-text-color-h), var(--helper-text-color-s), var(--helper-text-color-l));
+  --highlight-color: #0060DB;
+
+ 
+
+
+}
+body{
+  color: var(--text-color);
+}
+
+.select{
+  background-color: var(--background-color);
+}
+.rounded-input{
+  display: flex;
+  flex-direction: column-reverse;
+}
+.rounded-input label{
+  margin-bottom: var(--lg);
+  font-weight: 600;
+}
+.rounded-input input, .rounded-input select, .rounded-input textarea {
+  font-weight: 600;
+  background-color: inherit;
+  width: 100%;
+  border: var(--xss) solid var(--helper-text-color);
+  max-width: var(--w-xlg);
+  border-radius: var(--lg);
+  /* min-height: var(--w-xs); */
+  padding: var(--lg);
+  background-color: #FFF8F8;
+}
+
+.rounded-input input:hover, .rounded-input select:hover, .rounded-input textarea:hover {
+  background-color: #e9e2e2;
+}
+.rounded-input input:focus,  .rounded-input select:focus, .rounded-input textarea:focus{
+  outline: none;
+  background-color: #ffffff;
+  border-color: var(--highlight-color);
+}
+.rounded-input input:focus ~ label, .rounded-input select:focus ~ label, .rounded-input textarea:focus ~ label {
+  color: var(--highlight-color);
+}
+.rounded-input input:required:invalid ~ label, .rounded-input select:required:invalid ~ label, .rounded-input textarea:required:invalid ~ label {
+  color: var(--error-color);
+}
+.rounded-input input:required:invalid, .rounded-input select:required:invalid, .rounded-input textarea:required:invalid {
+  border: var(--xss) solid var(--error-color); 
+}
+
+.rounded-input input:required:valid, .rounded-input select:required:valid, .rounded-input textarea:required:valid {
+  border: var(--xss) solid var(--tetiary-color); 
+}
+
+.rounded-input textarea{
+  max-width: calc(var(--w-xlg) * 2);
+  resize: none;
+  overflow-y: hidden;
+  /* min-height: var(--w-lg); */
+}

@@ -272,7 +272,7 @@ a:hover{
   font-weight: 600;
 }
 .podcast-section .podcast-card .bg-image{
-  height: 6.1875rem;
+  height: 9rem;
   background-position: center;
   background-size: cover;
   position: relative;
@@ -318,7 +318,7 @@ a:hover{
   text-decoration-color: var(--highlight-color);
 }
 .news-section .news-card .bg-image{
-  height: 8.25rem;
+  height: 10rem;
   background-position: center;
   background-size: cover;
   position: relative;

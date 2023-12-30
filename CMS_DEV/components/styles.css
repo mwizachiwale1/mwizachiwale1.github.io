@@ -19,7 +19,7 @@ body,html{
   --w-md: 8rem;
   --w-lg: 13rem;
   --w-xlg: 21rem;
-
+  scroll-behavior: smooth;
 
 }
 

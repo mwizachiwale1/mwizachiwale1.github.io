@@ -71,11 +71,16 @@ header{
   z-index: 20;
   width: 100%;
 }
+@media(max-width: 321px){
+  header{
+    position: relative !important;
+  }
+}
 nav.nav{
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  gap: 0.1rem;
+  gap: .5rem;
   align-items: center;
   padding: 0.625rem 1.25rem;
   background-color:  #FFF;
@@ -124,7 +129,7 @@ nav .links{
   flex-wrap: wrap;
   align-items: center;
   justify-content: end;
-  gap: 1.2rem;
+  gap: 1.4rem;
 }
 @media(max-width: 574px){
   nav .links{

@@ -10,11 +10,11 @@ body,html{
   --xs: 2px;
   --sm: 5px;
   --md: 8px;
-  --lg: 13px;
+  --lg: 0.75rem;
   --xlg: 21px;
   
   --w-xss: 1rem;
-  --w-xs: 2rem;
+  --w-xs: 2.37338rem;
   --w-sm: 5rem;
   --w-md: 8rem;
   --w-lg: 13rem;

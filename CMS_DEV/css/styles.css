@@ -554,9 +554,8 @@ a:hover {
 }
 
 .comment .comment-profile-photo {
-  width: var(--w-xs);
+  min-width: var(--w-xs);
   height: var(--w-xs);
-  flex-shrink: 0;
   object-fit: cover;
   border-radius: 2.5rem;
   border: 0.5px solid var(--helper-text-color);

@@ -637,6 +637,13 @@ a:hover {
   color: #FFF;
 
 }
+@media (max-width: 800px){
+  .banner{
+    padding-inline: 2rem;
+    flex-wrap: wrap-reverse;
+    padding-block: 2rem;
+  }
+}
 .banner .banner-first-content{
   display: flex;
   flex-direction: column;

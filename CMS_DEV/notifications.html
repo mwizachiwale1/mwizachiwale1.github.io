@@ -16,18 +16,14 @@
 
   <link rel="stylesheet" type="text/css" href="components/styles.css">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
-  <title>Login</title>
+  <title>Notifications</title>
 </head>
 
-<body>
-
-
-
-  <main class="auth">
-    <form action="" method="post" enctype="multipart/form-data">
-      <div class="text-center" style="display: flex;flex-direction: column;justify-content: center; gap: var(--lg);">
-        <div>
-          <svg width="150" height="48" style="margin:0 auto;" viewBox="0 0 271 48" fill="none"
+<body style="background-color: #eeeeee;">
+  <header id="main-header">
+    <nav class="nav">
+      <div class="brand">
+        <svg width="150" height="48" style="margin:0 auto;" viewBox="0 0 271 48" fill="none"
           xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <g clip-path="url(#clip0_217_1000)">
             <rect width="48" height="48" fill="url(#pattern0)" />
@@ -47,116 +43,64 @@
           </defs>
         </svg>
 
+      </div>
+      <div class="search">
+        <i class="fa fa-md fa-search"></i>
+        <input type="text" class="p-2 w-full" placeholder="Search...">
+      </div>
+      <div class="links nav-type">
+        <a href="index.html" class="link">Home</a>
+        <a href="learn.html" class="link">Ai Education</a>
+        <a href="notifications.html" class="link active">Notifications(3)</a>
+        <a href="login.html" class="link">Login</a>
+        <!-- <a href="#" class="primary btn" style="color: #fff !important">Get Started</a> -->
+      </div>
+    </nav>
+  </header>
+
+
+  <main class="auth">
+    <div class="notifications-container">
+      <h1 class="text-2xl font-bold mb-4">Notifications</h1>
+  
+      <div class="Notificationcard unread">
+        <div class="discription">
+          <div>
+            <div class="font-bold">@mumba and 10 others liked your article</div>
+          </div>
+          <div class="notif-time">1m ago</div>
         </div>
-        <div>
-          <h2 class="text-gray-700 text-lg">Dear Guest, welcome back!</h2>
+  
+      </div>
+      <div class="Notificationcard read">
+        <div class="discription">
+          <div>Placeholder...</div>
+          <div class="notif-time">1m ago</div>
         </div>
       </div>
-      <section class="side-by-side mt-9">
-        <div>
-          <span class="text-2xl font-bold">Login</span>
-        </div>
-        <div>
-          <span class="text-gray-700">Don't have an account? <a href="signup.html">Signup</a></span>
-        </div>
-
-      </section>
-      <section class="mt-6">
-        <!-- Emaill address -->
-        <div class="rounded-input">
-          <input type="email" required placeholder="mule@mail.com" name="email" id="email" style="max-width: 100%;"
-            autocomplete="email" />
-          <label for="email">Email address</label>
-        </div>
-      </section>
-      <section class="mt-6">
-        <!-- Password -->
-        <div class="rounded-input">
-          <input type="password" required placeholder="***" name="password" id="input" style="max-width: 100%;" />
-          <label for="password">Password</label>
-        </div>
-      </section>
-
-      <section class="side-by-side mt-9">
-        <div>
-          <button type="submit" class="primary btn font-bold">Login</button>
-        </div>
-        <div>
-          <a href="#" class="">Forgot password?</a>
-        </div>
-      </section>
-    </form>
+    </div>
   </main>
 
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      // Function to validate passwords and submit the form
-      // function validateAndSubmit() {
-      //   // Confirm if the passwords match
-      //   const password = document.getElementById('password').value;
-      //   const confirmPassword = document.getElementById('confirm-password').value;
-  
-      //   if (password !== confirmPassword) {
-      //     alert('Passwords do not match!');
-      //     return;
-      //   }
-  
-      //   // If passwords match, proceed to submit the form
-      //   submitForm();
-      // }
-  
-      // Function to submit form data to the API endpoint
-      function submitForm() {
-        const form = document.querySelector('form');
-        const formData = new FormData(form);
-        const data = {};
-  
-        // Convert FormData to JSON
-        formData.forEach((value, key) => {
-          data[key] = value;
-        });
-  
-        // Example API endpoint
-        const apiEndpoint = 'http://www.journalismx.org/login';
-  
-        // Perform fetch to submit data
-        fetch(apiEndpoint, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
-          
+      // Fetch notifications for user
+      const urlEndPoint = 'http://www.journalismx.org/notifications'
+      fetch(urlEndPoint, {
+        mode: 'cors',
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+        }
+        
+      })
+        .then(result => { 
+          console.log(result);
         })
-          .then(response => response.json())
-          .then(result => {
-
-            try{
-              localStorage.setItem('accessToken', result.accessToken);
-              localStorage.setItem('userId', result.user.id);
-              localStorage.setItem('username', result.user.firstName);
-              window.location.href ="index.html";
-
-            } catch{
-              window.alert(result.message);
-            }
-            
-            if(result.user.id != undefined){
-            }
-            
-          })
-          .catch(error => {
-            // Handle errors
-            console.error('Error:', error);
-          });
-      }
-  
-      // Attach the validateAndSubmit function to the form's submit event
-      document.querySelector('form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent the default form submission
-        submitForm();
-      });
+        .catch(error => {
+          console.log(error);
+        });
     });
   </script>
 </body>

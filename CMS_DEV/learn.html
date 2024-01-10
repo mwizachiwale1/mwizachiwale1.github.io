@@ -47,11 +47,11 @@
         placeholder="Search...">
       </div>
       <div class="links nav-type">
-        <a href="#" class="link">Home</a>
-        <a href="#" class="link">Ai Education</a>
-        <a href="#" class="link">News</a>
-        <a href="#" class="link">Signin</a>
-        <!-- <a href="#" class="primary btn" style="color: #fff !important">Get Started</a> -->
+          <a href="index.html" class="link">Home</a>
+          <a href="learn.html" class="link active">Ai Education</a>
+          <a href="notifications.html" class="link">Notifications(3)</a>
+          <a href="login.html" class="link">Login</a>
+          <!-- <a href="#" class="primary btn" style="color: #fff !important">Get Started</a> -->
       </div>
     </nav>
   </header>
@@ -211,6 +211,61 @@
           header.classList.remove("fixed");
         }
       });
+
+      
+      
+      // Replace 'your_api_endpoint' with the actual URL of the API you want to fetch data from
+const apiEndpoint = 'http://www.journalismx.org/articles/createArticle';
+
+// fetch(apiEndpoint)
+//   .then(response => {
+//     if (!response.ok) {
+//       throw new Error(`Network response was not ok: ${response.statusText}`);
+//     }
+//     return response;
+//   })
+//   .then(data => {
+//     // Handle the data retrieved from the API
+//     console.log(data.);
+//   })
+//   .catch(error => {
+//     // Handle any errors that occurred during the fetch
+//     console.error('Fetch error:', error);
+//   });
+
+// Replace 'your_api_endpoint' with the actual URL of the API you want to send data to
+// const apiEndpoint = 'your_api_endpoint';
+
+// Replace 'your_data_object' with the data you want to send in the request body
+const dataObject = {
+  "title": "string",
+  "body": "string",
+  "category": "string",
+};
+
+fetch(apiEndpoint, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json', // Specify the content type if sending JSON data
+    // Add any other headers as needed
+  },
+  body: JSON.stringify(dataObject),
+})
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`Network response was not ok: ${response.statusText}`);
+    }
+    return response;
+  })
+  .then(data => {
+    // Handle the response from the API after sending data
+    console.log(data);
+  })
+  .catch(error => {
+    // Handle any errors that occurred during the fetch
+    console.error('Fetch error:', error);
+  });
+
     });
 
   </script>

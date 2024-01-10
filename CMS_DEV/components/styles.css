@@ -104,7 +104,7 @@ body{
   display: flex;
   flex-direction: column-reverse;
 }
-.rounded-input label{
+.rounded-input label, .label{
   margin-bottom: var(--lg);
   font-weight: 600;
 }

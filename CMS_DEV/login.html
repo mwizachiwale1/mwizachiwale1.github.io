@@ -16,6 +16,7 @@
 
   <link rel="stylesheet" type="text/css" href="components/styles.css">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <script src="https://accounts.google.com/gsi/client" async></script>
   <title>Login</title>
 </head>
 
@@ -50,7 +51,6 @@
         </div>
         <div>
           <h2 class="text-gray-700 text-lg">Dear Guest, welcome back!</h2>
-    <button style="background-color: green;" onclick="googleLogin()">Login With Google</button>
 
         </div>
       </div>
@@ -88,6 +88,21 @@
         </div>
       </section>
     </form>
+
+    <div class="auth-providers">
+      <h1 class="text-xl header text-center">OR</h1>
+
+      <div class="auth-providers-list">
+        <!-- <button  class=" btn auth-btn font-bold"><i class="fab fa-google"></i> Login With Google</button> -->
+        <div id="g_id_onload" data-client_id="521711271641-aqapgdvddn969lrhcne3rptkvktgt26h.apps.googleusercontent.com"
+          data-context="signin" data-ux_mode="popup" data-callback="handleAuth" data-auto_prompt="false">
+        </div>
+
+        <div class="g_id_signin" data-type="standard" data-shape="pill" data-theme="outline" data-text="continue_with"
+          data-size="large" data-logo_alignment="left">
+        </div>
+      </div>
+    </div>
   </main>
 
 
@@ -160,27 +175,33 @@
       });
 
 
-     
-    });
-     // Google Login
-     function googleLogin() {
-        const apiEndpoint = 'http://www.journalismx.org/google/auth';
-        console.log("executing")
-        // Perform fetch to submit data
-        fetch(apiEndpoint, {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        })
-          .then(response => response.json())
-          .then(result => {
-            console.log(result);
-          }).catch(error => {
-            console.log(error);
-          });
 
+    });
+    // Google Login
+
+    async function decodeResponse(credential) {
+      const url = new URL('http://127.0.0.1:4000/google/auth'); // change to the endpoint. Don't hard code this
+      url.searchParams.append('code', credential);
+      const localReq = await fetch(url);
+      const data = await localReq.json();
+      return data
+
+    }
+    async function handleAuth(response) {
+      console.log('Response', response);
+
+      const responsePayload = await decodeResponse(response.credential);
+      console.log('responsePayload', responsePayload);
+      try {
+        localStorage.setItem('accessToken', responce.accessToken);
+        localStorage.setItem('userId', responce.user.id);
+        localStorage.setItem('username', responce.user.firstName);
+        window.location.href = "index.html";
+
+      } catch {
+        window.alert(result.message);
       }
+    }
   </script>
 </body>
 

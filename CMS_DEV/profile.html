@@ -17,6 +17,35 @@
   <link rel="stylesheet" type="text/css" href="components/styles.css">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
   <title>Preview</title>
+  <style>
+    .author-details {
+        border-top: none;
+      }
+    @media (max-width: 1300px) {
+      .author-details .author-details-header .author-details-actions .btn {
+        width: 3rem;
+        height: 3rem;
+        font-size: var(--lg);
+      }
+
+      .author-details .author-details-header .author-details-actions .text {
+        display: none;
+      }
+    }
+
+
+
+    @media (max-width: 1000px) {
+      .view-content {
+        flex-direction: column-reverse;
+      }
+
+      .author-details {
+        border-top: none;
+        border-bottom: 0.03125rem solid #8d8d8d;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -50,74 +79,60 @@
       </div>
       <div class="links nav-type">
         <a href="index.html" class="link">Home</a>
-        <a href="learn.html" class="link active">Ai Education</a>
+        <a href="learn.html" class="link">Ai Education</a>
         <a href="notifications.html" class="link">Notifications(3)</a>
         <a href="login.html" class="link">Login</a>
         <!-- <a href="#" class="primary btn" style="color: #fff !important">Get Started</a> -->
       </div>
     </nav>
   </header>
-  <section class="bg-gray-200 py-8 px-4 page-lead">
-    <h1 class="text-3xl text-center font-bold text-gray-700"><span
-        style="color: var(--secondary-color) !important;">Ai</span> Education</h1>
-    <p class="mt-3 text-center text-md font-medium text-gray-700" style="font-style: italic;">Unlock the power of AI:
-      Learn, innovate, and shape the future.</p>
-
-  </section>
   <main class="full-width">
+    <section class="view-content">
+      <section class="main-content">
+        <h2 class="text-xl">Articles</h2>
+        <section class="news-section mt-2" id="news-container">
+          <div class="news-card">
+            <div class="bg-image border" style="background-image: url('img/ai_education5.jpeg');">
 
-    <!-- Videos section -->
-    <section class="mt-6 pt-6 px-1 section-decription">
-      <div class="title"><span class="fa fa-xl pr-1 fa-play"></span> <span class="text-xl font-bold">Videos</span></div>
-      <a class="tetiary-btn-variant">More Videos <span class="fa fa-lg pr-1 fa-chevron-right"></span></a>
-    </section>
-    <section class="podcast-section mt-6">
-      <div class="podcast-card">
-        <div class="bg-image" style="background-image: url('img/ai_education1.webp');">
-          <div class="label"><a href="#"><i class="fa fa-play-circle fa-xl mr-2"></i><span
-                class="meta-text">Play</span></a></div>
-        </div>
-        <span class="article-heading">Demystifying AI: A Beginner's Guide to Artificial Intelligence in Education</span>
-      </div>
-      <div class="podcast-card">
-        <div class="bg-image" style="background-image: url('img/ai_education2.webp');">
-          <div class="label"><a href="#"><i class="fa fa-play-circle fa-xl mr-2"></i><span
-                class="meta-text">Play</span></a></div>
-        </div>
-        <span class="article-heading">Empowering Minds: The Impact of AI on Learning and Education</span>
-      </div>
-      <div class="podcast-card">
-        <div class="bg-image" style="background-image: url('img/ai_education3.jpg');">
-          <div class="label"><a href="#"><i class="fa fa-play-circle fa-xl mr-2"></i><span
-                class="meta-text">Play</span></a></div>
-        </div>
-        <span class="article-heading">AI in Education: Transforming Classrooms for the Future</span>
-      </div>
-      <div class="podcast-card">
-        <div class="bg-image" style="background-image: url('img/ai_education4.webp');">
-          <div class="label"><a href="#"><i class="fa fa-play-circle fa-xl mr-2"></i><span
-                class="meta-text">Play</span></a></div>
-        </div>
-        <span class="article-heading">Coding the Future: Exploring the Role of AI in Educational Technology</span>
-      </div>
-    </section>
+            </div>
+            <a href="#"><span class="mt-3 article-heading">Journalism in the Digital Age: A Guide to Leveraging AI for
+                News Reporting</span></a>
+            <div class="meta-data meta-text">
+              <span class=""><a href="#">Lusaka Media</a></span><span class="mx-3">|</span><span>3hrs ago
+            </div>
+          </div>
+        </section>
 
-
-    <!-- Articles section -->
-    <section class="mt-6 pt-6 px-1 section-decription">
-      <div class="title"><span class="fa fa-xl pr-1 fa-rss"></span> <span class="text-xl font-bold">Articles</span>
-      </div>
-      <a class="tetiary-btn-variant">More Articles <span class="fa fa-lg pr-1 fa-chevron-right"></span></a>
-    </section>
-    <section class="news-section mt-6" id="news-container">
-      <div class="news-card">
-        <div class="bg-image border" style="background-image: url('img/ai_education5.jpeg');">
-
+      </section>
+      <section class="side-content">
+        <div class="author-details">
+          <div class="author-details-header">
+            <div class="author-detials-header-information">
+              <div>
+                <img class="author-profile-picture" src="img/mic2.jpeg" />
+              </div>
+              <div>
+                <div><span class="author-details-name">Lusaka News</span></div>
+                <div><span>12.2 Followers</span></div>
+              </div>
+            </div>
+            <div class="author-details-actions">
+              <div>
+                <button class="btn primary-btn"><i class="fa fa-user-plus"></i> <span
+                    class="text">Follow</span></button>
+              </div>
+              <div>
+                <button class="btn outline-btn"><i class="fa fa-bell"></i> <span class="text">Subscribe</span></button>
+              </div>
+            </div>
+          </div>
+          <div class="author-details-bio py-5">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus quo dolorum inventore possimus cum.
+              Facere error animi eveniet repellendus itaque reprehenderit a illo? Id est recusandae eaque praesentium,
+              iste adipisci.</p>
+          </div>
         </div>
-        <a href="#"><span class="mt-3 article-heading">Journalism in the Digital Age: A Guide to Leveraging AI for News
-            Reporting</span></a>
-
-      </div>
+      </section>
     </section>
   </main>
   <!-- footer -->
@@ -205,9 +220,7 @@
         }
       });
 
-
-
-      const apiEndpoint = 'http://www.journalismx.org/articles/categories/ai_education';
+      const apiEndpoint = 'http://www.journalismx.org/articles/';
       fetch(apiEndpoint)
         .then(response => {
           if (!response.ok) {

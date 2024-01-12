@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Sign In</title>
+    <script src="https://accounts.google.com/gsi/client" async></script>
+</head>
+
+<body>
+    <h1>Google Sign In</h1>
+    <!-- This code block enables google sign in -->
+    <div id="g_id_onload" data-client_id="521711271641-aqapgdvddn969lrhcne3rptkvktgt26h.apps.googleusercontent.com"
+        data-context="signin" data-ux_mode="popup" data-callback="handleAuth" data-auto_prompt="false">
+    </div>
+
+    <div class="g_id_signin" data-type="standard" data-shape="pill" data-theme="outline" data-text="continue_with"
+        data-size="large" data-logo_alignment="left">
+    </div>
+    <!-- End of google sign in -->
+
+    <!-- This script handles routing to the server -->
+    <script>
+        async function decodeResponse(credential) {
+            const url = new URL('http://127.0.0.1:4000/google/auth'); // change to the endpoint. Don't hard code this
+            url.searchParams.append('code', credential);
+            const localReq = await fetch(url);
+            const data = await localReq.json();
+            return data;
+
+        }
+        async function handleAuth(response) {
+            console.log('Response', response);
+
+            const responsePayload = await decodeResponse(response.credential);
+            console.log('responsePayload', responsePayload);
+        }
+    </script>
+</body>
+
+</html>

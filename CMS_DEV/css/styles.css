@@ -101,7 +101,7 @@ header {
 
 nav.nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
   gap: .5rem;
   align-items: center;
@@ -115,20 +115,20 @@ nav.nav {
 nav .brand {
   font-size: 40px;
   font-weight: 700;
-  flex-grow: 0.5;
+  flex-grow: 0;
 }
 
-@media(max-width: 574px) {
-  nav .brand {
-    text-align: center;
+@media (max-width: 360px){
+  nav.nav{
+    justify-content: center;
   }
 }
-
 nav .search {
   flex-grow: 2;
 
   display: flex;
   width: 9.8125rem;
+  max-width: 30rem;
   max-height: 2.8125rem;
   padding: 1rem 1.25rem;
   align-items: center;
@@ -148,30 +148,37 @@ nav .search input {
 nav .search input:focus {
   outline: none;
 }
-
-
-nav .links {
-  flex-grow: 2;
-  /* text-align: right; */
+nav .links{
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: end;
-  gap: 1.4rem;
+  flex-direction: row;
+  gap: 1rem;
+
 }
-nav .links .active {
-  color: var(--secondary-color) !important;
-}
-@media(max-width: 574px) {
-  nav .links {
-    justify-content: center;
+@media (max-width: 708px){
+  nav .links{
+    justify-content: space-between;
+    width: 100%;
+
   }
 }
-
 nav .links .link {
   font-family: inherit;
-  color: #9F9F9F;
+  color: var(--border-color);
+  padding-right: 10px;
+  padding-left: 10px;
 }
+
+nav .links .link:last-child {
+  border-right: none;
+  border-left: 1px solid #ccc;
+  color: var(--error-color);
+
+}
+nav .links .active {
+  color: var(--primary-color) !important;
+}
+
+
 
 .primary-btn {
   padding: 1rem 1.25rem;
@@ -262,9 +269,9 @@ nav .links .link {
   flex: 1fr;
 }
 
-a {
+/* a {
   color: var(--highlight-color) !important;
-}
+} */
 
 a:hover {
   text-decoration: underline;

@@ -2,6 +2,12 @@
 .hidden{
   display: none;
 }
+@media(max-width: 574px){
+  .hidden-mobile{
+    display: none;
+  }
+}
+
 .fixed{
   position: fixed;
 }

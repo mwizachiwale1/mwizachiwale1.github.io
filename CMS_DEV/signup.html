@@ -219,6 +219,7 @@
 
         // Perform fetch to submit data
         fetch(apiEndpoint, {
+          mode: 'cors',
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

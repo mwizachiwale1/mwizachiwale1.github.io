@@ -184,7 +184,7 @@
         <div class="comments">
           <form class="comment-box">
             <div>
-              <img src="img/girl.jpeg" alt="user-profile">
+              <img src="img/ai_education2.webp" alt="user-profile">
             </div>
             <div class="rounded-input">
               <textarea oninput="autoResize(this)" type="text" placeholder="Your Comment..." name="body"
@@ -237,7 +237,7 @@
           <div class="author-details-header">
             <div class="author-detials-header-information">
               <div>
-                <img class="author-profile-picture" src="img/mic2.jpeg" />
+                <img class="author-profile-picture" src="img/ai_education3.jpg" />
               </div>
               <div>
                 <div><span class="author-details-name">Lusaka News</span></div>
@@ -355,6 +355,7 @@
       let apiEndpoint = 'http://www.journalismx.org/articles/' + articleId;
       console.log(apiEndpoint);
       fetch(apiEndpoint, {
+        mode:"cors",
         method: "Get",
         headers: {
           'Content-Type': 'application/json',
@@ -401,6 +402,7 @@
 
         // Perform fetch to submit data
         fetch(apiEndpoint, {
+          mode:"cors",
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -491,7 +493,14 @@
 
       function fetchComments() {
         let apiEndpoint = 'http://www.journalismx.org/comments/' + getArticleIdFromUrl();
-        fetch(apiEndpoint)
+        fetch(apiEndpoint, {
+          headers: {
+          'Content-Type': 'application/json', 
+        },
+        mode: 'cors',
+        method: 'GET',
+      
+        })
           .then(response => {
             if (!response.ok) {
               throw new Error(`Network response was not ok: ${response.statusText}`);

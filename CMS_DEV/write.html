@@ -59,7 +59,7 @@
     </nav>
   </header>
   <main>
-    <form action="" enctype="multipart/form-data">
+    <form id="articleForm" enctype="multipart/form-data">
       <section>
         <div class="rounded-input">
           <textarea name="title" id="title" oninput="autoResize(this)" style="max-width: 100%;"
@@ -103,8 +103,8 @@
           <label for="input">Category</label>
         </div>
         <div class="rounded-input" >
-          <input type="file" name="cover-image" accept="JPEG, PNG, JPG, WEBP">
-          <label for="input">Cover Image</label>
+          <input type="file" id="image" name="image" accept="JPEG, PNG, JPG, WEBP">
+          <label for="image">Cover Image</label>
         </div>
       </section>
   
@@ -135,31 +135,21 @@
 
     // Function to submit form data to the API endpoint
     function submitForm() {
-      const form = document.querySelector('form');
+      const form = document.getElementById('articleForm');
       const formData = new FormData(form);
-      const data = {};
-
-      // Convert FormData to JSON
-      formData.forEach((value, key) => {
-        data[key] = value;
-      });
-
-      // Example API endpoint
-      const apiEndpoint = 'http://www.journalismx.org/articles/createArticle';
+      const apiEndpoint = 'http://104.131.13.86/articles/createArticle';
 
       // Perform fetch to submit data
       fetch(apiEndpoint, {
-        mode:"cors",
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
           Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
         },
-        body: JSON.stringify(data),
+        body: formData,
         
       })
         .then(result => {
-          console.log(JSON.stringify(data));
+          console.log(JSON.stringify(result));
           console.log(result);
           // window.location.href="login.html";
           

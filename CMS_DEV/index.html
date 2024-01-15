@@ -89,13 +89,13 @@
 
 
     <!-- Headline section -->
-    <section class="headline-section">
+    <!-- <section class="headline-section">
       <div id="headline-bg" class="bg-image" style="background-image: url('img/img/journalism.web');">
         <div class="label py-1 px-4 bg-secondary"><i class="fa fa-fire app-icon phone pr-1"></i>TRENDING NEWS</div>
       </div>
       <div id="headline-content" class="content">
       </div>
-    </section>
+    </section> -->
 
 
 
@@ -106,7 +106,7 @@
       <a class="tetiary-btn-variant">More News <span class="fa fa-lg pr-1 fa-chevron-right"></span></a>
     </section>
     <section class="news-section mt-6" id="news-container">
-      <div class="news-card">
+      <!-- <div class="news-card">
         <div class="bg-image border" style="background-image: url('img/ai_education5.jpeg');">
 
         </div>
@@ -115,6 +115,26 @@
         <div class="meta-data meta-text">
           <span class=""><a href="#">Lusaka Media</a></span><span class="mx-3">|</span><span>3hrs ago
         </div>
+      </div> -->
+      <div>
+        <div class="shimmer-placeholder" style="height: 10rem;"></div>
+        <div class="shimmer-placeholder mt-2" style="height: 1rem;border-radius: var(--sm);"></div>
+        <div class="shimmer-placeholder mt-1" style="height: 1rem;border-radius: var(--sm);width: 75%;"></div>
+      </div>
+      <div>
+        <div class="shimmer-placeholder" style="height: 10rem;"></div>
+        <div class="shimmer-placeholder mt-2" style="height: 1rem;border-radius: var(--sm);"></div>
+        <div class="shimmer-placeholder mt-1" style="height: 1rem;border-radius: var(--sm);width: 75%;"></div>
+      </div>
+      <div>
+        <div class="shimmer-placeholder" style="height: 10rem;"></div>
+        <div class="shimmer-placeholder mt-2" style="height: 1rem;border-radius: var(--sm);"></div>
+        <div class="shimmer-placeholder mt-1" style="height: 1rem;border-radius: var(--sm);width: 75%;"></div>
+      </div>
+      <div>
+        <div class="shimmer-placeholder" style="height: 10rem;"></div>
+        <div class="shimmer-placeholder mt-2" style="height: 1rem;border-radius: var(--sm);"></div>
+        <div class="shimmer-placeholder mt-1" style="height: 1rem;border-radius: var(--sm);width: 75%;"></div>
       </div>
     </section>
   </main>
@@ -208,10 +228,10 @@
 
 
 
-      const apiEndpoint = 'http://www.journalismx.org/articles';
+      const apiEndpoint = 'http://104.131.13.86/articles';
       fetch(apiEndpoint, {
         headers: {
-          'Content-Type': 'application/json', 
+          'Content-Type': 'application/json',
         },
         mode: 'cors',
         method: 'GET'
@@ -230,7 +250,9 @@
           const article = articles[0];
 
           // Populate the headline section
-          populateHeadline(article);
+          // populateHeadline(article);
+          // empty new container
+          document.getElementById('news-container').innerHTML ="";
           articles.forEach(article => {
             createArticleElement(article);
           });
@@ -252,7 +274,7 @@
         // Create background image div
         const bgImage = document.createElement('div');
         bgImage.classList.add('bg-image', 'border');
-        bgImage.style.backgroundImage = `url('img/ai_education5.jpeg')`; // Replace with article image URL
+        bgImage.style.backgroundImage = `url('${article.thumbnail}')`; // Replace with article image URL
         newsCard.appendChild(bgImage);
 
         // Create article heading

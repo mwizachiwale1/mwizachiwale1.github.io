@@ -62,96 +62,26 @@
     <section class="view-content">
       <section class="main-content">
         <div class="">
-          <h1 class="text-3xl">Journalism in the Digital Age: A Guide to Leveraging AI for News Reporting</h1>
+          <div id="title-placeholder">
+            <div class="shimmer-placeholder mt-2" style="height: 0.5rem;border-radius: var(--sm);"></div>
+            <div class="shimmer-placeholder mt-2" style="height: 0.5rem;border-radius: var(--sm);width: 60%;"></div>
+          </div>
+         
+          <h1 class="text-3xl" id="title"></h1>
         </div>
         <div class="">
-          <img class="article-image" src="img/journalism.webp" alt="">
+          <div id="image-placeholder" class="shimmer-placeholder mt-2" style="height: 20rem;border-radius: var(--sm);"></div>
+          <img class="article-image hidden" id="article-image" src="" alt="">
         </div>
         <div class="article">
-          <p class="mb-3">
-            In an era dominated by technological advancements, journalism has evolved beyond traditional practices.
-            Embracing the digital age involves not just adapting but leveraging the power of Artificial Intelligence
-            (AI) for more effective news reporting.
-            Navigating the Landscape
-          </p>
+          <div id="body-placeholder">
+            <div class="shimmer-placeholder mt-2" style="height: 0.2rem;border-radius: var(--sm);"></div>
+            <div class="shimmer-placeholder mt-2" style="height: 0.2rem;border-radius: var(--sm);width: 80%;"></div>
+            <div class="shimmer-placeholder mt-2" style="height: 0.2rem;border-radius: var(--sm);width: 95%;"></div>
+            <div class="shimmer-placeholder mt-2" style="height: 0.2rem;border-radius: var(--sm);width: 85%;"></div>
+          </div>
 
-          <p class="mb-3">
-            AI serves as a valuable ally for journalists seeking to enhance their reporting capabilities. From sifting
-            through vast datasets to automating routine tasks, AI opens doors to unprecedented efficiency and
-            innovation.
-
-          </p>
-          <p class="mb-3 font-md">
-            1. Data Analysis and Insights
-
-          </p>
-
-          <p class="mb-3">
-            Journalists can harness AI to analyze massive datasets, extracting meaningful insights faster than ever
-            before. This not only streamlines research processes but also allows for a more in-depth understanding of
-            complex issues.
-
-          </p>
-          <p class="mb-3 font-md">
-            2. Automated Fact-Checking
-
-          </p>
-
-          <p class="mb-3">
-            In the age of information overload, ensuring accuracy is paramount. AI-driven fact-checking tools can
-            expedite the verification process, helping journalists maintain the integrity of their stories and combat
-            the spread of misinformation.
-
-          </p>
-          <p class="mb-3 font-bold">
-            Embracing Automation
-
-          </p>
-          <p class="mb-3 font-md">
-            3. Content Creation Assistance
-
-          </p>
-          <p class="mb-3">
-            AI-powered writing assistants and algorithms can aid journalists in generating initial drafts, offering
-            suggestions for better readability and coherence. This doesn't replace the human touch but rather
-            complements journalistic skills.
-
-          </p>
-          <p class="mb-3 font-md">
-            4. Personalized News Delivery
-
-          </p>
-          <p class="mb-3">
-            AI algorithms enable the customization of news delivery, catering to individual preferences. This not only
-            enhances user experience but also provides journalists with valuable feedback on audience interests.
-
-          </p>
-          <p class="mb-3 font-bold">
-            Overcoming Challenges
-
-          </p>
-          <p class="mb-3">
-            While AI brings remarkable benefits, ethical considerations and potential biases must be addressed.
-            Journalists must remain vigilant, understanding the limitations of AI and ensuring responsible
-            implementation.
-
-          </p>
-          <p class="mb-3 font-bold">
-            The Future of Journalism
-
-          </p>
-          <p class="mb-3">
-            As journalism continues to evolve, the integration of AI becomes not just a choice but a necessity. Those
-            who adeptly navigate this intersection will find themselves at the forefront of innovation, shaping the
-            future of news reporting in the digital age.
-
-          </p>
-          <p class="mb-3">
-            In conclusion, this guide illuminates the potential of AI as a tool to amplify journalistic capabilities. By
-            embracing these technological advancements responsibly, journalists can redefine the art of storytelling and
-            adapt to the ever-changing landscape of the digital era.
-
-          </p>
+          <p class="mb-3 text-lg" id="body"></p>
         </div>
         <div class="action-bar">
           <div class="sector-1">
@@ -184,7 +114,7 @@
         <div class="comments">
           <form class="comment-box">
             <div>
-              <img src="img/ai_education2.webp" alt="user-profile">
+              <img src="img/profile.jpg" alt="user-profile">
             </div>
             <div class="rounded-input">
               <textarea oninput="autoResize(this)" type="text" placeholder="Your Comment..." name="body"
@@ -352,7 +282,7 @@
       let articleId = getArticleIdFromUrl();
       console.log('Article ID:', articleId);
       // Fetch article
-      let apiEndpoint = 'http://www.journalismx.org/articles/' + articleId;
+      let apiEndpoint = 'http://104.131.13.86/articles/' + articleId;
       console.log(apiEndpoint);
       fetch(apiEndpoint, {
         mode:"cors",
@@ -370,7 +300,14 @@
         })
         .then(article => {
           // Handle the data retrieved from the API
-          console.log(article);
+          document.getElementById("title-placeholder").classList.add("hidden");
+          document.getElementById("body-placeholder").classList.add("hidden");
+          document.getElementById("image-placeholder").classList.add("hidden");
+          document.getElementById("title").innerHTML = article.title;
+          document.getElementById("body").innerHTML = (article.body).replace(/\n/g, '<br>');
+          document.getElementById("article-image").src = article.image;
+          document.getElementById("article-image").classList.remove("hidden");
+          
 
         })
         .catch(error => {
@@ -398,7 +335,7 @@
         });
 
         // Example API endpoint
-        const apiEndpoint = 'http://www.journalismx.org/comments/' + getArticleIdFromUrl();
+        const apiEndpoint = 'http://104.131.13.86/comments/' + getArticleIdFromUrl();
 
         // Perform fetch to submit data
         fetch(apiEndpoint, {
@@ -425,7 +362,7 @@
             // Create the first div for the profile photo
             let profilePhotoDiv = document.createElement('div');
             let profilePhotoImg = document.createElement('img');
-            profilePhotoImg.src = 'img/ai_education3.jpg';
+            profilePhotoImg.src = 'img/profile.jpg';
             profilePhotoImg.alt = 'Profile Photo';
             profilePhotoImg.className = 'comment-profile-photo';
             profilePhotoDiv.appendChild(profilePhotoImg);
@@ -492,7 +429,7 @@
 
 
       function fetchComments() {
-        let apiEndpoint = 'http://www.journalismx.org/comments/' + getArticleIdFromUrl();
+        let apiEndpoint = 'http://104.131.13.86/comments/' + getArticleIdFromUrl();
         fetch(apiEndpoint, {
           headers: {
           'Content-Type': 'application/json', 
@@ -532,7 +469,7 @@
         // Create the first div for the profile photo
         let profilePhotoDiv = document.createElement('div');
         let profilePhotoImg = document.createElement('img');
-        profilePhotoImg.src = 'img/ai_education3.jpg';
+        profilePhotoImg.src = 'img/profile.jpg';
         profilePhotoImg.alt = 'Profile Photo';
         profilePhotoImg.className = 'comment-profile-photo';
         profilePhotoDiv.appendChild(profilePhotoImg);

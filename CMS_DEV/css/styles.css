@@ -25,10 +25,38 @@ main {
   padding-inline: calc(100vw / 20);
 
 }
+main.auth {
+  margin-top: 1rem;
+}
 
-main.auth,
+
 main.full-width {
   margin-top: 4rem;
+}
+@media (min-width: 450px) {
+  main.auth form{
+    border: 1px solid var(--border-color);
+    padding: var(--xlg);
+    border-radius: var(--md);
+    background-color: var(--surface-color);
+  }
+}
+
+
+@media (min-width: 600px) {
+  main {
+    padding-inline: calc(100vw / 10);
+  }
+
+  main.full-width,
+  .page-lead {
+    padding-inline: calc(100vw / 55);
+  }
+
+  main.auth {
+    margin-top: 2rem;
+    padding-inline: calc(100vw / 5);
+  }
 }
 
 @media (min-width: 850px) {
@@ -42,7 +70,8 @@ main.full-width {
   }
 
   main.auth {
-    padding-inline: calc(100vw / 3.5);
+    margin-top: 3rem;
+    padding-inline: calc(100vw / 3.4);
   }
 }
 
@@ -54,6 +83,9 @@ main.full-width {
   main.full-width,
   .page-lead {
     padding-inline: calc(100vw / 30);
+  }
+  main.auth {
+    padding-inline: calc(100vw / 3);
   }
 
 }
@@ -269,9 +301,9 @@ nav .links .active {
   flex: 1fr;
 }
 
-/* a {
-  color: var(--highlight-color) !important;
-} */
+a,a {
+  color: var(--highlight-color);
+}
 
 a:hover {
   text-decoration: underline;
@@ -280,14 +312,14 @@ a:hover {
 .btn {
   width: 10rem;
   max-width: 12rem;
-  height: 58px;
+  height: 45px;
   text-align: center;
   border-radius: var(--w-xs);
   display: flex;
   justify-content: center;
   gap: .8rem;
   align-items: center;
-  padding-inline: 1rem;
+  padding-inline: .7rem;
 
 }
 
@@ -817,7 +849,7 @@ a:hover {
 }
 
 .auth-providers{
-  margin-top: var(--w-xs);
+  margin-top: var(--w-xss);
 }
 .auth-providers .header{
   color: var(--helper-text-color);
@@ -826,9 +858,6 @@ a:hover {
   cursor: pointer;
 }
 .auth-providers .auth-providers-list{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
   margin-top: var(--w-xss);
 }
 .auth-providers .auth-providers-list .auth-btn{
@@ -842,4 +871,11 @@ a:hover {
 .auth-providers .auth-providers-list .auth-btn:active{
   background-color: var(--highlight-color);
   color: #FFF;
+}
+
+
+
+.disabled-form {
+  pointer-events: none;
+  opacity: 0.6; /* You can adjust the opacity to visually indicate the disabled state */
 }

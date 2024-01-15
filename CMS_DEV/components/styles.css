@@ -122,7 +122,7 @@ body{
   max-width: var(--w-xlg);
   border-radius: var(--lg);
   /* min-height: var(--w-xs); */
-  padding: var(--lg);
+  padding: var(--md);
   background-color: #FFF8F8;
 }
 
@@ -137,14 +137,14 @@ body{
 .rounded-input input:focus ~ label, .rounded-input select:focus ~ label, .rounded-input textarea:focus ~ label {
   color: var(--highlight-color);
 }
-.rounded-input input:required:invalid ~ label, .rounded-input select:required:invalid ~ label, .rounded-input textarea:required:invalid ~ label {
+.submitted .rounded-input input:required:invalid ~ label, .submitted .rounded-input select:required:invalid ~ label, .submitted .rounded-input textarea:required:invalid ~ label {
   color: var(--error-color);
 }
-.rounded-input input:required:invalid, .rounded-input select:required:invalid, .rounded-input textarea:required:invalid {
+.submitted .rounded-input input:required:invalid, .submitted .rounded-input select:required:invalid, .submitted .rounded-input textarea:required:invalid {
   border: var(--xss) solid var(--error-color); 
 }
 
-.rounded-input input:required:valid, .rounded-input select:required:valid, .rounded-input textarea:required:valid {
+.submitted .rounded-input input:required:valid, .submitted .rounded-input select:required:valid, .submitted .rounded-input textarea:required:valid {
   border: var(--xss) solid var(--tetiary-color); 
 }
 
@@ -154,3 +154,23 @@ body{
   overflow-y: hidden;
   /* min-height: var(--w-lg); */
 }
+
+.loader {
+  width: 30px;
+  height: 30px;
+  border: 5px solid #FFF;
+  border-bottom-color: #00ff0d;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+  100% {
+      transform: rotate(360deg);
+  }
+  } 

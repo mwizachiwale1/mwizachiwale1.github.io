@@ -53,8 +53,9 @@
       </div>
       <div class="links nav-type">
         <a href="learn.html" class="link"><i class="fas fa-graduation-cap"></i> Ai Education</a>
-        <a href="login.html" class="link"><i class="far fa-user"></i> Login</a>
-        <a href="notifications.html" class="link"><i class="far fa-bell"></i> <sup>3</sup></a>
+        <a href="login.html" class="link not-loged-in hidden"><i class="far fa-user"></i> Login / Signup </a>
+        <a href="login.html" class="link loged-in hidden" style="padding-top: 0px;"><img src="img/profile.jpg" id="nav-profile-image" alt=""></a>
+        <a href="notifications.html" class="link loged-in hidden"><i class="far fa-bell"></i> <sup>3</sup></a>
 
         <!-- <a href="#" class="primary btn" style="color: #fff !important">Get Started</a> -->
       </div>
@@ -270,6 +271,7 @@
   <script src="js/index.js"></script>
   <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function () {
+      headerController();
       const apiEndpoint = 'http://104.131.13.86'
       readArticle(apiEndpoint);
       fetchComments(apiEndpoint); // fetch the comments

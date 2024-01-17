@@ -62,6 +62,37 @@ const fetchArticles = (api) => {
       console.error('Fetch error:', error);
     });
 }
+// Fetches articles from th apiEndPoint By category
+const fetchArticlesByCategory = (api, category) => {
+  let apiEndpoint = api + '/articles/categories/'+category;
+  document.getElementById('placeholder-container').classList.remove('hidden');
+  fetch(apiEndpoint, {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    mode: 'cors',
+    method: 'GET'
+  }
+
+  )
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Network response was not ok: ${response.statusText}`);
+      }
+      return response.json();
+    })
+    .then(articles => {
+      document.getElementById('placeholder-container').classList.add('hidden');
+      console.log(articles);
+      articles.forEach(article => {
+        createArticleElement(article, api);
+      });
+    })
+    .catch(error => {
+      // Handle any errors that occurred during the fetch
+      console.error('Fetch error:', error);
+    });
+}
 
 // Create the article html and displays it on the specified location
 function createArticleElement(article, api) {
@@ -454,4 +485,8 @@ function showAuthorDetails(api, u_id){
       document.getElementById("author-bio").innerText = responce.bio;
     }
   })
+}
+
+function likeArticle() {
+
 }

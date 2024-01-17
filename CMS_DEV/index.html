@@ -54,7 +54,23 @@
       <div class="links nav-type">
         <a href="learn.html" class="link"><i class="fas fa-graduation-cap"></i> Ai Education</a>
         <a href="login.html" class="link not-loged-in hidden"><i class="far fa-user"></i> Login / Signup </a>
-        <a href="login.html" class="link loged-in hidden" style="padding-top: 0px;"><img src="img/profile.jpg" id="nav-profile-image" alt=""></a>
+        <div href="#" class="link loged-in hidden" style="padding-top: 0px;">
+          <img src="img/profile.jpg" id="nav-profile-image" alt="" />
+          <ul class="nav-dropdown" id="user-dropdown">
+            <li>
+              <a href="#!"><i class="far fa-user-circle mr-2"></i> Profile</a>
+            </li>
+            <li class="mt-2">
+              <a href="#!"><i class="fa fa-cog mr-2"></i> Settings</a>
+            </li>
+            <li class="mt-2">
+              <a href="" id="logout-btn" style="color: var(--error-color);"><i class="fas fa-sign-out-alt mr-2"></i>
+                Logout</a>
+            </li>
+          </ul>
+        </div>
+
+
         <a href="notifications.html" class="link loged-in hidden"><i class="far fa-bell"></i> <sup>3</sup></a>
 
         <!-- <a href="#" class="primary btn" style="color: #fff !important">Get Started</a> -->
@@ -215,12 +231,12 @@
 
   <div class="floatingButtonWrap loged-in">
     <div class="floatingButtonInner">
-        <a href="write.html" class="floatingButton">
-            <i class="fa fa-edit icon-default"></i>
-        </a>
-      
+      <a href="write.html" class="floatingButton">
+        <i class="fa fa-edit icon-default"></i>
+      </a>
+
     </div>
-</div>
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
   <script src="js/index.js"></script>
   <script type="text/javascript">
@@ -229,7 +245,7 @@
       const apiEndpoint = 'http://104.131.13.86';
       fetchArticles(apiEndpoint);
     });
-   
+
   </script>
 </body>
 

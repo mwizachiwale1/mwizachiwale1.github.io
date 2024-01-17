@@ -18,9 +18,14 @@ function headerController() {
   if (isLogedIn()) {
     var elements = document.getElementsByClassName("loged-in");
     for (var i = 0; i < elements.length; i++) {
-      // Replace the following line with your specific action
       elements[i].classList.remove('hidden');
     }
+    const logoutBtn = document.querySelector("#logout-btn");
+    logoutBtn.addEventListener("click", function(e){
+      e.preventDefault();
+      localStorage.clear();
+      window.location.href = "login.html";
+    })
   } else {
     var elements = document.getElementsByClassName("not-loged-in");
     for (var i = 0; i < elements.length; i++) {
@@ -28,6 +33,8 @@ function headerController() {
       elements[i].classList.remove('hidden');
     }
   }
+
+  
 }
 
 
@@ -93,6 +100,39 @@ const fetchArticlesByCategory = (api, category) => {
       console.error('Fetch error:', error);
     });
 }
+
+// Fetches articles from th apiEndPoint By category
+const fetchArticlesForAuthor = (api, u_id) => {
+  let apiEndpoint = api + '/articles/user/'+u_id;
+  document.getElementById('placeholder-container').classList.remove('hidden');
+  fetch(apiEndpoint, {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    mode: 'cors',
+    method: 'GET'
+  }
+
+  )
+    .then(response => {
+      if (!response.ok) {
+        throw new Error(`Network response was not ok: ${response.statusText}`);
+      }
+      return response.json();
+    })
+    .then(articles => {
+      document.getElementById('placeholder-container').classList.add('hidden');
+      console.log(articles);
+      articles.forEach(article => {
+        createArticleElement(article, api);
+      });
+    })
+    .catch(error => {
+      // Handle any errors that occurred during the fetch
+      console.error('Fetch error:', error);
+    });
+}
+
 
 // Create the article html and displays it on the specified location
 function createArticleElement(article, api) {
@@ -476,7 +516,7 @@ function showAuthorDetails(api, u_id){
   getUserDetails(api, u_id).then(responce => {
     const authorName = document.getElementById("author-name");
     authorName.innerText = responce.firstName + " " + responce.lastName;
-    authorName.href = api + "/profile?u_id="+u_id;
+    authorName.href = "profile.html?u_id="+u_id;
 
     if(responce.image != null){
       document.getElementById("author-image").src = responce.image;

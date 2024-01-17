@@ -54,7 +54,22 @@
       <div class="links nav-type">
         <a href="learn.html" class="link"><i class="fas fa-graduation-cap"></i> Ai Education</a>
         <a href="login.html" class="link not-loged-in hidden"><i class="far fa-user"></i> Login / Signup </a>
-        <a href="login.html" class="link loged-in hidden" style="padding-top: 0px;"><img src="img/profile.jpg" id="nav-profile-image" alt=""></a>
+        <div href="#" class="link loged-in hidden" style="padding-top: 0px;">
+          <img src="img/profile.jpg" id="nav-profile-image" alt=""/>
+          <ul class="nav-dropdown" id="user-dropdown">
+            <li>
+              <a href="#!"><i class="far fa-user-circle mr-2"></i> Profile</a>
+            </li>
+            <li class="mt-2">
+              <a href="#!"><i class="fa fa-cog mr-2"></i> Settings</a>
+            </li>
+            <li class="mt-2">
+              <a href="" id="logout-btn" style="color: var(--error-color);"><i class="fas fa-sign-out-alt mr-2"></i> Logout</a>
+            </li>
+          </ul>
+        </div>
+
+       
         <a href="notifications.html" class="link loged-in hidden"><i class="far fa-bell"></i> <sup>3</sup></a>
 
         <!-- <a href="#" class="primary btn" style="color: #fff !important">Get Started</a> -->
@@ -183,9 +198,9 @@
                 <button class="btn primary-btn"><i class="fa fa-user-plus"></i> <span
                     class="text">Follow</span></button>
               </div>
-              <div>
+              <!-- <div>
                 <button class="btn outline-btn"><i class="fa fa-bell"></i> <span class="text">Subscribe</span></button>
-              </div>
+              </div> -->
             </div>
           </div>
           <div class="author-details-bio py-5">
@@ -196,6 +211,14 @@
       <section class="side-content"></section>
     </section>
   </main>
+  <div class="floatingButtonWrap loged-in">
+    <div class="floatingButtonInner">
+      <a href="write.html" class="floatingButton">
+        <i class="fa fa-edit icon-default"></i>
+      </a>
+
+    </div>
+  </div>
   <!-- footer -->
   <footer class="mt-6 pt-6">
     <div class="footer-row">

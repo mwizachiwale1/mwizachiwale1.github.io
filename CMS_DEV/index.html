@@ -53,8 +53,9 @@
       </div>
       <div class="links nav-type">
         <a href="learn.html" class="link"><i class="fas fa-graduation-cap"></i> Ai Education</a>
-        <a href="login.html" class="link"><i class="far fa-user"></i> Login</a>
-        <a href="notifications.html" class="link"><i class="far fa-bell"></i> <sup>3</sup></a>
+        <a href="login.html" class="link not-loged-in hidden"><i class="far fa-user"></i> Login / Signup </a>
+        <a href="login.html" class="link loged-in hidden" style="padding-top: 0px;"><img src="img/profile.jpg" id="nav-profile-image" alt=""></a>
+        <a href="notifications.html" class="link loged-in hidden"><i class="far fa-bell"></i> <sup>3</sup></a>
 
         <!-- <a href="#" class="primary btn" style="color: #fff !important">Get Started</a> -->
       </div>
@@ -116,6 +117,8 @@
           <span class=""><a href="#">Lusaka Media</a></span><span class="mx-3">|</span><span>3hrs ago
         </div>
       </div> -->
+    </section>
+    <section class="news-section mt-6" id="placeholder-container">
       <div>
         <div class="shimmer-placeholder" style="height: 10rem;"></div>
         <div class="shimmer-placeholder mt-2" style="height: 1rem;border-radius: var(--sm);"></div>
@@ -209,138 +212,24 @@
       &copy; 2023 JournalismX. All Rights Reserved
     </div>
   </footer>
+
+  <div class="floatingButtonWrap loged-in">
+    <div class="floatingButtonInner">
+        <a href="write.html" class="floatingButton">
+            <i class="fa fa-edit icon-default"></i>
+        </a>
+      
+    </div>
+</div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  <script src="js/index.js"></script>
   <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function () {
-      var header = document.getElementById("main-header");
-      var search_bar = document.getElementById("search");
-      var headerHeight = header.offsetHeight;
-
-      window.addEventListener("scroll", function () {
-        if (window.scrollY > headerHeight) {
-          header.classList.add("fixed");
-          brand.classList.add("hidden-mobile");
-        } else {
-          header.classList.remove("fixed");
-          brand.classList.remove("hidden-mobile");
-        }
-      });
-
-
-
-      const apiEndpoint = 'http://104.131.13.86/articles';
-      fetch(apiEndpoint, {
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        mode: 'cors',
-        method: 'GET'
-      }
-
-      )
-        .then(response => {
-          if (!response.ok) {
-            throw new Error(`Network response was not ok: ${response.statusText}`);
-          }
-          return response.json();
-        })
-        .then(articles => {
-          // Handle the data retrieved from the API
-          console.log(articles);
-          const article = articles[0];
-
-          // Populate the headline section
-          // populateHeadline(article);
-          // empty new container
-          document.getElementById('news-container').innerHTML ="";
-          articles.forEach(article => {
-            createArticleElement(article);
-          });
-        })
-        .catch(error => {
-          // Handle any errors that occurred during the fetch
-          console.error('Fetch error:', error);
-        });
-
-
-      // Function to create HTML elements for each article
-      function createArticleElement(article) {
-        const newsContainer = document.getElementById('news-container');
-
-        // Create news card container
-        const newsCard = document.createElement('div');
-        newsCard.classList.add('news-card');
-
-        // Create background image div
-        const bgImage = document.createElement('div');
-        bgImage.classList.add('bg-image', 'border');
-        bgImage.style.backgroundImage = `url('${article.thumbnail}')`; // Replace with article image URL
-        newsCard.appendChild(bgImage);
-
-        // Create article heading
-        const articleHeading = document.createElement('a');
-        articleHeading.href = `read.html?id=${article.id}`; // Replace with the article URL
-        articleHeading.innerHTML = `<span class="mt-3 article-heading">${article.title}</span>`;
-        newsCard.appendChild(articleHeading);
-
-        const metaData = document.createElement('div');
-        metaData.classList.add('meta-data', 'meta-text');
-        metaData.innerHTML = `
-        <span class=""><a href="#">${article.category}</a></span>
-        <span class="mx-3">|</span>
-        <span>${timeAgo(article.createdAt)}</span>
-      `;
-        newsCard.appendChild(metaData);
-
-        newsContainer.appendChild(newsCard);
-      }
-
-
-
-      // Function to populate the headline section
-      function populateHeadline(article) {
-        const headlineBg = document.getElementById('headline-bg');
-        const headlineContent = document.getElementById('headline-content');
-
-        // Set background image
-        headlineBg.style.backgroundImage = `url('img/journalism.webp')`; // Replace with article image URL
-
-        // Create headline content
-        const headlineTitleLink = document.createElement('a');
-        headlineTitleLink.href = `read.html?id=${article.id}`;
-        headlineTitleLink.textContent = article.title;
-
-        const headlineTitle = document.createElement('h2');
-        headlineTitle.appendChild(headlineTitleLink);
-        headlineTitle.classList.add('mb-2', 'h1');
-
-        const headlineParagraph = document.createElement('p');
-        headlineParagraph.classList.add('paragraph');
-        headlineParagraph.textContent = article.body;
-
-        const metaData = document.createElement('div');
-        metaData.classList.add('meta-data', 'mt-8', 'meta-text');
-        metaData.innerHTML = `
-        <span class="">Posted by <a href="#">${article.category}</a></span>
-        <span class="mx-3">|</span>
-        <span>${article.published ? 'Published' : 'Unpublished'}</span>
-        <span class="mx-3">|</span>
-        <span>Lusaka, Chalala</span>
-      `;
-
-        // Append elements to the headline content
-        headlineContent.appendChild(headlineTitle);
-        headlineContent.appendChild(headlineParagraph);
-        headlineContent.appendChild(metaData);
-      }
-
-      function timeAgo(dateString) {
-        const now = moment();
-        const date = moment(dateString);
-
-        return date.fromNow();
-      }
+      headerController();
+      const apiEndpoint = 'http://104.131.13.86';
+      fetchArticles(apiEndpoint);
     });
+   
   </script>
 </body>
 

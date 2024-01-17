@@ -149,7 +149,11 @@ nav .brand {
   font-weight: 700;
   flex-grow: 0;
 }
-
+nav #nav-profile-image{
+  width: var(--w-xs);
+  height: var(--w-xs);
+  border-radius: var(--w-xs);
+}
 @media (max-width: 360px){
   nav.nav{
     justify-content: center;
@@ -198,6 +202,7 @@ nav .links .link {
   color: var(--border-color);
   padding-right: 10px;
   padding-left: 10px;
+  padding-top: 5px;
 }
 
 nav .links .link:last-child {
@@ -652,7 +657,7 @@ a:hover {
 }
 
 .author-details .author-details-header .author-detials-header-information .author-details-name {
-  font-size: var(--lg);
+  font-size: 1rem;
   color: var(--helper-text-color);
 }
 
@@ -915,3 +920,49 @@ a:hover {
     transform: translateX(100%);
   }
 }
+
+/* FAB */
+.floatingButtonWrap {
+  display: block;
+  position: fixed;
+  bottom: 45px;
+  right: 45px;
+  z-index: 999999999;
+}
+
+.floatingButtonInner {
+  position: relative;
+}
+
+.floatingButton {
+  display: block;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  background: -webkit-linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  background: -o-linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+  color: #fff;
+  line-height: 50px;
+  position: absolute;
+  border-radius: 50% 50%;
+  bottom: 0px;
+  right: 0px;
+  border: 5px solid #c3e9f0;
+  /* opacity: 0.3; */
+  opacity: 1;
+  transition: all 0.4s;
+}
+
+.floatingButton .fa {
+  font-size: 15px !important;
+}
+
+.floatingButton.open,
+.floatingButton:hover,
+.floatingButton:focus,
+.floatingButton:active {
+  opacity: 1;
+  color: #fff;
+}
+

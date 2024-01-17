@@ -17,8 +17,9 @@
   <link rel="stylesheet" type="text/css" href="components/styles.css">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
   <script src="https://accounts.google.com/gsi/client" async></script>
-  <title>Sign-up</title>
 
+  <title>Login</title>
+  <!-- <a href="https://www.freepik.com/free-vector/continents-world-background_16351373.htm#query=world%20map%20background&position=40&from_view=search&track=ais&uuid=ce55573a-18df-4511-ab62-2b1745d3237f">Image by rawpixel.com</a> on Freepik -->
   <style>
     a {
       color: var(--highlight-color) !important;
@@ -38,7 +39,7 @@
   </style>
 </head>
 
-<body>
+<body id="body">
 
 
 
@@ -73,271 +74,23 @@
       </div>
       <section class="side-by-side mt-5">
         <div>
-          <span class="text-2xl font-bold">Signup</span>
+          <span class="text-2xl font-bold">Verify email</span>
         </div>
 
-        <div>
-          <span class="text-gray-700">Already have an account? <a href="login.html">Login</a></span>
-        </div>
 
       </section>
-      <section class="auth-providers">
-        <div class="auth-providers-list">
-          <!-- <button  class=" btn auth-btn font-bold"><i class="fab fa-google"></i> Login With Google</button> -->
-          <div id="g_id_onload"
-            data-client_id="521711271641-aqapgdvddn969lrhcne3rptkvktgt26h.apps.googleusercontent.com"
-            data-context="signin" data-ux_mode="popup" data-callback="handleAuth" data-auto_prompt="false">
-          </div>
-
-          <div class="g_id_signin" data-type="standard" data-shape="pill" data-theme="outline" data-text="continue_with"
-            data-size="large" data-logo_alignment="left">
-          </div>
-        </div>
+      <section class="mt-3">
+        <p>Please click on the link we have sent to <a href="#" id="email_address"></a> to verify that this is your email address.</p>
       </section>
-      <section class="mt-4 hidden" id="error-message">
-        <p style="color: var(--error-color);"><i class="fas fa-exclamation-triangle"></i> Something went wrong, this email might be in use by another account.</p>
-      </section>
-      <!-- Personal Details -->
-      <section class="options-area">
-        <div class="rounded-input">
-          <input type="text" required minlength="5" maxlength="50" placeholder="John" name="firstName" id="f-name"
-            style="max-width: 100%;" autocomplete="full-name" />
-          <label for="f-name">First Name *</label>
-        </div>
-        <div class="rounded-input">
-          <input type="text" required minlength="5" maxlength="50" placeholder="Doe" name="lastName" id="l-name"
-            style="max-width: 100%;" autocomplete="full-name" />
-          <label for="l-name">Last Name *</label>
-        </div>
-
-      </section>
-      <!-- Email -->
-      <section class="mt-6">
-        <div class="rounded-input">
-          <input type="email" required placeholder="mule@mail.com" name="email" id="email" style="max-width: 100%;"
-            autocomplete="email" />
-          <label for="email">Email Address *</label>
-        </div>
-      </section>
-      <!-- Gender -->
-      <section class="mt-6">
-        <div>
-          <div class="label">Gender:</div>
-          <input type="radio" name="gender" id="male" value="M">
-          <label for="male">Male</label>
-          <input type="radio" name="gender" id="female" class="ml-5" value="F">
-          <label for="female">Female</label>
-        </div>
-
-      </section>
-      <section class="mt-6">
-        <div class="rounded-input">
-          <input type="date" required id="dob" name="dateOfBirth" style="max-width: 100%;" autocomplete="dob" />
-          <label for="dob">Date of birth *</label>
-        </div>
-      </section>
-      <!-- Password -->
-      <section class="mt-6 options-area">
-        <div class="rounded-input">
-          <input type="password" required minlength="8" placeholder="***" id="password" name="password"
-            style="max-width: 100%;" />
-          <label for="password">Password *</label>
-        </div>
-        <div class="rounded-input">
-          <input type="password" required placeholder="***" minlength="8" id="confirm-password"
-            style="max-width: 100%;" />
-          <label for="confirm-password">Confirm Password *</label>
-        </div>
-      </section>
-      <!-- Location -->
-      <!-- <section class="options-area">
-        <div class="rounded-input">
-          <select name="zambiaProvinces" id="zambiaProvinces" required>
-            <option disabled selected>Select Province</option>
-            <option value="central">Central Province</option>
-            <option value="copperbelt">Copperbelt Province</option>
-            <option value="eastern">Eastern Province</option>
-            <option value="luapula">Luapula Province</option>
-            <option value="lusaka">Lusaka Province</option>
-            <option value="muchinga">Muchinga Province</option>
-            <option value="northwestern">Northwestern Province</option>
-            <option value="northern">Northern Province</option>
-            <option value="southern">Southern Province</option>
-            <option value="western">Western Province</option>
-          </select>
-          <label for="zambiaProvinces">Province *</label>
-        </div>
-        <div class="rounded-input">
-          <select name="zambiaTowns" id="zambiaTowns" required>
-            <option disabled selected>Select Town</option>
-            <option value="lusaka">Lusaka</option>
-            <option value="kitwe">Kitwe</option>
-            <option value="ndola">Ndola</option>
-            <option value="kabwe">Kabwe</option>
-            <option value="choma">Choma</option>
-            <option value="livingstone">Livingstone</option>
-            <option value="chipata">Chipata</option>
-            <option value="mongu">Mongu</option>
-            <option value="kasama">Kasama</option>
-            <option value="solwezi">Solwezi</option>
-          </select>
-          <label for="zambiaTowns">Town *</label>
-        </div>
-      </section> -->
 
 
-
-
-      <section class="side-by-side mt-9">
-        <!-- <a href="#" class="">Forgot password?</a> -->
-
-        <div>
-        </div>
-        <div>
-          <button id="submit-btn" type="submit" class="primary btn font-bold">
-            <span class="loader hidden"
-              id="button-loader"></span><span id="label">Create Account </span>
-          </button>
-
-        </div>
-      </section>
-    </form>
   </main>
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const email = urlParams.get('email');
+  document.getElementById("email_address").innerText = email;
+</script>
 
-
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // Function to validate passwords and submit the form
-      function validateAndSubmit() {
-        // Confirm if the passwords match
-        const password = document.getElementById('password').value;
-        const confirmPassword = document.getElementById('confirm-password').value;
-
-        if (password !== confirmPassword) {
-          alert('Passwords do not match!');
-          return;
-        }
-
-        // If passwords match, proceed to submit the form
-        submitForm();
-      }
-
-      // Function to submit form data to the API endpoint
-      function submitForm() {
-        document.querySelector('#error-message').classList.add("hidden");
-        const form = document.querySelector('form');
-        const formData = new FormData(form);
-        const data = {};
-
-         // simulate loading
-         form.classList.add("disabled-form");
-        const buttonLoader = document.querySelector("#button-loader");
-        const buttonLabel = document.querySelector("#label");
-        buttonLabel.classList.add("hidden");
-        buttonLoader.classList.remove("hidden")
-
-        // Convert FormData to JSON
-        formData.forEach((value, key) => {
-          data[key] = value;
-        });
-
-        // Example API endpoint
-        const apiEndpoint = 'http://104.131.13.86/signup';
-
-        // Perform fetch to submit data
-        fetch(apiEndpoint, {
-          mode: 'cors',
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
-
-        })
-          .then(response => response.json())
-          .then(result => {
-            console.log(JSON.stringify(data));
-            console.log(result);
-          if(result.message != "User created successfully"){
-              // Show error message
-              buttonLoader.classList.add("hidden");
-              buttonLabel.classList.remove("hidden");
-              document.querySelector('#error-message').classList.remove("hidden");
-              document.querySelector('#error-message').scrollIntoView({ behavior: 'smooth' });
-              form.classList.remove("disabled-form");
-          }else{
-            window.location.href = "verify.html?email="+data['email'];
-          }
-            // 
-
-
-          })
-          .catch(error => {
-            // Handle errors
-            console.error('Error:', error);
-            document.querySelector('#error-message').classList.remove("hidden");
-            document.querySelector('#error-message').scrollIntoView({ behavior: 'smooth' });
-            form.classList.remove("disabled-form");
-          });
-      }
-
-      // Attach the validateAndSubmit function to the form's submit event
-      document.querySelector('form').addEventListener('submit', function (event) {
-        event.preventDefault(); // Prevent the default form submission
-        validateAndSubmit();
-      });
-
-      const submitButton = document.getElementById("submit-btn");
-      submitButton.addEventListener("click", function () {
-        document.querySelector('form').classList.add("submitted");
-      });
-      // Google Login
-
-      async function decodeResponse(credential) {
-        const url = new URL('http://127.0.0.1:4000/google/auth'); // change to the endpoint. Don't hard code this
-        url.searchParams.append('code', credential);
-        const localReq = await fetch(url);
-        const data = await localReq.json();
-        return data
-
-      }
-      async function handleAuth(response) {
-        console.log('Response', response);
-
-        const responsePayload = await decodeResponse(response.credential);
-        console.log('responsePayload', responsePayload);
-        localStorage.setItem('accessToken', responce.accessToken);
-        localStorage.setItem('userId', responce.user.id);
-        localStorage.setItem('username', responce.user.firstName);
-        window.location.href = "index.html";
-      }
-
-
-
-      // bg image
-      const imageUrl = 'img/16351373_v875-katie-35.jpg';
-
-      // Get the container element
-      const container = document.getElementById('body');
-
-      // Create an image element
-      const img = new Image();
-
-      // Set the source of the image
-      img.src = imageUrl;
-
-      // Event listener for the load event
-      img.addEventListener('load', function () {
-        // Set the background image when the image has fully loaded
-        container.style.background = `linear-gradient(180deg, rgba(42, 206, 247, 0.842) 0%, rgba(2, 37, 90, 0.87) 100%), url('img/16351373_v875-katie-35.jpg');`;
-        console.log("New image inserted");
-      });
-    });
-
-  </script>
-
-  <!-- Your existing HTML code below this line -->
 
 </body>
 

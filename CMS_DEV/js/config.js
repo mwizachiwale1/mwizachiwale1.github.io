@@ -1,0 +1,1 @@
+const journalisXapi = 'http://104.131.13.86';

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,700;1,700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+  <title>Success!</title>
+  <style>
+    a {
+      color: var(--highlight-color) !important;
+    }
+
+    @media (min-width: 450px) {
+      body {
+        /* background-color: #eee; */
+        background: linear-gradient(180deg, rgba(235, 252, 84, 0.842) 0%, rgba(30, 90, 2, 0.87) 100%), url('img/world_map1.jpg');
+        background-position: top;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+
+      }
+    }
+  </style>
+</head>
+
+<body id="body">
+
+
+
+  <main class="auth">
+    <form action="" class="shadow-xl" method="post" enctype="multipart/form-data">
+      <div class="text-center" style="display: flex;flex-direction: column;justify-content: center; gap: var(--lg);">
+        <div class="dummy-positioning d-flex" >
+  
+          <div class="check-container">
+            <div class="check-background">
+              <svg viewBox="0 0 65 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 25L27.3077 44L58.5 7" stroke="white" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <!-- <div class="check-shadow"></div> -->
+          </div>
+          
+        </div>
+      </div>
+      <section class="success-mesage mt-5">
+        <div><h2 class="font-bold text-3xl">Congratulations 👏</h2></div>
+        <div class="mt-4">
+          <p class="text-l">Your payment is successfully completed!</p>
+        </div>
+        <div class="mt-5" >
+          <button href="#" style="margin: 0px auto;" class="btn primary">Take Me Home</button>
+        </div>
+        <div>
+          <span class="text-2xl font-bold"></span>
+        </div>
+
+
+      </section>
+      <section class="mt-6">
+        <p class="text-gray-700">We appreaciate your business and look forward to serving you again. If you have any questions feel free to reach out on <a href="#" id="email_address">info@example.com</a></p>
+      </section>
+
+      <audio src="audio/hero_simple-celebration-01.wav" autoplay></audio>
+
+  </main>
+<script>
+  // const urlParams = new URLSearchParams(window.location.search);
+  // const email = urlParams.get('email');
+  // document.getElementById("email_address").innerText = email;
+  let beat = new Audio('audio/hero_simple-celebration-01.wav');
+  // beat.play();
+
+</script>
+
+
+</body>
+
+</html>

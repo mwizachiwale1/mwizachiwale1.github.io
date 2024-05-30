@@ -1,0 +1,190 @@
+html, body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #478a63;
+}
+.wall-fence{
+  width: 50rem;
+  height: 30rem;
+  border: .7rem solid #ffffff;
+  background-color: #312f2c;
+  position: relative;
+  background-image: url('../img/tarmac.jpg');
+  background-size: 8rem;
+  border-image: url('../img/stone.jpeg') 10 round;
+}
+.tiled-field{
+  max-width: 100%;
+  height: 4.5rem;
+  background-image: url('../img/soil.webp');
+  background-size: 10rem;
+  display: flex;
+  justify-content: space-between;
+  padding-inline: .5rem;
+  box-sizing: content-box;
+  align-items: center;
+ 
+}
+.tiled-field img{
+  width: 3rem;
+  height: 3rem;
+  border-radius:50%;
+  border: 2px solid #e77c02;
+  object-fit: cover;
+}
+.loan .container{
+  display: flex;
+  justify-content: space-between;
+  max-width: 35rem;
+  height: 7.5rem;
+  align-items: end;
+  padding-bottom: 4rem;
+  padding-inline: 1rem;
+}
+.loan .container img{
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius:50%;
+  border: 2px solid #fff;
+  object-fit: cover;
+}
+.loan{
+  width: 100%;
+  height: 9rem;
+  background-color: rgb(14, 168, 9);
+  background-image: url('../img/texture-grass-field_1232-251.avif');
+  background-size: 5rem;
+}
+.loan .cuban{
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius:50%;
+  border: 2px solid #fff;
+  object-fit: cover;
+  position: absolute;
+  right: 1.5rem;
+  top: 10rem;
+  z-index: 10;
+}
+.front-loan{
+  position: relative;
+}
+.front-loan .inner-loan{
+  width: 25rem;
+  height: 5.8rem;
+  background-color: rgb(14, 168, 9);
+  background-image: url('../img/texture-grass-field_1232-251.avif');
+  background-size: 5rem;
+  position: absolute;
+  right: 0;
+}
+.flowers{
+  width: 100%;
+  height: 1.2rem;
+  background-image: url('../img/Euphorbia_Milii_flowers.jpg');
+  background-size: 2rem;
+  background-repeat: repeat-x;
+}
+
+.paved-road-vertical{
+  width: 2.5rem;
+  height: 12rem;
+  background-color: #fff;
+  /* border-right: 1px solid #000; */
+  /* border-left: 1px solid #000; */
+  position: absolute;
+  z-index: 10;
+  right: 8rem;
+  bottom: 9.5rem;
+  /* border-top-right-radius: 20px; */
+  background-image: url('../img/pavers.jpeg');
+  background-size: 5rem;
+}
+
+.paved-road-horizontal{
+  width: 100%;
+  height: 2rem;
+  background-color: #fff;
+  /* border-top: 1px solid #000;
+  border-bottom: 1px solid #000; */
+  position: absolute;
+  z-index: 10;
+  /* right: 10.5rem; */
+  top: 6.5rem;
+  background-image: url('../img/pavers.jpeg');
+  background-size: 5rem;
+
+}
+.house{
+  width: 15rem;
+  height: 10rem;
+  position: absolute;
+  top: 16rem;
+  left:8rem;
+  z-index: 20;
+  /* transform: rotate(90); */
+}
+/* .modal{
+  width: 80vw;
+  height: 80vh;
+  z-index: 20;
+  background-color: ;
+} */
+
+.outside{
+  width: 5rem;
+  height: 30rem;
+  display: flex;
+  flex-direction: column;
+  align-content:space-between;
+}
+.outside .part-1{
+  width: 6.5rem;
+  height: 23rem;
+  background-color: rgb(14, 168, 9);
+  background-image: url('../img/texture-grass-field_1232-251.avif');
+  background-size: 5rem;
+  border: .8rem solid #312f2c;
+  border-left: none;
+  border-image: url('../img/kerbstone.jpeg') 10 round;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-block: 2rem;
+  align-items: center;
+
+}
+.outside .part-1 img, .outside .part-3 img{
+  width: 3rem;
+  height: 3rem;
+  border-radius:50%;
+  border: 2px solid #ffffff;
+  object-fit: cover;
+}
+.outside .part-2{
+  width: 7rem;
+  height: 6.5rem;
+  background-color: rgb(5, 7, 5);
+  background-image: url('../img/tarmac.jpg');
+  background-size: 8rem;
+  
+
+}
+.outside .part-3{
+  width: 6.5rem;
+  height: 4.5rem;
+  background-color: rgb(14, 168, 9);
+  background-image: url('../img/texture-grass-field_1232-251.avif');
+  background-size: 5rem;
+  border: .8rem solid #312f2c;
+  border-left: none;
+  border-image: url('../img/kerbstone.jpeg') 10 round;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* padding-block: 2rem; */
+  align-items: center;
+
+}

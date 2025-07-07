@@ -74,6 +74,7 @@
                 class="container mx-auto px-4 py-4 flex flex-col space-y-2 lg:flex-row lg:space-y-0 lg:space-x-4 lg:py-0">
                 <a href="#home" class="text-white hover:text-yellow-300 px-3 py-2 rounded-md">Home</a>
                 <a href="#amenities" class="text-white hover:text-yellow-300 px-3 py-2 rounded-md">Amenities</a>
+                <a href="#pricing" class="text-white hover:text-yellow-300 px-3 py-2 rounded-md">Pricing</a>
                 <a href="#contact" class="text-white hover:text-yellow-300 px-3 py-2 rounded-md">Contact</a>
                 <a href="#about" class="text-white hover:text-yellow-300 px-3 py-2 rounded-md">About</a>
             </div>
@@ -89,7 +90,6 @@
             <p class="text-xl md:text-2xl mb-4 font-light max-w-3xl mx-auto">
                 At <span class="font-semibold text-green-700">Menafa Hostels</span>, we offer a safe, supportive, and comfortable home for students. Our focus is on your well-being and academic journey, so you can thrive and make lasting memories in harmony with nature and community.
             </p>
-                    <p class="text-lg text-gray-700 mb-4">Enjoy spacious rooms designed for comfort and community, with three students per room.</p>
    
             <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12 relative z-10">
                 <a href="#contact"
@@ -273,7 +273,7 @@
       <div class="container mx-auto px-4">
         <div class="text-center mb-12" data-aos="fade-up">
           <h2 class="text-3xl md:text-5xl font-bold text-green-900 mb-4 handwritten">Pricing</h2>
-          <p class="text-lg text-gray-700 max-w-2xl mx-auto">Choose the plan that fits you best. All prices include nutritious meals and daily shuttle service.</p>
+          <!-- <p class="text-lg text-gray-700 max-w-2xl mx-auto">Choose the plan that fits you best. All prices include nutritious meals and daily shuttle service.</p> -->
         </div>
         <div class="flex flex-col md:flex-row gap-10 justify-center items-center">
           <!-- Local Students -->
@@ -316,9 +316,9 @@
                 <h2 class="text-3xl md:text-5xl font-bold text-black mb-4 handwritten">
                   Contact Menafa Hostels
                 </h2>
-                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                <!-- <p class="text-gray-600 text-lg max-w-2xl mx-auto">
                   Ready to book your room or have questions? Reach out to us for bookings, availability, or more information about student life at Menafa Hostels.
-                </p>
+                </p> -->
             </div>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-10 md:gap-0">
@@ -384,11 +384,19 @@
                 <!-- Contact Image -->
                 <div class="bg-gradient-to-br col-span-2 lg:col-span-2 bg-yellow-200 via-orange-100 to-green-100 min-h-[300px] md:min-h-[400px] rounded shadow flex flex-col justify-center items-center p-8" data-aos="fade-up">
                   <h3 class="text-2xl font-bold text-green-900 mb-4">Book a Hostel Tour</h3>
-                  <p class="text-gray-700 mb-6 text-center max-w-md">Want to see Menafa Hostels for yourself? Book an appointment to tour our facilities and experience our welcoming community in person.</p>
+                  <!-- <p class="text-gray-700 mb-6 text-center max-w-md">Want to see Menafa Hostels for yourself? Book an appointment to tour our facilities and experience our welcoming community in person.</p> -->
                   <form class="w-full max-w-md bg-white rounded-lg shadow p-6 flex flex-col gap-4" onsubmit="event.preventDefault(); Swal.fire({icon: 'success', title: 'Thank you for reaching out!', html: '<b>Your hostel tour request has been received.</b><br>We can’t wait to welcome you to Menafa Hostels!<br><br>Our team will get in touch with you within 3 business days. If you have any urgent questions, feel free to email or WhatsApp us anytime.<br><br>Have a wonderful day!', confirmButtonText: 'Close', confirmButtonColor: '#15803d'}); this.reset();">
                     <label class="block">
                       <span class="text-gray-800 font-semibold">Appointment Date</span>
                       <input type="date" name="date" required class="mt-1 block w-full border border-green-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" id="appointment-date" />
+                    </label>
+                    <label class="block">
+                      <span class="text-gray-800 font-semibold">Appointment Type</span>
+                      <select name="appointmentType" required class="mt-1 block w-full border border-green-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400">
+                        <option value="" disabled selected>Select type</option>
+                        <option value="physical">Physical (in-person)</option>
+                        <option value="online">Online (virtual)</option>
+                      </select>
                     </label>
                     <div class="grid md:grid-cols-2 gap-2">
                       <label class="w-full">
@@ -419,7 +427,7 @@
                     About Menafa Hostels
                 </h2>
                 <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-                    Menafa Hostels was founded to provide students with a safe, affordable, and welcoming home away from home. Our mission is to support your academic journey and well-being, offering a peaceful environment, nutritious meals, and a vibrant community where every student can thrive.
+                    <!-- Menafa Hostels was founded to provide students with a safe, affordable, and welcoming home away from home. Our mission is to support your academic journey and well-being, offering a peaceful environment, nutritious meals, and a vibrant community where every student can thrive. -->
                 </p>
             </div>
 
@@ -473,6 +481,7 @@
             <nav class="flex flex-wrap justify-center gap-6 text-white text-base font-medium">
                 <a href="#home" class="hover:text-yellow-600 transition">Home</a>
                 <a href="#amenities" class="hover:text-yellow-600 transition">Amenities</a>
+                <a href="#pricing" class="hover:text-yellow-600 transition">Pricing</a>
                 <a href="#contact" class="hover:text-yellow-600 transition">Contact</a>
                 <a href="#about" class="hover:text-yellow-600 transition">About</a>
             </nav>

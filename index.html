@@ -348,8 +348,8 @@
                         </div>
                         <div>
                           <h3 class="text-lg font-bold text-black mb-1">WhatsApp</h3>
-                          <a href="https://wa.me/260977442150" class="text-gray-700 underline">
-                            +260 961436205 / +260 977442150
+                          <a href="https://wa.me/260777218734?text=Hello%20Menafa%20Hostels%2C%20I%20would%20like%20to%20inquire%20about%20student%20accommodation." class="text-gray-700 underline">
+                            +260 961436205 / +260 777218734
                           </a>
                         </div>
                       </div>
@@ -360,8 +360,8 @@
                         </div>
                         <div>
                           <h3 class="text-lg font-bold text-black mb-1">Call</h3>
-                          <a href="tel:+260977442150" class="text-gray-700 underline">
-                            +260 961436205 / +260 977442150
+                          <a href="tel:+260777218734" class="text-gray-700 underline">
+                            +260 961436205 / +260 777218734
                           </a>
                         </div>
                       </div>
@@ -492,10 +492,10 @@
                 <a href="mailto:lesa.christine@gmail.com" class="hover:text-yellow-600 transition" aria-label="Email">
                     <i class="fas fa-envelope text-2xl text-white"></i>
                 </a>
-                <a href="tel:+260972926107" class="hover:text-yellow-600 transition" aria-label="Call">
+                <a href="tel:+260777218734" class="hover:text-yellow-600 transition" aria-label="Call">
                     <i class="fas fa-phone text-2xl text-white"></i>
                 </a>
-                <a href="https://wa.me/260972926107" class="hover:text-green-600 transition" aria-label="WhatsApp">
+                <a href="https://wa.me/260777218734" class="hover:text-green-600 transition" aria-label="WhatsApp">
                     <i class="fab fa-whatsapp text-2xl text-gwhite"></i>
                 </a>
             </div>
@@ -544,6 +544,24 @@
     </script>
     <!-- Add SweetAlert2 CDN -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" aria-label="Back to top"
+      class="fixed bottom-6 right-6 z-50 bg-white text-black rounded-full shadow-xl w-14 h-14 text-2xl hover:scale-110 hover:shadow-2xl transition-all duration-300 flex items-center justify-center border-2 border-green-700 hidden"
+      onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+      <i class="fas fa-angle-up"></i>
+    </button>
+    <script>
+      // Show/hide Back to Top button
+      window.addEventListener('scroll', function() {
+        const btn = document.getElementById('backToTopBtn');
+        if (window.scrollY > 300) {
+          btn.classList.remove('hidden');
+        } else {
+          btn.classList.add('hidden');
+        }
+      });
+    </script>
 </body>
 
 </html>

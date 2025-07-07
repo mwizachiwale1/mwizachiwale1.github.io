@@ -321,9 +321,9 @@
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 md:gap-16">
+            <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-10 md:gap-0">
                 <!-- Contact Information -->
-                <div class="space-y-8 col-span-1 lg:col-span-1">
+                <div class="space-y-8 col-span-1 lg:col-span-1 mb-8">
                     <!-- Contact Cards in Rows, Left to Right -->
                     <!-- All icon backgrounds set to black -->
                     <div class="space-y-6" id="contacts">
@@ -388,7 +388,7 @@
                   <form class="w-full max-w-md bg-white rounded-lg shadow p-6 flex flex-col gap-4" onsubmit="event.preventDefault(); Swal.fire({icon: 'success', title: 'Thank you for reaching out!', html: '<b>Your hostel tour request has been received.</b><br>We can’t wait to welcome you to Menafa Hostels!<br><br>Our team will get in touch with you within 3 business days. If you have any urgent questions, feel free to email or WhatsApp us anytime.<br><br>Have a wonderful day!', confirmButtonText: 'Close', confirmButtonColor: '#15803d'}); this.reset();">
                     <label class="block">
                       <span class="text-gray-800 font-semibold">Appointment Date</span>
-                      <input type="date" name="date" required class="mt-1 block w-full border border-green-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" />
+                      <input type="date" name="date" required class="mt-1 block w-full border border-green-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" id="appointment-date" />
                     </label>
                     <div class="grid md:grid-cols-2 gap-2">
                       <label class="w-full">
@@ -516,6 +516,19 @@
                 iconOpen.classList.toggle('hidden');
                 iconClose.classList.toggle('hidden');
             });
+        });
+
+        // Set default date to tomorrow
+        document.addEventListener('DOMContentLoaded', function() {
+          var dateInput = document.getElementById('appointment-date');
+          if (dateInput) {
+            var tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            var yyyy = tomorrow.getFullYear();
+            var mm = String(tomorrow.getMonth() + 1).padStart(2, '0');
+            var dd = String(tomorrow.getDate()).padStart(2, '0');
+            dateInput.value = yyyy + '-' + mm + '-' + dd;
+          }
         });
     </script>
     <!-- Add SweetAlert2 CDN -->

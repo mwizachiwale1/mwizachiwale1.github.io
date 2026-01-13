@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menafa Hostels | Student Accommodation Lusaka</title>
+    <meta name="description" content="Menafa Hostels offers safe, comfortable student accommodation for UNILUS students near Silverest Campus. Self-contained rooms, optional meals, self-catering, WiFi, shuttle service and 24/7 security." />
+    <meta name="keywords" content="Menafa Hostels, student accommodation, Lusaka, UNILUS, Silverest, students, hostels Zambia, affordable accommodation, self-catering" />
+    <meta name="author" content="Menafa Hostels" />
+    <link rel="canonical" href="https://menafahostels.com/" />
+    <link rel="icon" href="img/logo.png" type="image/png" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Menafa Hostels | Student Accommodation Lusaka" />
+    <meta property="og:description" content="Safe, comfortable student accommodation for UNILUS students near Silverest Campus. Self-contained rooms from K2,700/month." />
+    <meta property="og:image" content="img/logo.png" />
+    <meta property="og:url" content="https://menafahostels.com/" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Menafa Hostels | Student Accommodation Lusaka" />
+    <meta name="twitter:description" content="Safe, comfortable student accommodation for UNILUS students near Silverest Campus. Self-contained rooms from K2,700/month." />
+    <meta name="twitter:image" content="img/logo.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5.0.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Ubuntu:wght@400;700&display=swap"
+        rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .handwritten {
+            font-family: 'Montserrat', cursive;
+        }
+
+        body,
+        html {
+            font-family: 'Ubuntu', 'Montserrat', Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            /* Enables smooth scrolling */
+        }
+    </style>
+
+<body class="bg-white font-sans leading-relaxed tracking-normal text-gray-800">
+
+    <!-- Navigation -->
+    <nav class="bg-green-900  shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <img src="img/logo.png" alt="Menafa Hostels Logo" class="h-10">
+                <span class="text-white font-bold text-2xl tracking-wide">Menafa Hostels</span>
+            </div>
+
+            <!-- Toggle -->
+            <button id="menu-toggle" aria-expanded="false" aria-label="Open main menu"
+                class="text-white focus:outline-none lg:hidden">
+                <i id="icon-open" class="fas fa-bars text-2xl block"></i>
+                <i id="icon-close" class="fas fa-times text-2xl hidden"></i>
+            </button>
+        </div>
+
+        <!-- Dropdown (mobile) / Inline (desktop) -->
+        <div id="menu-items"
+            class="hidden lg:static lg:bg-transparent lg:flex lg:items-center lg:justify-end z-40">
+            <div
+                class="container mx-auto px-4 py-4 flex flex-col space-y-2 lg:flex-row lg:space-y-0 lg:space-x-4 lg:py-0">
+                <a href="#home" class="text-white hover:text-yellow-300 px-3 py-2 rounded-md">Home</a>
+                <a href="#amenities" class="text-white hover:text-yellow-300 px-3 py-2 rounded-md">Amenities</a>
+                <a href="#pricing" class="text-white hover:text-yellow-300 px-3 py-2 rounded-md">Pricing</a>
+                <a href="#contact" class="text-white hover:text-yellow-300 px-3 py-2 rounded-md">Contact</a>
+                <a href="#about" class="text-white hover:text-yellow-300 px-3 py-2 rounded-md">About</a>
+                <a href="gallery.html" class="text-white hover:text-yellow-300 px-3 py-2 rounded-md">Gallery</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" data-aos="fade-up" class="pt-16 h-auto flex items-center justify-center bg-gradient-to-br from-green-100 via-yellow-100 to-green-200">
+        <div class="text-center text-green-900 px-4 max-w-5xl mx-auto">
+            <h1 class="text-4xl md:text-7xl font-bold mb-6 handwritten leading-tight drop-shadow-lg">
+                Safe, Comfortable Housing for UNILUS Students
+            </h1>
+            <p class="text-xl md:text-2xl mb-4 font-light max-w-3xl mx-auto">
+                Located just <span class="font-semibold text-green-700">5 minutes' drive from Silverest Campus</span>, Menafa Hostels offers modern self-contained accommodation for all UNILUS students with shared rooms, optional meal packages, self-catering facilities, and all essential amenities for your academic journey.
+            </p>
+            <p class="text-lg text-gray-700 mb-4">
+                <span class="font-semibold">Move-in Date: 1st December 2025</span> • Capacity: 80 students • Modern two-storey building
+            </p>
+   
+            <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12 relative z-10">
+                <a href="#contact"
+                    class="bg-gradient-to-r from-green-600 via-yellow-400 to-green-400 text-green-900 px-12 py-5 rounded-full hover:shadow-2xl font-semibold text-lg transition-all duration-500 transform hover:scale-110 flex items-center gap-3 shadow-2xl border-2 border-green-700">
+                    Book Your Room
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section id="amenities" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+          <div class="text-center mb-12" data-aos="fade-up">
+            <h2 class="text-3xl md:text-5xl font-bold text-black mb-4 handwritten">
+              Amenities for Everyday Comfort
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="p-8 rounded shadow border border-black flex flex-col items-center" data-aos="fade-up">
+              <div class="mb-4 text-3xl text-green-600">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-black text-center">24/7 Security</h3>
+              <ul class="text-gray-700 text-center">
+                <li>Your safety is our priority</li>
+                <li>Secure premises</li>
+                <li>Friendly security staff</li>
+              </ul>
+            </div>
+            <div class="p-8 rounded shadow border border-black flex flex-col items-center" data-aos="fade-up">
+              <div class="mb-4 text-3xl text-green-600">
+                <i class="fas fa-bed"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-black text-center">Flexible Room Options</h3>
+              <ul class="text-gray-700 text-center">
+                <li>3 beds per room (1 student per bed)</li>
+                <li>Book 2-3 bed spaces for more privacy</li>
+                <li>Share with just one friend or have the room to yourself</li>
+              </ul>
+            </div>
+            <div class="p-8 rounded shadow border border-black flex flex-col items-center" data-aos="fade-up">
+              <div class="mb-4 text-3xl text-green-600">
+                <i class="fas fa-utensils"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-black text-center">Flexible Meal Options</h3>
+              <ul class="text-gray-700 text-center mb-4">
+                <li>Nutritious meals available daily (optional meal package)</li>
+                <li>Self-catering kitchen facilities for independent cooking</li>
+              </ul>
+              <button 
+                class="bg-gradient-to-r from-yellow-400 via-green-400 to-green-600 text-green-900 px-8 py-3 rounded-full font-bold text-lg shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300 flex items-center gap-3 animate-pulse hover:animate-none"
+                onclick="document.getElementById('menu-modal').classList.remove('hidden')"
+                type="button"
+              >
+                <i class="fas fa-utensils text-xl"></i>
+                View Weekly Menu
+              </button>
+            </div>
+
+            <!-- Modal -->
+            <div id="menu-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden overflow-y-auto">
+              <div class="bg-white rounded-lg shadow-lg max-w-3xl w-full p-6 relative flex flex-col max-h-[90vh]">
+                <button 
+                  class="sticky top-3 right-3 self-end text-gray-500 hover:text-green-700 text-2xl z-10"
+                  onclick="document.getElementById('menu-modal').classList.add('hidden')"
+                  aria-label="Close"
+                  type="button"
+                >
+                  &times;
+                </button>
+                <h4 class="text-2xl font-bold mb-4 text-green-900 text-center">Weekly Food Menu</h4>
+                <div class="overflow-x-auto flex-1">
+                  <table class="min-w-full border border-green-700 text-sm md:text-base">
+                    <thead>
+                      <tr class="bg-green-100">
+                        <th class="border border-green-700 px-2 py-2">Day</th>
+                        <th class="border border-green-700 px-2 py-2">Breakfast</th>
+                        <th class="border border-green-700 px-2 py-2">Lunch</th>
+                        <th class="border border-green-700 px-2 py-2">Dinner</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="border border-green-700 px-2 py-2 font-semibold">Monday</td>
+                        <td class="border border-green-700 px-2 py-2">Bread, peanut butter, tea</td>
+                        <td class="border border-green-700 px-2 py-2">Chicken stew or beef sausage with rice or nshima</td>
+                        <td class="border border-green-700 px-2 py-2">Chicken stew or beef sausage with rice or nshima</td>
+                      </tr>
+                      <tr class="bg-green-50">
+                        <td class="border border-green-700 px-2 py-2 font-semibold">Tuesday</td>
+                        <td class="border border-green-700 px-2 py-2">Bread, peanut butter, butter, jam</td>
+                        <td class="border border-green-700 px-2 py-2">Fish curry or minced beef with rice or nshima</td>
+                        <td class="border border-green-700 px-2 py-2">Fish curry or minced beef with rice or nshima</td>
+                      </tr>
+                      <tr>
+                        <td class="border border-green-700 px-2 py-2 font-semibold">Wednesday</td>
+                        <td class="border border-green-700 px-2 py-2">Bread, peanut butter, tea</td>
+                        <td class="border border-green-700 px-2 py-2">Grilled beef or Hungarian sausage with rice or nshima</td>
+                        <td class="border border-green-700 px-2 py-2">Grilled beef or Hungarian sausage with rice or nshima</td>
+                      </tr>
+                      <tr class="bg-green-50">
+                        <td class="border border-green-700 px-2 py-2 font-semibold">Thursday</td>
+                        <td class="border border-green-700 px-2 py-2">Bread, jam or peanut butter, tea</td>
+                        <td class="border border-green-700 px-2 py-2">Chicken curry or fish with rice or nshima</td>
+                        <td class="border border-green-700 px-2 py-2">Chicken curry or fish with rice or nshima</td>
+                      </tr>
+                      <tr>
+                        <td class="border border-green-700 px-2 py-2 font-semibold">Friday</td>
+                        <td class="border border-green-700 px-2 py-2">Bread, peanut butter, butter, jam</td>
+                        <td class="border border-green-700 px-2 py-2">Hungarian sausage stew or beef cubes with rice or nshima</td>
+                        <td class="border border-green-700 px-2 py-2">Hungarian sausage stew or beef cubes with rice or nshima</td>
+                      </tr>
+                      <tr class="bg-green-50">
+                        <td class="border border-green-700 px-2 py-2 font-semibold">Saturday</td>
+                        <td class="border border-green-700 px-2 py-2">English breakfast (eggs, baked beans, mini sausage)</td>
+                        <td class="border border-green-700 px-2 py-2">Chicken or sausage, salad, chips</td>
+                        <td class="border border-green-700 px-2 py-2">Chicken or sausage, salad, chips</td>
+                      </tr>
+                      <tr>
+                        <td class="border border-green-700 px-2 py-2 font-semibold">Sunday</td>
+                        <td class="border border-green-700 px-2 py-2">English breakfast (egg, baked beans, mini sausage)</td>
+                        <td class="border border-green-700 px-2 py-2">Samosas, pasta, minced balls, vegetable stir fry</td>
+                        <td class="border border-green-700 px-2 py-2">Minced beef samosas, pasta, vegetable stir fry</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="mt-6 flex justify-center sticky bottom-0 bg-white pt-4 pb-2 z-10">
+                  <button 
+                    class="bg-green-700 text-white px-6 py-2 rounded-full font-semibold hover:bg-green-800 transition"
+                    onclick="document.getElementById('menu-modal').classList.add('hidden')"
+                    type="button"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="p-8 rounded shadow border border-black flex flex-col items-center" data-aos="fade-up">
+              <div class="mb-4 text-3xl text-green-600">
+                <i class="fas fa-bolt"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-black text-center">Reliable Power</h3>
+              <ul class="text-gray-700 text-center">
+                <li>Solar-backed electricity for uninterrupted study</li>
+              </ul>
+            </div>
+            <div class="p-8 rounded shadow border border-black flex flex-col items-center" data-aos="fade-up">
+              <div class="mb-4 text-3xl text-green-600">
+                <i class="fas fa-building"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-black text-center">Separate Floors</h3>
+              <ul class="text-gray-700 text-center">
+                <li>Gentlemen’s quarters & ladies’ suites for privacy</li>
+              </ul>
+            </div>
+            <div class="p-8 rounded shadow border border-black flex flex-col items-center" data-aos="fade-up">
+              <div class="mb-4 text-3xl text-green-600">
+                <i class="fas fa-wifi"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-black text-center">Fast Wi-Fi</h3>
+              <ul class="text-gray-700 text-center">
+                <li>Campus-grade internet for study and leisure</li>
+              </ul>
+            </div>
+            <div class="p-8 rounded shadow border border-black flex flex-col items-center" data-aos="fade-up">
+              <div class="mb-4 text-3xl text-green-600">
+                <i class="fas fa-bath"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-black text-center">Clean & Hygienic</h3>
+              <ul class="text-gray-700 text-center">
+                <li>Clean water all day</li>
+                <li>Spotless bathrooms</li>
+              </ul>
+            </div>
+            <div class="p-8 rounded shadow border border-black flex flex-col items-center lg:col-span-3" data-aos="fade-up">
+              <div class="mb-4 text-3xl text-green-600">
+                <i class="fas fa-shuttle-van"></i>
+              </div>
+              <h3 class="text-xl font-bold mb-3 text-black text-center">Shuttle Service</h3>
+              <ul class="text-gray-700 text-center">
+                <li>Transportation to campus included in accommodation fee</li>
+                <li>5 minutes' drive or 15-20 minutes' walk to UNILUS Silverest Campus</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </section>
+
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16 bg-gradient-to-br from-yellow-50 via-green-50 to-yellow-100">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-12" data-aos="fade-up">
+          <h2 class="text-3xl md:text-5xl font-bold text-green-900 mb-4 handwritten">Pricing</h2>
+          <p class="text-lg text-gray-700 max-w-2xl mx-auto">Flexible options to suit your needs. Shuttle service to campus is included in accommodation.</p>
+        </div>
+        <div class="flex flex-col lg:flex-row gap-8 justify-center items-stretch">
+          <!-- Accommodation Only -->
+          <div class="bg-white rounded-2xl shadow-lg border-2 border-green-600 p-8 flex-1 max-w-md" data-aos="fade-up">
+            <h3 class="text-2xl font-bold text-green-800 mb-2">Accommodation Only</h3>
+            <div class="text-4xl font-extrabold text-green-700 mb-2">K2,700</div>
+            <div class="text-gray-600 mb-4">per bed space / month</div>
+            <ul class="text-gray-700 mb-6 space-y-2 text-left">
+              <li><i class="fas fa-check-circle text-green-600 mr-2"></i>Shared room (3 beds per room)</li>
+              <li><i class="fas fa-check-circle text-green-600 mr-2"></i>Self-contained with private bathroom</li>
+              <li><i class="fas fa-check-circle text-green-600 mr-2"></i>Wardrobe, bed with mattress & curtains</li>
+              <li><i class="fas fa-check-circle text-green-600 mr-2"></i>Shuttle service to campus included</li>
+              <li><i class="fas fa-check-circle text-green-600 mr-2"></i>24/7 security, WiFi & solar power</li>
+            </ul>
+            <div class="text-sm text-gray-500">Book 2 or 3 bed spaces for more privacy</div>
+          </div>
+          <!-- Meal Package Add-on -->
+          <div class="bg-white rounded-2xl shadow-lg border-2 border-yellow-500 p-8 flex-1 max-w-md" data-aos="fade-up">
+            <h3 class="text-2xl font-bold text-yellow-700 mb-2">Meal Package (Optional)</h3>
+            <div class="text-4xl font-extrabold text-yellow-600 mb-2">K2,500</div>
+            <div class="text-gray-600 mb-4">per month</div>
+            <ul class="text-gray-700 mb-6 space-y-2 text-left">
+              <li><i class="fas fa-check-circle text-yellow-600 mr-2"></i>Breakfast, Lunch & Supper</li>
+              <li><i class="fas fa-check-circle text-yellow-600 mr-2"></i>Provided daily (7 days a week)</li>
+              <li><i class="fas fa-check-circle text-yellow-600 mr-2"></i>Nutritious, balanced meals</li>
+              <li><i class="fas fa-check-circle text-yellow-600 mr-2"></i>On-site cafeteria</li>
+            </ul>
+            <div class="text-sm text-gray-500">Add this to your accommodation package</div>
+          </div>
+          <!-- Total Package -->
+          <div class="bg-gradient-to-br from-green-700 to-green-900 rounded-2xl shadow-lg border-2 border-green-800 p-8 flex-1 max-w-md text-white" data-aos="fade-up">
+            <div class="bg-yellow-400 text-green-900 text-xs font-bold px-3 py-1 rounded-full inline-block mb-3">BEST VALUE</div>
+            <h3 class="text-2xl font-bold mb-2">Total Package</h3>
+            <div class="text-4xl font-extrabold mb-2">K5,200</div>
+            <div class="text-green-200 mb-4">per month (accommodation + meals)</div>
+            <ul class="mb-6 space-y-2 text-left">
+              <li><i class="fas fa-check-circle text-yellow-400 mr-2"></i>Everything in Accommodation</li>
+              <li><i class="fas fa-check-circle text-yellow-400 mr-2"></i>All meals included (3x daily)</li>
+              <li><i class="fas fa-check-circle text-yellow-400 mr-2"></i>Shuttle service to campus</li>
+              <li><i class="fas fa-check-circle text-yellow-400 mr-2"></i>All amenities included</li>
+            </ul>
+            <div class="text-sm text-green-200">The complete student living experience</div>
+          </div>
+        </div>
+      </div>
+    </section>
+        <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white mx-auto ">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="bg-yellow-200 min-h-[200px] mb-4 md:min-h-[400px] rounded shadow block lg:hidden"
+                style="background-image: url('img/group.png');background-position: center;background-repeat: no-repeat;background-size: cover;" data-aos="fade-up">
+            </div>
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-5xl font-bold text-black mb-4 handwritten">
+                  Contact Menafa Hostels
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                  Ready to book your room or have questions? Reach out to us for bookings, availability, or more information about student life at Menafa Hostels.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 lg:gap-10 md:gap-0">
+                <!-- Contact Information -->
+                <div class="space-y-8 col-span-1 lg:col-span-1 mb-8">
+                    <!-- Contact Cards in Rows, Left to Right -->
+                    <!-- All icon backgrounds set to black -->
+                    <div class="space-y-6" id="contacts">
+                      <!-- Email Row -->
+                      <div class="flex items-center gap-6 p-6 rounded shadow hover:shadow-lg transition hover:-translate-y-1 border border-black bg-white" data-aos="fade-up">
+                        <div class="mb-0 text-3xl text-green-600">
+                          <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                          <h3 class="text-lg font-bold text-black mb-1">Email</h3>
+                          <a href="mailto:lesa.christine@gmail.com" class="text-gray-700 underline break-all block">
+                            lesa.christine@gmail.com
+                          </a>
+                          <a href="mailto:natashalesa23@gmail.com" class="text-gray-700 underline break-all block">
+                            natashalesa23@gmail.com
+                          </a>
+                        </div>
+                      </div>
+                      <!-- WhatsApp Row -->
+                      <div class="flex items-center gap-6 p-6 rounded shadow hover:shadow-lg transition hover:-translate-y-1 border border-black bg-white" data-aos="fade-up">
+                        <div class="mb-0 text-3xl text-green-600">
+                          <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div>
+                          <h3 class="text-lg font-bold text-black mb-1">WhatsApp</h3>
+                          <a href="https://wa.me/260977442150?text=Hello%20Menafa%20Hostels%2C%20I%20would%20like%20to%20inquire%20about%20student%20accommodation." class="text-gray-700 underline block">
+                            +260 977 442 150
+                          </a>
+                          <a href="https://wa.me/260977471349?text=Hello%20Menafa%20Hostels%2C%20I%20would%20like%20to%20inquire%20about%20student%20accommodation." class="text-gray-700 underline block">
+                            +260 977 471 349
+                          </a>
+                        </div>
+                      </div>
+                      <!-- Call Row -->
+                      <div class="flex items-center gap-6 p-6 rounded shadow hover:shadow-lg transition hover:-translate-y-1 border border-black bg-white" data-aos="fade-up">
+                        <div class="mb-0 text-3xl text-green-600">
+                          <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                          <h3 class="text-lg font-bold text-black mb-1">Call</h3>
+                          <a href="tel:+260977442150" class="text-gray-700 underline">
+                            +260 977 442 150 / +260 977 471 349
+                          </a>
+                        </div>
+                      </div>
+                      <!-- Address Row -->
+                      <div class="flex items-center gap-6 p-6 rounded shadow hover:shadow-lg transition hover:-translate-y-1 border border-black bg-white" data-aos="fade-up">
+                        <div class="mb-0 text-3xl text-green-600">
+                          <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                          <h3 class="text-lg font-bold text-black mb-1">Address</h3>
+                          <address class="text-gray-700 not-italic">
+                            Near Ratsa and Zambeef Silverest<br>
+                            Subdivision of Lot No. 18048/M<br>
+                            15-20 min walk / 5 min drive to UNILUS
+                          </address>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+                </div>
+
+                <!-- Contact Image -->
+                <div class="bg-gradient-to-br col-span-2 lg:col-span-2 bg-yellow-200 via-orange-100 to-green-100 min-h-[300px] md:min-h-[400px] rounded shadow flex flex-col justify-center items-center p-8" data-aos="fade-up">
+                  <h3 class="text-2xl font-bold text-green-900 mb-4">Book a Hostel Tour</h3>
+                  <!-- <p class="text-gray-700 mb-6 text-center max-w-md">Want to see Menafa Hostels for yourself? Book an appointment to tour our facilities and experience our welcoming community in person.</p> -->
+                  <form id="booking-form" class="w-full max-w-md bg-white rounded-lg shadow p-6 flex flex-col gap-4">
+                    <label class="block">
+                      <span class="text-gray-800 font-semibold">Appointment Date</span>
+                      <input type="date" name="date" required class="mt-1 block w-full border border-green-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" id="appointment-date" />
+                    </label>
+                    <label class="block">
+                      <span class="text-gray-800 font-semibold">Appointment Type</span>
+                      <select name="appointmentType" required class="mt-1 block w-full border border-green-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400">
+                        <option value="" disabled selected>Select type</option>
+                        <option value="physical">Physical (in-person)</option>
+                        <option value="online">Online (virtual)</option>
+                      </select>
+                    </label>
+                    <div class="grid md:grid-cols-2 gap-2">
+                      <label class="w-full">
+                        <span class="text-gray-800 font-semibold">Full Name</span>
+                        <input type="text" name="fullName" placeholder="Enter your full name" required class="mt-1 block w-full border border-green-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" />
+                      </label>
+                      <label class="w-full">
+                        <span class="text-gray-800 font-semibold">Email Address</span>
+                        <input type="email" name="email" placeholder="example@email.com" required class="mt-1 block w-full border border-green-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" />
+                      </label>
+                    </div>
+                    <button type="submit" class="mt-4 bg-green-700 text-white font-semibold py-3 rounded hover:bg-green-800 transition">Book Appointment</button>
+                  </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+
+        <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <!-- Section Header -->
+            <div class="text-center mb-12" data-aos="fade-up">
+                <h2 class="text-3xl md:text-5xl font-bold text-black mb-4 handwritten">
+                    About Menafa Hostels
+                </h2>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                    Menafa Hostels provides UNILUS students with safe, comfortable, and affordable accommodation just minutes from Silverest Campus. Our modern two-storey building offers self-contained rooms, optional meal packages, self-catering facilities, and all the amenities you need to focus on your studies.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16">
+                <!-- About Image -->
+                <div class="min-h-[300px] md:min-h-[400px] rounded"
+                    style="background-image: url('img/hostel_photos/img_2.JPG');background-position: center;background-repeat: no-repeat;background-size: contain;" data-aos="fade-up">
+                </div>
+
+                <!-- About Content -->
+                <div class="space-y-6">
+                    <div class="bg-white p-8 rounded shadow border border-black" data-aos="fade-up">
+                        <p class="text-gray-700 text-base md:text-lg mb-4">
+                            Founded in 2025 by Leonard Lesa and Christine Phiri, 
+                            Menafa Hostels was built to provide students with a home that is affordable, 
+                            convenient, and welcoming to all.
+                        </p>
+                        <p class="text-gray-700 text-base md:text-lg">
+                             We believe in harmony with the environment and our community, offering a peaceful space for learning and growth.
+                        </p>
+                        <p class="text-gray-700 text-base md:text-lg">
+                             Our commitment is to inclusivity, sustainability, and the well-being of every resident. At Menafa, you are part of a caring family, surrounded by nature and opportunity.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4" data-aos="fade-up">
+                      <div class="bg-gradient-to-br bg-green-900 p-6 rounded text-center">
+                        <div class="text-2xl font-bold text-white mb-2">2025</div>
+                        <div class="text-sm text-gray-100">Opened</div>
+                      </div>
+                      <div class="bg-white border border-black p-6 rounded text-center">
+                        <div class="text-2xl font-bold text-black mb-2 text-green-700">First Intake</div>
+                        <div class="text-sm text-gray-600">Welcomed Students</div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="bg-green-900  text-white py-10 px-4" data-aos="fade-up">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between md:items-center gap-10">
+            <!-- Left: Logo & Tagline -->
+            <div class="flex flex-col md:flex-row md:items-center gap-4 items-center text-center">
+                <img src="img/logo.png" alt="Menafa Hostels Logo" class="mb-2 md:mb-0" style="width: 3rem;height: auto;">
+                <span class="text-lg font-semibold tracking-wide text-white">Menafa Hostels</span>
+            </div>
+            <!-- Center: Navigation Links -->
+            <nav class="flex flex-wrap justify-center gap-6 text-white text-base font-medium">
+                <a href="#home" class="hover:text-yellow-600 transition">Home</a>
+                <a href="#amenities" class="hover:text-yellow-600 transition">Amenities</a>
+                <a href="#pricing" class="hover:text-yellow-600 transition">Pricing</a>
+                <a href="#contact" class="hover:text-yellow-600 transition">Contact</a>
+                <a href="#about" class="hover:text-yellow-600 transition">About</a>
+            </nav>
+            <!-- Right: Social & Contact Icons -->
+            <div class="flex gap-6 justify-center md:justify-end">
+                <a href="mailto:lesa.christine@gmail.com" class="hover:text-yellow-600 transition" aria-label="Email">
+                    <i class="fas fa-envelope text-2xl text-white"></i>
+                </a>
+                <a href="tel:+260977442150" class="hover:text-yellow-600 transition" aria-label="Call">
+                    <i class="fas fa-phone text-2xl text-white"></i>
+                </a>
+                <a href="https://wa.me/260977442150" class="hover:text-green-600 transition" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp text-2xl text-white"></i>
+                </a>
+            </div>
+        </div>
+        <div class="border-t border-green-800 mt-8 pt-6 text-center text-white text-sm">
+            © 2025 Menafa Hostels. All rights reserved. Built with care for people and planet.
+        </div>
+    </footer>
+    <!-- Initialize AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            const btn = document.getElementById('menu-toggle');
+            const menu = document.getElementById('menu-items');
+            const iconOpen = document.getElementById('icon-open');
+            const iconClose = document.getElementById('icon-close');
+
+            btn.addEventListener('click', () => {
+                const isHidden = menu.classList.toggle('hidden');
+                btn.setAttribute('aria-expanded', String(!isHidden));
+                btn.setAttribute('aria-label', isHidden ? 'Open main menu' : 'Close main menu');
+                iconOpen.classList.toggle('hidden');
+                iconClose.classList.toggle('hidden');
+            });
+        });
+
+        // Set default date to tomorrow
+        document.addEventListener('DOMContentLoaded', function() {
+          var dateInput = document.getElementById('appointment-date');
+          if (dateInput) {
+            var tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            var yyyy = tomorrow.getFullYear();
+            var mm = String(tomorrow.getMonth() + 1).padStart(2, '0');
+            var dd = String(tomorrow.getDate()).padStart(2, '0');
+            dateInput.value = yyyy + '-' + mm + '-' + dd;
+          }
+        });
+    </script>
+    <!-- Add SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" aria-label="Back to top"
+      class="fixed bottom-6 right-6 z-50 bg-white text-black rounded-full shadow-xl w-14 h-14 text-2xl hover:scale-110 hover:shadow-2xl transition-all duration-300 flex items-center justify-center border-2 border-green-700 hidden"
+      onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+      <i class="fas fa-angle-up"></i>
+    </button>
+    <script>
+      // Show/hide Back to Top button
+      window.addEventListener('scroll', function() {
+        const btn = document.getElementById('backToTopBtn');
+        if (window.scrollY > 300) {
+          btn.classList.remove('hidden');
+        } else {
+          btn.classList.add('hidden');
+        }
+      });
+    </script>
+
+    <!-- Form submission handler -->
+    <script>
+      document.getElementById('booking-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(this);
+        const data = {
+          date: formData.get('date'),
+          appointmentType: formData.get('appointmentType'),
+          fullName: formData.get('fullName'),
+          email: formData.get('email')
+        };
+
+        try {
+          const response = await fetch('/api/book-tour', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+          });
+
+          const result = await response.json();
+
+          if (result.success) {
+            Swal.fire({
+              icon: 'success',
+              title: 'Thank you for reaching out!',
+              html: '<b>Your hostel tour request has been received.</b><br>We can\'t wait to welcome you to Menafa Hostels!<br><br>Our team will get in touch with you within 3 business days. If you have any urgent questions, feel free to email or WhatsApp us anytime.<br><br>Have a wonderful day!',
+              confirmButtonText: 'Close',
+              confirmButtonColor: '#15803d'
+            });
+            this.reset();
+            // Reset date to tomorrow
+            var tomorrow = new Date();
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            document.getElementById('appointment-date').value = tomorrow.toISOString().split('T')[0];
+          } else {
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops!',
+              text: result.message || 'Something went wrong. Please try again.',
+              confirmButtonColor: '#15803d'
+            });
+          }
+        } catch (error) {
+          console.error('Error:', error);
+          Swal.fire({
+            icon: 'error',
+            title: 'Connection Error',
+            text: 'Could not connect to the server. Please try again later.',
+            confirmButtonColor: '#15803d'
+          });
+        }
+      });
+    </script>
+</body>
+
+</html>

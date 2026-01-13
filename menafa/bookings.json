@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1765959653855,
+    "date": "2025-12-20",
+    "appointmentType": "physical",
+    "fullName": "Test User",
+    "email": "test@example.com",
+    "createdAt": "2025-12-17T08:20:53.855Z"
+  },
+  {
+    "id": 1765960015649,
+    "date": "2025-12-18",
+    "appointmentType": "online",
+    "fullName": "Mwiza",
+    "email": "admin@ces.com",
+    "createdAt": "2025-12-17T08:26:55.649Z"
+  }
+]

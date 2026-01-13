@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Menafa Hostels</title>
+  <link rel="icon" href="img/logo.png" type="image/png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .gallery-img { cursor: pointer; transition: transform 0.2s; }
+    .gallery-img:hover { transform: scale(1.05); }
+    .lightbox {
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+      background: rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center;
+      z-index: 1000; display: none;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox-img { max-width: 90vw; max-height: 80vh; border-radius: 1rem; }
+    .lightbox-close {
+      position: absolute; top: 2rem; right: 2rem; color: white; font-size: 2rem; cursor: pointer;
+    }
+    .lightbox-arrow {
+      position: absolute; top: 50%; transform: translateY(-50%); color: white; font-size: 2.5rem; cursor: pointer;
+      z-index: 1001;
+    }
+    .lightbox-arrow.left { left: 2rem; }
+    .lightbox-arrow.right { right: 2rem; }
+  </style>
+</head>
+<body class="bg-white font-sans">
+  <nav class="bg-green-900 py-4 px-6 flex justify-between items-center">
+    <div class="flex items-center gap-2">
+      <img src="img/logo.png" alt="Menafa Hostels Logo" class="h-10">
+      <span class="text-white font-bold text-2xl tracking-wide">Menafa Hostels</span>
+    </div>
+    <a href="index.html" class="text-white hover:text-yellow-300 px-4 py-2 rounded-md">Home</a>
+  </nav>
+  <main class="container mx-auto px-4 py-12">
+    <h1 class="text-4xl font-bold text-center text-green-900 mb-10">Hostel Gallery</h1>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <img src="img/hostel_photos/img_1.JPG" alt="Hostel Photo 1" class="gallery-img rounded shadow-lg" loading="lazy" onclick="openLightbox(0)">
+      <img src="img/hostel_photos/img_2.JPG" alt="Hostel Photo 2" class="gallery-img rounded shadow-lg" loading="lazy" onclick="openLightbox(1)">
+      <img src="img/hostel_photos/IMG_5957.JPG" alt="Hostel Photo 3" class="gallery-img rounded shadow-lg" loading="lazy" onclick="openLightbox(2)">
+      <img src="img/hostel_photos/IMG_5958 (1).JPG" alt="Hostel Photo 4" class="gallery-img rounded shadow-lg" loading="lazy" onclick="openLightbox(3)">
+      <img src="img/hostel_photos/IMG_5959.JPG" alt="Hostel Photo 5" class="gallery-img rounded shadow-lg" loading="lazy" onclick="openLightbox(4)">
+      <img src="img/hostel_photos/IMG_5961.JPG" alt="Hostel Photo 6" class="gallery-img rounded shadow-lg" loading="lazy" onclick="openLightbox(5)">
+      <img src="img/hostel_photos/IMG_5967.JPG" alt="Hostel Photo 7" class="gallery-img rounded shadow-lg" loading="lazy" onclick="openLightbox(6)">
+      <img src="img/hostel_photos/IMG_5977.jpg" alt="Hostel Photo 8" class="gallery-img rounded shadow-lg" loading="lazy" onclick="openLightbox(7)">
+      <img src="img/hostel_photos/IMG_5982.jpg" alt="Hostel Photo 9" class="gallery-img rounded shadow-lg" loading="lazy" onclick="openLightbox(8)">
+      <img src="img/hostel_photos/IMG_5984.jpg" alt="Hostel Photo 10" class="gallery-img rounded shadow-lg" loading="lazy" onclick="openLightbox(9)">
+      <img src="img/hostel_photos/IMG_5987.jpg" alt="Hostel Photo 11" class="gallery-img rounded shadow-lg" loading="lazy" onclick="openLightbox(10)">
+      <img src="img/hostel_photos/IMG_5989.jpg" alt="Hostel Photo 12" class="gallery-img rounded shadow-lg" loading="lazy" onclick="openLightbox(11)">
+      <img src="img/hostel_photos/IMG_5990.jpg" alt="Hostel Photo 13" class="gallery-img rounded shadow-lg" loading="lazy" onclick="openLightbox(12)">
+      <img src="img/hostel_photos/IMG_6013.jpg" alt="Hostel Photo 14" class="gallery-img rounded shadow-lg" loading="lazy" onclick="openLightbox(13)">
+      <img src="img/hostel_photos/IMG_6014.jpg" alt="Hostel Photo 15" class="gallery-img rounded shadow-lg" loading="lazy" onclick="openLightbox(14)">
+    </div>
+  </main>
+  <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+    <span class="lightbox-close" onclick="closeLightbox(event)">&times;</span>
+    <span class="lightbox-arrow left" onclick="prevImage(event)"><i class="fas fa-chevron-left"></i></span>
+    <img id="lightbox-img" class="lightbox-img" src="" alt="Gallery Image">
+    <span class="lightbox-arrow right" onclick="nextImage(event)"><i class="fas fa-chevron-right"></i></span>
+  </div>
+  <script>
+    const images = [
+      'img/hostel_photos/img_1.JPG',
+      'img/hostel_photos/img_2.JPG',
+      'img/hostel_photos/IMG_5957.JPG',
+      'img/hostel_photos/IMG_5958 (1).JPG',
+      'img/hostel_photos/IMG_5959.JPG',
+      'img/hostel_photos/IMG_5961.JPG',
+      'img/hostel_photos/IMG_5967.JPG',
+      'img/hostel_photos/IMG_5977.jpg',
+      'img/hostel_photos/IMG_5982.jpg',
+      'img/hostel_photos/IMG_5984.jpg',
+      'img/hostel_photos/IMG_5987.jpg',
+      'img/hostel_photos/IMG_5989.jpg',
+      'img/hostel_photos/IMG_5990.jpg',
+      'img/hostel_photos/IMG_6013.jpg',
+      'img/hostel_photos/IMG_6014.jpg'
+    ];
+    let currentIndex = 0;
+    function openLightbox(idx) {
+      currentIndex = idx;
+      document.getElementById('lightbox-img').src = images[currentIndex];
+      document.getElementById('lightbox').classList.add('active');
+    }
+    function closeLightbox(e) {
+      if (e.target.id === 'lightbox' || e.target.classList.contains('lightbox-close')) {
+        document.getElementById('lightbox').classList.remove('active');
+      }
+    }
+    function prevImage(e) {
+      e.stopPropagation();
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      document.getElementById('lightbox-img').src = images[currentIndex];
+    }
+    function nextImage(e) {
+      e.stopPropagation();
+      currentIndex = (currentIndex + 1) % images.length;
+      document.getElementById('lightbox-img').src = images[currentIndex];
+    }
+    document.addEventListener('keydown', function(e) {
+      if (document.getElementById('lightbox').classList.contains('active')) {
+        if (e.key === 'Escape') closeLightbox({target: {id: 'lightbox'}});
+        if (e.key === 'ArrowLeft') prevImage(e);
+        if (e.key === 'ArrowRight') nextImage(e);
+      }
+    });
+  </script>
+</body>
+</html>

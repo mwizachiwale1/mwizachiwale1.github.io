@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nyengo Admin Dashboard</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Dashboard -->
+    <div id="dashboard" class="container hidden">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="assets/logo.png" alt="Nyengo Logo" class="sidebar-logo">
+                <div class="logo-text">
+                    <p>Admin Dashboard</p>
+                </div>
+            </div>
+            <nav>
+                <div class="nav-item active" data-page="overview">
+                    <span class="nav-icon"><i class="fas fa-chart-bar"></i></span>
+                    <span>Dashboard</span>
+                </div>
+                <div class="nav-item" data-page="retailers">
+                    <span class="nav-icon"><i class="fas fa-store"></i></span>
+                    <span>Retailers</span>
+                </div>
+                <div class="nav-item" data-page="buyers">
+                    <span class="nav-icon"><i class="fas fa-users"></i></span>
+                    <span>Buyers</span>
+                </div>
+                <div class="nav-item" data-page="orders">
+                    <span class="nav-icon"><i class="fas fa-box"></i></span>
+                    <span>Orders & Delivery</span>
+                </div>
+                <div class="nav-item" data-page="payments">
+                    <span class="nav-icon"><i class="fas fa-credit-card"></i></span>
+                    <span>Payments</span>
+                </div>
+                <div class="nav-item super-admin-only" data-page="fees">
+                    <span class="nav-icon"><i class="fas fa-dollar-sign"></i></span>
+                    <span>Service Fees</span>
+                </div>
+                <div class="nav-item" data-page="reports">
+                    <span class="nav-icon"><i class="fas fa-chart-line"></i></span>
+                    <span>Reports</span>
+                </div>
+                <div class="nav-item super-admin-only" data-page="admins">
+                    <span class="nav-icon"><i class="fas fa-user-shield"></i></span>
+                    <span>Admin Users</span>
+                </div>
+                <!-- New Admin Features Start -->
+                <div class="nav-section-title">Admin Features</div>
+                <div class="nav-item" data-page="admin_support_tickets" onclick="showPage('admin_support_tickets')">
+                    <span class="nav-icon"><i class="fas fa-ticket-alt"></i></span>
+                    <span>Support Tickets</span>
+                </div>
+                <div class="nav-item" data-page="admin_categories" onclick="showPage('admin_categories')">
+                    <span class="nav-icon"><i class="fas fa-tags"></i></span>
+                    <span>Categories</span>
+                </div>
+                <div class="nav-item" data-page="admin_delivery_companies" onclick="showPage('admin_delivery_companies')">
+                    <span class="nav-icon"><i class="fas fa-truck"></i></span>
+                    <span>Delivery Companies</span>
+                </div>
+                <div class="nav-item" data-page="admin_reviews" onclick="showPage('admin_reviews')">
+                    <span class="nav-icon"><i class="fas fa-star"></i></span>
+                    <span>Reviews</span>
+                </div>
+                <div class="nav-item" data-page="admin_notifications" onclick="showPage('admin_notifications')">
+                    <span class="nav-icon"><i class="fas fa-bell"></i></span>
+                    <span>Notifications</span>
+                </div>
+                <div class="nav-item" data-page="admin_banners" onclick="showPage('admin_banners')">
+                    <span class="nav-icon"><i class="fas fa-image"></i></span>
+                    <span>Banners</span>
+                </div>
+                <div class="nav-item" data-page="admin_analytics" onclick="showPage('admin_analytics')">
+                    <span class="nav-icon"><i class="fas fa-chart-pie"></i></span>
+                    <span>Analytics</span>
+                </div>
+                <div class="nav-item super-admin-only" data-page="admin_audit_logs" onclick="showPage('admin_audit_logs')">
+                    <span class="nav-icon"><i class="fas fa-clipboard-list"></i></span>
+                    <span>Audit Logs</span>
+                </div>
+                <div class="nav-item super-admin-only" data-page="admin_roles" onclick="showPage('admin_roles')">
+                    <span class="nav-icon"><i class="fas fa-user-tag"></i></span>
+                    <span>Roles</span>
+                </div>
+                <div class="nav-item super-admin-only" data-page="admin_compliance" onclick="showPage('admin_compliance')">
+                    <span class="nav-icon"><i class="fas fa-balance-scale"></i></span>
+                    <span>Compliance</span>
+                </div>
+                <div class="nav-item" data-page="admin_messaging" onclick="showPage('admin_messaging')">
+                    <span class="nav-icon"><i class="fas fa-envelope"></i></span>
+                    <span>Messaging</span>
+                </div>
+                <div class="nav-item" data-page="admin_flagged_content" onclick="showPage('admin_flagged_content')">
+                    <span class="nav-icon"><i class="fas fa-flag"></i></span>
+                    <span>Flagged Content</span>
+                </div>
+                <!-- New Admin Features End -->
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <h2 id="pageTitle">Dashboard Overview</h2>
+                <div class="user-info">
+                    <div>
+                        <div id="userName" style="font-weight: 600;">Admin User</div>
+                        <div id="userRole" style="font-size: 12px; color: #718096;">Super Admin</div>
+                    </div>
+                    <div class="user-avatar" id="userAvatar">
+                        <img src="assets/profile image.jpg.webp" alt="Profile" class="avatar-img">
+                    </div>
+                    <button class="logout-btn" id="logoutBtn">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Overview Page -->
+            <div id="overviewPage" class="content-section active">
+                <div class="overview-layout">
+                    <!-- Left Column: Chart and Orders Table -->
+                    <div class="overview-left">
+                        <!-- User Growth Chart -->
+                        <div class="chart-container">
+                            <div class="chart-header">
+                                <div class="chart-title">User Growth Trend</div>
+                                <div class="chart-controls">
+                                    <div class="chart-filter-group">
+                                        <label for="chartPeriod">Period:</label>
+                                        <select id="chartPeriod" onchange="updateChart()">
+                                            <option value="7">Last 7 Days</option>
+                                            <option value="30" selected>Last 30 Days</option>
+                                            <option value="90">Last 3 Months</option>
+                                            <option value="180">Last 6 Months</option>
+                                            <option value="365">Last Year</option>
+                                        </select>
+                                    </div>
+                                    <div class="chart-filter-group">
+                                        <label for="chartType">View:</label>
+                                        <select id="chartType" onchange="updateChart()">
+                                            <option value="users" selected>Total Users</option>
+                                            <option value="buyers">Buyers Only</option>
+                                            <option value="retailers">Retailers Only</option>
+                                            <option value="revenue">Revenue Growth</option>
+                                        </select>
+                                    </div>
+                                    <button class="refresh-chart-btn" onclick="refreshChart()" title="Refresh Data">
+                                        <i class="fas fa-sync-alt"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <canvas id="growthChart" width="650" height="200"></canvas>
+                            <div class="chart-legend">
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background: #FF0000;"></span>
+                                    <span class="legend-label" id="legendLabel">User Growth</span>
+                                </div>
+                                <div class="chart-stats">
+                                    <span id="chartAverage">Avg: +12.3/day</span>
+                                    <span id="chartTrend">📈 +15.2% vs previous period</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recent Orders Table -->
+                        <div class="orders-section">
+                            <div class="section-header">
+                                <h3>Recent Orders & Deliveries</h3>
+                                <a href="#" onclick="showPage('orders')" class="view-all-link">
+                                    <span>View All</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            <table class="data-table compact-table">
+                                <thead>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <th>Customer</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th>Delivery</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="recentOrdersTableBody">
+                                    <tr>
+                                        <td>#ORD001</td>
+                                        <td>John Banda</td>
+                                        <td>MWK 15,000</td>
+                                        <td><span class="badge completed">Completed</span></td>
+                                        <td><span class="badge delivered">Delivered</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#ORD002</td>
+                                        <td>Mary Phiri</td>
+                                        <td>MWK 28,500</td>
+                                        <td><span class="badge pending">Pending</span></td>
+                                        <td><span class="badge in-transit">In Transit</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#ORD003</td>
+                                        <td>Peter Mwale</td>
+                                        <td>MWK 12,300</td>
+                                        <td><span class="badge completed">Completed</span></td>
+                                        <td><span class="badge delivered">Delivered</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#ORD004</td>
+                                        <td>Grace Tembo</td>
+                                        <td>MWK 19,800</td>
+                                        <td><span class="badge processing">Processing</span></td>
+                                        <td><span class="badge pending">Pending</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#ORD005</td>
+                                        <td>David Chirwa</td>
+                                        <td>MWK 22,100</td>
+                                        <td><span class="badge completed">Completed</span></td>
+                                        <td><span class="badge in-transit">In Transit</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Metric Cards -->
+                    <div class="overview-right">
+                        <div class="metrics-grid-vertical">
+                            <div class="metric-card">
+                                <div class="metric-header">
+                                    <i class="fas fa-users metric-icon"></i>
+                                    <h3>Total Buyers</h3>
+                                </div>
+                                <div class="metric-value" id="totalBuyers">1,250</div>
+                                <div class="metric-change positive">
+                                    <i class="fas fa-arrow-up"></i>
+                                    <span>+12.5% from last month</span>
+                                </div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-header">
+                                    <i class="fas fa-store metric-icon"></i>
+                                    <h3>Active Retailers</h3>
+                                </div>
+                                <div class="metric-value" id="activeRetailers">45</div>
+                                <div class="metric-change positive">
+                                    <i class="fas fa-plus-circle"></i>
+                                    <span>3 pending applications</span>
+                                </div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-header">
+                                    <i class="fas fa-credit-card metric-icon"></i>
+                                    <h3>Today's Transactions</h3>
+                                </div>
+                                <div class="metric-value" id="todayTransactions">67</div>
+                                <div class="metric-change positive">
+                                    <span>MWK 245,000</span>
+                                </div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-header">
+                                    <i class="fas fa-truck metric-icon"></i>
+                                    <h3>Delivery Performance</h3>
+                                </div>
+                                <div class="metric-value" id="deliveryRate">92%</div>
+                                <div class="metric-change positive">
+                                    <span>On-time delivery rate</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Retailers Page -->
+            <div id="retailersPage" class="content-section">
+                <div class="filters">
+                    <div class="filter-group">
+                        <label>Search</label>
+                        <input type="text" id="retailerSearch" placeholder="Search retailers...">
+                    </div>
+                    <div class="filter-group">
+                        <label>Performance Tier</label>
+                        <select id="tierFilter">
+                            <option value="">All Tiers</option>
+                            <option value="platinum">Platinum</option>
+                            <option value="gold">Gold</option>
+                            <option value="silver">Silver</option>
+                            <option value="bronze">Bronze</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>City</label>
+                        <select id="cityFilter">
+                            <option value="">All Cities</option>
+                            <option value="Lilongwe">Lilongwe</option>
+                            <option value="Blantyre">Blantyre</option>
+                            <option value="Mzuzu">Mzuzu</option>
+                        </select>
+                    </div>
+                </div>
+
+                <table class="data-table" id="retailersTable">
+                    <thead>
+                        <tr>
+                            <th class="sortable" data-sort="name">Business Name</th>
+                            <th class="sortable" data-sort="owner">Owner</th>
+                            <th class="sortable" data-sort="city">City</th>
+                            <th class="sortable" data-sort="sales">Total Sales (MTD)</th>
+                            <th class="sortable" data-sort="orders">Orders (MTD)</th>
+                            <th class="sortable" data-sort="products">Products</th>
+                            <th class="sortable" data-sort="tier">Tier</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="retailersTableBody">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+                
+                <!-- Pagination Controls -->
+                <div id="retailerPagination" style="margin-top: 20px;"></div>
+            </div>
+
+            <!-- Buyers Page -->
+            <div id="buyersPage" class="content-section">
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <i class="fas fa-user-check metric-icon"></i>
+                            <h3>Active Buyers</h3>
+                        </div>
+                        <div class="metric-value" id="activeBuyersCount">0</div>
+                        <div class="metric-change">Purchased in last 30 days</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <i class="fas fa-user-clock metric-icon"></i>
+                            <h3>Dormant Buyers</h3>
+                        </div>
+                        <div class="metric-value" id="dormantBuyersCount">0</div>
+                        <div class="metric-change">31-90 days inactive</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <i class="fas fa-user-times metric-icon"></i>
+                            <h3>Inactive Buyers</h3>
+                        </div>
+                        <div class="metric-value" id="inactiveBuyersCount">0</div>
+                        <div class="metric-change">90+ days inactive</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <i class="fas fa-user-plus metric-icon"></i>
+                            <h3>New This Month</h3>
+                        </div>
+                        <div class="metric-value" id="newBuyersCount">0</div>
+                        <div class="metric-change positive">
+                            <i class="fas fa-arrow-up"></i>
+                            <span id="newBuyersGrowth">0%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Buyers Filters -->
+                <div class="filters">
+                    <div class="filter-group">
+                        <label>Search Buyers</label>
+                        <input type="text" id="buyerSearch" placeholder="Search by name, email, or phone...">
+                    </div>
+                    <div class="filter-group">
+                        <label>Activity Status</label>
+                        <select id="buyerActivityFilter">
+                            <option value="">All Buyers</option>
+                            <option value="active">Active</option>
+                            <option value="dormant">Dormant</option>
+                            <option value="inactive">Inactive</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Account Status</label>
+                        <select id="buyerStatusFilter">
+                            <option value="">All Status</option>
+                            <option value="active">Active</option>
+                            <option value="suspended">Suspended</option>
+                            <option value="inactive">Inactive</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>KYC Status</label>
+                        <select id="buyerKycFilter">
+                            <option value="">All</option>
+                            <option value="verified">Verified</option>
+                            <option value="pending">Pending</option>
+                            <option value="rejected">Rejected</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Buyers Table -->
+                <table class="data-table" id="buyersTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>City</th>
+                            <th>Total Orders</th>
+                            <th>Total Spent</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="buyersTableBody">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+                
+                <!-- Pagination Controls -->
+                <div id="buyerPagination" style="margin-top: 20px;"></div>
+            </div>
+
+            <!-- Orders Page -->
+            <div id="ordersPage" class="content-section">
+                <h2 style="margin-bottom: 20px;">Orders & Delivery Management</h2>
+                
+                <!-- Order Metrics -->
+                <div class="metrics">
+                    <div class="metric-card">
+                        <div class="metric-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                            <i class="fas fa-box"></i>
+                        </div>
+                        <div class="metric-info">
+                            <span class="metric-label">Total Orders</span>
+                            <span class="metric-value" id="totalOrdersCount">0</span>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="metric-info">
+                            <span class="metric-label">Pending Orders</span>
+                            <span class="metric-value" id="pendingOrdersCount">0</span>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <div class="metric-info">
+                            <span class="metric-label">In Transit</span>
+                            <span class="metric-value" id="inTransitOrdersCount">0</span>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="metric-info">
+                            <span class="metric-label">Delivered Today</span>
+                            <span class="metric-value" id="deliveredTodayCount">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filters -->
+                <div class="filters">
+                    <div class="filter-group">
+                        <label>Search</label>
+                        <input type="text" id="orderSearch" placeholder="Search order ID, buyer, or retailer...">
+                    </div>
+                    <div class="filter-group">
+                        <label>Order Status</label>
+                        <select id="orderStatusFilter">
+                            <option value="">All Status</option>
+                            <option value="pending">Pending</option>
+                            <option value="processing">Processing</option>
+                            <option value="shipped">Shipped</option>
+                            <option value="delivered">Delivered</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Payment Status</label>
+                        <select id="paymentStatusFilter">
+                            <option value="">All Payment Status</option>
+                            <option value="paid">Paid</option>
+                            <option value="pending">Pending</option>
+                            <option value="failed">Failed</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Date Range</label>
+                        <select id="dateRangeFilter">
+                            <option value="">All Time</option>
+                            <option value="today">Today</option>
+                            <option value="week">This Week</option>
+                            <option value="month">This Month</option>
+                        </select>
+                    </div>
+                </div>
+
+                <table class="data-table" id="ordersTable">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Date</th>
+                            <th>Buyer</th>
+                            <th>Retailer</th>
+                            <th>Amount</th>
+                            <th>Payment</th>
+                            <th>Order Status</th>
+                            <th>Delivery Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="ordersTableBody">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+                
+                <!-- Pagination -->
+                <div id="orderPagination"></div>
+            </div>
+
+            <!-- Payments Page -->
+            <div id="paymentsPage" class="content-section">
+                <h2 style="margin-bottom: 20px;">Payment Management</h2>
+                
+                <!-- Payment Metrics -->
+                <div class="metrics">
+                    <div class="metric-card">
+                        <div class="metric-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div class="metric-info">
+                            <span class="metric-label">Total Payments</span>
+                            <span class="metric-value" id="totalPaymentsCount">0</span>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="metric-info">
+                            <span class="metric-label">Successful Today</span>
+                            <span class="metric-value" id="successfulPaymentsCount">0</span>
+                            <span class="metric-change" id="successfulPaymentsAmount">MWK 0</span>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="metric-info">
+                            <span class="metric-label">Pending Payments</span>
+                            <span class="metric-value" id="pendingPaymentsCount">0</span>
+                            <span class="metric-change" id="pendingPaymentsAmount">MWK 0</span>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                            <i class="fas fa-exclamation-triangle"></i>
+                        </div>
+                        <div class="metric-info">
+                            <span class="metric-label">Failed Payments</span>
+                            <span class="metric-value" id="failedPaymentsCount">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filters -->
+                <div class="filters">
+                    <div class="filter-group">
+                        <label>Search</label>
+                        <input type="text" id="paymentSearch" placeholder="Search transaction ID, order ID, or user...">
+                    </div>
+                    <div class="filter-group">
+                        <label>Payment Status</label>
+                        <select id="paymentStatusFilterSelect">
+                            <option value="">All Status</option>
+                            <option value="paid">Paid</option>
+                            <option value="pending">Pending</option>
+                            <option value="failed">Failed</option>
+                            <option value="refunded">Refunded</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Payment Method</label>
+                        <select id="paymentMethodFilter">
+                            <option value="">All Methods</option>
+                            <option value="airtel_money">Airtel Money</option>
+                            <option value="tnm_mpamba">TNM Mpamba</option>
+                            <option value="credit_card">Credit Card</option>
+                            <option value="bank_transfer">Bank Transfer</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Date Range</label>
+                        <select id="paymentDateRangeFilter">
+                            <option value="">All Time</option>
+                            <option value="today">Today</option>
+                            <option value="week">This Week</option>
+                            <option value="month">This Month</option>
+                        </select>
+                    </div>
+                </div>
+
+                <table class="data-table" id="paymentsTable">
+                    <thead>
+                        <tr>
+                            <th>Transaction ID</th>
+                            <th>Date</th>
+                            <th>Order ID</th>
+                            <th>Buyer</th>
+                            <th>Amount</th>
+                            <th>Method</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="paymentsTableBody">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+                
+                <!-- Pagination -->
+                <div id="paymentPagination"></div>
+            </div>
+
+            <!-- Service Fees Page (Super Admin Only) -->
+            <div id="feesPage" class="content-section">
+                <h2 style="margin-bottom: 20px;">Service Fee & Commission Management</h2>
+                
+                <!-- Fee Settings Cards -->
+                <div class="metrics">
+                    <div class="metric-card">
+                        <div class="metric-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                            <i class="fas fa-percentage"></i>
+                        </div>
+                        <div class="metric-info">
+                            <span class="metric-label">Platform Commission</span>
+                            <span class="metric-value" id="platformCommissionRate">0%</span>
+                            <span class="metric-change" id="commissionLastUpdated">Never updated</span>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <div class="metric-info">
+                            <span class="metric-label">Delivery Fee</span>
+                            <span class="metric-value" id="deliveryFeeAmount">MWK 0</span>
+                            <span class="metric-change" id="deliveryFeeLastUpdated">Never updated</span>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="metric-info">
+                            <span class="metric-label">Service Fee</span>
+                            <span class="metric-value" id="serviceFeeAmount">MWK 0</span>
+                            <span class="metric-change" id="serviceFeeLastUpdated">Never updated</span>
+                        </div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-icon" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div class="metric-info">
+                            <span class="metric-label">Total Revenue Today</span>
+                            <span class="metric-value" id="totalRevenueToday">MWK 0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 style="margin: 30px 0 20px 0;">Fee Configuration</h3>
+                <table class="data-table" id="feesTable">
+                    <thead>
+                        <tr>
+                            <th>Fee Type</th>
+                            <th>Current Value</th>
+                            <th>Description</th>
+                            <th>Last Modified</th>
+                            <th>Modified By</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="feesTableBody">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Reports Page -->
+            <div id="reportsPage" class="content-section">
+                <h2 style="margin-bottom: 20px;">Reports & Analytics</h2>
+                
+                <!-- Report Generation Form -->
+                <div class="filters" style="background: #f8f9fa; padding: 20px; border-radius: 8px; border: 1px solid #dee2e6;">
+                    <div class="filter-group">
+                        <label>Report Type <span style="color: #dc3545;">*</span></label>
+                        <select id="reportType">
+                            <option value="executive">Executive Summary</option>
+                            <option value="retailer">Retailer Performance</option>
+                            <option value="buyer">Buyer Behavior</option>
+                            <option value="delivery">Delivery Performance</option>
+                            <option value="financial">Financial Overview</option>
+                            <option value="products">Product Performance</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Period</label>
+                        <select id="reportPeriod">
+                            <option value="today">Today</option>
+                            <option value="yesterday">Yesterday</option>
+                            <option value="week">This Week</option>
+                            <option value="last_week">Last Week</option>
+                            <option value="month" selected>This Month</option>
+                            <option value="last_month">Last Month</option>
+                            <option value="custom">Custom Date Range</option>
+                        </select>
+                    </div>
+                    <div class="filter-group" id="customDateGroup" style="display: none;">
+                        <label>Start Date</label>
+                        <input type="date" id="reportStartDate">
+                    </div>
+                    <div class="filter-group" id="customDateGroup2" style="display: none;">
+                        <label>End Date</label>
+                        <input type="date" id="reportEndDate">
+                    </div>
+                    <div class="filter-group">
+                        <label>&nbsp;</label>
+                        <button class="generate-report-btn" onclick="dashboard.generateReport()" style="width: 100%;">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Generate Report</span>
+                        </button>
+                    </div>
+                    <div class="filter-group">
+                        <label>&nbsp;</label>
+                        <button class="btn-secondary" onclick="dashboard.exportReport()" style="width: 100%;" disabled id="exportReportBtn">
+                            <i class="fas fa-download"></i>
+                            <span>Export PDF</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Report Output -->
+                <div id="reportOutput" style="margin-top: 30px;"></div>
+            </div>
+
+            <!-- Admin Users Page (Super Admin Only) -->
+            <div id="adminsPage" class="content-section">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h3>Admin Users Management</h3>
+                    <button class="add-btn" id="addAdminBtn" style="width: auto; padding: 10px 20px;">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Add Admin User</span>
+                    </button>
+                </div>
+                
+                <!-- Admin Stats -->
+                <div class="metrics" style="margin-bottom: 25px;">
+                    <div class="metric-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <div class="metric-value" id="totalAdminsCount">0</div>
+                        <div class="metric-label">Total Admins</div>
+                    </div>
+                    <div class="metric-card" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                        <div class="metric-value" id="activeAdminsCount">0</div>
+                        <div class="metric-label">Active Admins</div>
+                    </div>
+                    <div class="metric-card" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                        <div class="metric-value" id="superAdminsCount">0</div>
+                        <div class="metric-label">Super Admins</div>
+                    </div>
+                    <div class="metric-card" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
+                        <div class="metric-value" id="supportStaffCount">0</div>
+                        <div class="metric-label">Support Staff</div>
+                    </div>
+                </div>
+                
+                <!-- Filters -->
+                <div class="filters" style="margin-bottom: 20px;">
+                    <div class="filter-group">
+                        <input type="text" id="adminSearch" placeholder="Search by name, email, or username..." style="min-width: 300px;">
+                    </div>
+                    <div class="filter-group">
+                        <select id="adminRoleFilter">
+                            <option value="">All Roles</option>
+                            <option value="super_admin">Super Admin</option>
+                            <option value="admin">Admin</option>
+                            <option value="support_staff">Support Staff</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <select id="adminStatusFilter">
+                            <option value="">All Status</option>
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                            <option value="suspended">Suspended</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <table class="data-table" id="adminsTable">
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Last Login</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="adminsTableBody">
+                        <!-- Populated by JS -->
+                    </tbody>
+                </table>
+                
+                <!-- Pagination -->
+                <div id="adminsPaginationContainer" class="pagination-container" style="margin-top: 20px;">
+                    <!-- Pagination controls populated by JS -->
+                </div>
+            </div>
+            
+            <!-- Add/Edit Admin Modal -->
+            <div id="adminModal" class="modal">
+                <div class="modal-content" style="max-width: 600px;">
+                    <div class="modal-header">
+                        <h3 id="adminModalTitle">Add Admin User</h3>
+                        <button class="modal-close" onclick="closeAdminModal()">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="adminForm" onsubmit="return false;">
+                            <input type="hidden" id="adminId" value="">
+                            
+                            <div class="form-group">
+                                <label for="adminUsername">Username *</label>
+                                <input type="text" id="adminUsername" required placeholder="Enter username">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="adminEmail">Email *</label>
+                                <input type="email" id="adminEmail" required placeholder="Enter email address">
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="adminFirstName">First Name *</label>
+                                    <input type="text" id="adminFirstName" required placeholder="First name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="adminLastName">Last Name *</label>
+                                    <input type="text" id="adminLastName" required placeholder="Last name">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="adminPhone">Phone Number</label>
+                                <input type="tel" id="adminPhone" placeholder="Enter phone number">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="adminRole">Role *</label>
+                                <select id="adminRole" required>
+                                    <option value="">Select Role</option>
+                                    <option value="admin">Admin</option>
+                                    <option value="support_staff">Support Staff</option>
+                                    <option value="super_admin">Super Admin</option>
+                                </select>
+                                <small style="color: #666; display: block; margin-top: 5px;">
+                                    <strong>Admin:</strong> Full access to manage platform<br>
+                                    <strong>Support Staff:</strong> Limited access for customer support<br>
+                                    <strong>Super Admin:</strong> Complete control including financial settings
+                                </small>
+                            </div>
+                            
+                            <div id="passwordSection">
+                                <div class="form-group">
+                                    <label for="adminPassword">Password *</label>
+                                    <input type="password" id="adminPassword" placeholder="Enter password (min. 8 characters)">
+                                    <small style="color: #666; display: block; margin-top: 5px;">
+                                        Password must be at least 8 characters with letters and numbers
+                                    </small>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="adminConfirmPassword">Confirm Password *</label>
+                                    <input type="password" id="adminConfirmPassword" placeholder="Confirm password">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="adminStatus">Status</label>
+                                <select id="adminStatus">
+                                    <option value="active">Active</option>
+                                    <option value="inactive">Inactive</option>
+                                    <option value="suspended">Suspended</option>
+                                </select>
+                            </div>
+                            
+                            <div class="modal-footer">
+                                <button type="button" class="btn-secondary" onclick="closeAdminModal()">Cancel</button>
+                                <button type="submit" class="btn-primary" id="saveAdminBtn">
+                                    <i class="fas fa-save"></i> Save Admin
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- View Admin Details Modal -->
+            <div id="adminDetailsModal" class="modal">
+                <div class="modal-content" style="max-width: 700px;">
+                    <div class="modal-header">
+                        <h3>Admin User Details</h3>
+                        <button class="modal-close" onclick="closeAdminDetailsModal()">&times;</button>
+                    </div>
+                    <div class="modal-body" id="adminDetailsContent">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Admin Feature SPA Sections Start -->
+            <div id="admin_support_ticketsPage" class="content-section">
+                <div class="header">
+                    <h2 id="pageTitle">Support Ticket Management</h2>
+                    <div class="user-info">
+                        <div>
+                            <div id="userName" style="font-weight: 600;">Admin User</div>
+                            <div id="userRole" style="font-size: 12px; color: #718096;">Super Admin</div>
+                        </div>
+                        <div class="user-avatar" id="userAvatar">
+                            <img src="assets/profile image.jpg.webp" alt="Profile" class="avatar-img">
+                        </div>
+                        <button class="logout-btn" id="logoutBtn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </button>
+                    </div>
+                </div>
+                <section>
+                    <button id="refreshTickets">Refresh Tickets</button>
+                    <table class="data-table" id="ticketsTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Subject</th>
+                                <th>Status</th>
+                                <th>Priority</th>
+                                <th>Category</th>
+                                <th>Created</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Tickets will be loaded here -->
+                        </tbody>
+                    </table>
+                </section>
+                <section id="ticketDetails" style="display:none;">
+                    <h2>Ticket Details</h2>
+                    <div id="ticketInfo"></div>
+                    <button id="closeDetails">Close</button>
+                </section>
+            </div>
+            <div id="admin_categoriesPage" class="content-section">
+                <div class="header">
+                    <h2 id="pageTitle">Category Management</h2>
+                    <div class="user-info">
+                        <div>
+                            <div id="userName" style="font-weight: 600;">Admin User</div>
+                            <div id="userRole" style="font-size: 12px; color: #718096;">Super Admin</div>
+                        </div>
+                        <div class="user-avatar" id="userAvatar">
+                            <img src="assets/profile image.jpg.webp" alt="Profile" class="avatar-img">
+                        </div>
+                        <button class="logout-btn" id="logoutBtn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </button>
+                    </div>
+                </div>
+                <section>
+                    <button id="refreshCategories">Refresh Categories</button>
+                    <table class="data-table" id="categoriesTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Categories will be loaded here -->
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+            <div id="admin_delivery_companiesPage" class="content-section">
+                <div class="header">
+                    <h2 id="pageTitle">Delivery Companies Management</h2>
+                    <div class="user-info">
+                        <div>
+                            <div id="userName" style="font-weight: 600;">Admin User</div>
+                            <div id="userRole" style="font-size: 12px; color: #718096;">Super Admin</div>
+                        </div>
+                        <div class="user-avatar" id="userAvatar">
+                            <img src="assets/profile image.jpg.webp" alt="Profile" class="avatar-img">
+                        </div>
+                        <button class="logout-btn" id="logoutBtn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </button>
+                    </div>
+                </div>
+                <section>
+                    <button id="refreshDeliveryCompanies">Refresh Companies</button>
+                    <table class="data-table" id="deliveryCompaniesTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Contact</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Companies will be loaded here -->
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+            <div id="admin_reviewsPage" class="content-section">
+                <div class="header">
+                    <h2 id="pageTitle">Reviews Management</h2>
+                    <div class="user-info">
+                        <div>
+                            <div id="userName" style="font-weight: 600;">Admin User</div>
+                            <div id="userRole" style="font-size: 12px; color: #718096;">Super Admin</div>
+                        </div>
+                        <div class="user-avatar" id="userAvatar">
+                            <img src="assets/profile image.jpg.webp" alt="Profile" class="avatar-img">
+                        </div>
+                        <button class="logout-btn" id="logoutBtn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </button>
+                    </div>
+                </div>
+                <section>
+                    <button id="refreshReviews">Refresh Reviews</button>
+                    <table class="data-table" id="reviewsTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>User</th>
+                                <th>Product</th>
+                                <th>Rating</th>
+                                <th>Comment</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Reviews will be loaded here -->
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+            <div id="admin_notificationsPage" class="content-section">
+                <div class="header">
+                    <h2 id="pageTitle">Notifications Management</h2>
+                    <div class="user-info">
+                        <div>
+                            <div id="userName" style="font-weight: 600;">Admin User</div>
+                            <div id="userRole" style="font-size: 12px; color: #718096;">Super Admin</div>
+                        </div>
+                        <div class="user-avatar" id="userAvatar">
+                            <img src="assets/profile image.jpg.webp" alt="Profile" class="avatar-img">
+                        </div>
+                        <button class="logout-btn" id="logoutBtn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </button>
+                    </div>
+                </div>
+                <section>
+                    <button id="refreshNotifications">Refresh Notifications</button>
+                    <table class="data-table" id="notificationsTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Message</th>
+                                <th>Status</th>
+                                <th>Created</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Notifications will be loaded here -->
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+            <div id="admin_bannersPage" class="content-section">
+                <div class="header">
+                    <h2 id="pageTitle">Banners Management</h2>
+                    <div class="user-info">
+                        <div>
+                            <div id="userName" style="font-weight: 600;">Admin User</div>
+                            <div id="userRole" style="font-size: 12px; color: #718096;">Super Admin</div>
+                        </div>
+                        <div class="user-avatar" id="userAvatar">
+                            <img src="assets/profile image.jpg.webp" alt="Profile" class="avatar-img">
+                        </div>
+                        <button class="logout-btn" id="logoutBtn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </button>
+                    </div>
+                </div>
+                <section>
+                    <button id="refreshBanners">Refresh Banners</button>
+                    <table class="data-table" id="bannersTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Title</th>
+                                <th>Image</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Banners will be loaded here -->
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+            <div id="admin_analyticsPage" class="content-section">
+                <div class="header">
+                    <h2 id="pageTitle">Analytics</h2>
+                    <div class="user-info">
+                        <div>
+                            <div id="userName" style="font-weight: 600;">Admin User</div>
+                            <div id="userRole" style="font-size: 12px; color: #718096;">Super Admin</div>
+                        </div>
+                        <div class="user-avatar" id="userAvatar">
+                            <img src="assets/profile image.jpg.webp" alt="Profile" class="avatar-img">
+                        </div>
+                        <button class="logout-btn" id="logoutBtn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </button>
+                    </div>
+                </div>
+                <section>
+                    <button id="refreshAnalytics">Refresh Analytics</button>
+                    <div id="analyticsContent">
+                        <!-- Analytics data will be loaded here -->
+                    </div>
+                </section>
+            </div>
+            <div id="admin_audit_logsPage" class="content-section">
+                <div class="header">
+                    <h2 id="pageTitle">Audit Logs</h2>
+                    <div class="user-info">
+                        <div>
+                            <div id="userName" style="font-weight: 600;">Admin User</div>
+                            <div id="userRole" style="font-size: 12px; color: #718096;">Super Admin</div>
+                        </div>
+                        <div class="user-avatar" id="userAvatar">
+                            <img src="assets/profile image.jpg.webp" alt="Profile" class="avatar-img">
+                        </div>
+                        <button class="logout-btn" id="logoutBtn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </button>
+                    </div>
+                </div>
+                <section>
+                    <button id="refreshAuditLogs">Refresh Logs</button>
+                    <table class="data-table" id="auditLogsTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>User</th>
+                                <th>Action</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Audit logs will be loaded here -->
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+            <div id="admin_rolesPage" class="content-section">
+                <div class="header">
+                    <h2 id="pageTitle">Roles Management</h2>
+                    <div class="user-info">
+                        <div>
+                            <div id="userName" style="font-weight: 600;">Admin User</div>
+                            <div id="userRole" style="font-size: 12px; color: #718096;">Super Admin</div>
+                        </div>
+                        <div class="user-avatar" id="userAvatar">
+                            <img src="assets/profile image.jpg.webp" alt="Profile" class="avatar-img">
+                        </div>
+                        <button class="logout-btn" id="logoutBtn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </button>
+                    </div>
+                </div>
+                <section>
+                    <button id="refreshRoles">Refresh Roles</button>
+                    <table class="data-table" id="rolesTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Roles will be loaded here -->
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+            <div id="admin_compliancePage" class="content-section">
+                <div class="header">
+                    <h2 id="pageTitle">Compliance Management</h2>
+                    <div class="user-info">
+                        <div>
+                            <div id="userName" style="font-weight: 600;">Admin User</div>
+                            <div id="userRole" style="font-size: 12px; color: #718096;">Super Admin</div>
+                        </div>
+                        <div class="user-avatar" id="userAvatar">
+                            <img src="assets/profile image.jpg.webp" alt="Profile" class="avatar-img">
+                        </div>
+                        <button class="logout-btn" id="logoutBtn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </button>
+                    </div>
+                </div>
+                <section>
+                    <button id="refreshCompliance">Refresh Compliance</button>
+                    <table class="data-table" id="complianceTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Type</th>
+                                <th>Status</th>
+                                <th>Last Checked</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Compliance data will be loaded here -->
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+            <div id="admin_messagingPage" class="content-section">
+                <div class="header">
+                    <h2 id="pageTitle">Messaging</h2>
+                    <div class="user-info">
+                        <div>
+                            <div id="userName" style="font-weight: 600;">Admin User</div>
+                            <div id="userRole" style="font-size: 12px; color: #718096;">Super Admin</div>
+                        </div>
+                        <div class="user-avatar" id="userAvatar">
+                            <img src="assets/profile image.jpg.webp" alt="Profile" class="avatar-img">
+                        </div>
+                        <button class="logout-btn" id="logoutBtn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </button>
+                    </div>
+                </div>
+                <section>
+                    <button id="refreshMessages">Refresh Messages</button>
+                    <table class="data-table" id="messagesTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Sender</th>
+                                <th>Recipient</th>
+                                <th>Message</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Messages will be loaded here -->
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+            <div id="admin_flagged_contentPage" class="content-section">
+                <div class="header">
+                    <h2 id="pageTitle">Flagged Content</h2>
+                    <div class="user-info">
+                        <div>
+                            <div id="userName" style="font-weight: 600;">Admin User</div>
+                            <div id="userRole" style="font-size: 12px; color: #718096;">Super Admin</div>
+                        </div>
+                        <div class="user-avatar" id="userAvatar">
+                            <img src="assets/profile image.jpg.webp" alt="Profile" class="avatar-img">
+                        </div>
+                        <button class="logout-btn" id="logoutBtn">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </button>
+                    </div>
+                </div>
+                <section>
+                    <button id="refreshFlaggedContent">Refresh Flagged Content</button>
+                    <table class="data-table" id="flaggedContentTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>User</th>
+                                <th>Type</th>
+                                <th>Reason</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Flagged content will be loaded here -->
+                        </tbody>
+                    </table>
+                </section>
+            </div>
+            <!-- Admin Feature SPA Sections End -->
+        </main>
+    </div>
+
+    <!-- Detail Modal -->
+    <div id="detailModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Details</h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Load scripts in correct order -->
+    <script src="js/constants.js"></script>
+    <script src="js/api-service.js"></script>
+    <script src="js/auth-service.js"></script>
+    <script src="js/data-loader.js"></script>
+    
+    <!-- Utility Scripts -->
+    <script src="js/utils/helpers.js"></script>
+    <script src="js/utils/validators.js"></script>
+    
+    <!-- Page Scripts -->
+    <script src="js/pages/overview.js"></script>
+    <script src="js/pages/retailers.js"></script>
+    <script src="js/pages/buyers.js"></script>
+    <script src="js/pages/orders.js"></script>
+    <script src="js/pages/payments.js"></script>
+    <script src="js/pages/fees.js"></script>
+    <script src="js/pages/reports.js"></script>
+    <script src="js/pages/admins.js"></script>
+    
+    <!-- Admin Features Scripts -->
+    <script src="js/admin-features/support-tickets.js"></script>
+    <script src="js/admin-features/categories.js"></script>
+    <script src="js/admin-features/delivery-companies.js"></script>
+    <script src="js/admin-features/reviews.js"></script>
+    <script src="js/admin-features/notifications.js"></script>
+    <script src="js/admin-features/banners.js"></script>
+    <script src="js/admin-features/analytics.js"></script>
+    <script src="js/admin-features/audit-logs.js"></script>
+    <script src="js/admin-features/roles.js"></script>
+    <script src="js/admin-features/compliance.js"></script>
+    <script src="js/admin-features/messaging.js"></script>
+    <script src="js/admin-features/flagged-content.js"></script>
+    
+    <!-- Main App -->
+    <script src="js/main.js"></script>
+    <script>
+        // Initialize dashboard
+        const dashboard = new NyengoDashboard();
+
+        // --- Sidebar Active Nav Highlighting ---
+        function setActiveNavItem(page) {
+            // Remove 'active' from all nav-items
+            document.querySelectorAll('.sidebar .nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            // Add 'active' to the nav-item with matching data-page
+            if (page) {
+                const nav = document.querySelector(`.sidebar .nav-item[data-page="${page}"]`);
+                if (nav) nav.classList.add('active');
+            }
+        }
+
+        // Patch showPage to also update sidebar highlighting
+        const origShowPage = window.showPage;
+        window.showPage = function(page) {
+            if (typeof origShowPage === 'function') origShowPage(page);
+            setActiveNavItem(page);
+        };
+
+        // On initial load, highlight the default (overview) nav item
+        document.addEventListener('DOMContentLoaded', function() {
+            setActiveNavItem('overview');
+        });
+
+        // SPA section activation logic
+        function showPage(page) {
+            // Hide all content sections
+            document.querySelectorAll('.content-section').forEach(function(section) {
+                section.classList.remove('active');
+            });
+            
+            // Show the selected section
+            var pageId = page + 'Page';
+            var section = document.getElementById(pageId);
+            if (section) {
+                section.classList.add('active');
+                
+                // Initialize regular pages
+                if (page === 'overview' && typeof overviewPage !== 'undefined') {
+                    overviewPage.init();
+                }
+                else if (page === 'retailers' && typeof retailersPage !== 'undefined') {
+                    retailersPage.init();
+                }
+                else if (page === 'buyers' && typeof buyersPage !== 'undefined') {
+                    buyersPage.init();
+                }
+                else if (page === 'orders' && typeof ordersPage !== 'undefined') {
+                    ordersPage.init();
+                }
+                else if (page === 'payments' && typeof paymentsPage !== 'undefined') {
+                    paymentsPage.init();
+                }
+                else if (page === 'fees' && typeof feesPage !== 'undefined') {
+                    feesPage.init();
+                }
+                else if (page === 'reports' && typeof reportsPage !== 'undefined') {
+                    reportsPage.init();
+                }
+                else if (page === 'admins' && typeof adminsPage !== 'undefined') {
+                    adminsPage.init();
+                }
+                
+                // Initialize admin features
+                else if (page === 'admin_support_tickets' && typeof supportTicketsFeature !== 'undefined') {
+                    supportTicketsFeature.init();
+                }
+                else if (page === 'admin_categories' && typeof categoriesFeature !== 'undefined') {
+                    categoriesFeature.init();
+                }
+                else if (page === 'admin_delivery_companies' && typeof deliveryCompaniesFeature !== 'undefined') {
+                    deliveryCompaniesFeature.init();
+                }
+                else if (page === 'admin_reviews' && typeof reviewsFeature !== 'undefined') {
+                    reviewsFeature.init();
+                }
+                else if (page === 'admin_notifications' && typeof notificationsFeature !== 'undefined') {
+                    notificationsFeature.init();
+                }
+                else if (page === 'admin_banners' && typeof bannersFeature !== 'undefined') {
+                    bannersFeature.init();
+                }
+                else if (page === 'admin_analytics' && typeof analyticsFeature !== 'undefined') {
+                    analyticsFeature.init();
+                }
+                else if (page === 'admin_audit_logs' && typeof auditLogsFeature !== 'undefined') {
+                    auditLogsFeature.init();
+                }
+                else if (page === 'admin_roles' && typeof rolesFeature !== 'undefined') {
+                    rolesFeature.init();
+                }
+                else if (page === 'admin_compliance' && typeof complianceFeature !== 'undefined') {
+                    complianceFeature.init();
+                }
+                else if (page === 'admin_messaging' && typeof messagingFeature !== 'undefined') {
+                    messagingFeature.init();
+                }
+                else if (page === 'admin_flagged_content' && typeof flaggedContentFeature !== 'undefined') {
+                    flaggedContentFeature.init();
+                }
+            }
+            
+            // Update page title based on page
+            var titles = {
+                'overview': 'Dashboard Overview',
+                'retailers': 'Retailer Management',
+                'buyers': 'Buyer Analytics',
+                'orders': 'Orders & Delivery',
+                'payments': 'Payment Management',
+                'fees': 'Service Fee Management',
+                'reports': 'Reports & Analytics',
+                'admins': 'Admin Users Management',
+                'admin_support_tickets': 'Support Ticket Management',
+                'admin_categories': 'Category Management',
+                'admin_delivery_companies': 'Delivery Companies Management',
+                'admin_reviews': 'Reviews Management',
+                'admin_notifications': 'Notifications Management',
+                'admin_banners': 'Banners Management',
+                'admin_analytics': 'Analytics',
+                'admin_audit_logs': 'Audit Logs',
+                'admin_roles': 'Roles Management',
+                'admin_compliance': 'Compliance Management',
+                'admin_messaging': 'Messaging',
+                'admin_flagged_content': 'Flagged Content'
+            };
+            
+            var pageTitleEl = document.getElementById('pageTitle');
+            if (pageTitleEl && titles[page]) {
+                pageTitleEl.textContent = titles[page];
+            }
+        }
+    </script>
+</body>
+</html>

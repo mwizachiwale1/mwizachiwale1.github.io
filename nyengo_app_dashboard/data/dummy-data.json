@@ -1,0 +1,128 @@
+{
+  "retailers": [
+    {
+      "id": "1",
+      "name": "TechMart Electronics",
+      "owner": "John Banda",
+      "city": "Lilongwe",
+      "salesMTD": 450000,
+      "ordersMTD": 45,
+      "products": 120,
+      "tier": "platinum",
+      "subscriptionPaid": true
+    },
+    {
+      "id": "2",
+      "name": "Fashion Hub",
+      "owner": "Mary Phiri",
+      "city": "Blantyre",
+      "salesMTD": 320000,
+      "ordersMTD": 38,
+      "products": 95,
+      "tier": "gold",
+      "subscriptionPaid": true
+    },
+    {
+      "id": "3",
+      "name": "HomeStyle Furniture",
+      "owner": "Peter Mwale",
+      "city": "Lilongwe",
+      "salesMTD": 280000,
+      "ordersMTD": 22,
+      "products": 67,
+      "tier": "gold",
+      "subscriptionPaid": true
+    },
+    {
+      "id": "4",
+      "name": "Fresh Foods Store",
+      "owner": "Grace Tembo",
+      "city": "Mzuzu",
+      "salesMTD": 190000,
+      "ordersMTD": 56,
+      "products": 145,
+      "tier": "silver",
+      "subscriptionPaid": true
+    },
+    {
+      "id": "5",
+      "name": "Sports World",
+      "owner": "James Kachaje",
+      "city": "Blantyre",
+      "salesMTD": 150000,
+      "ordersMTD": 18,
+      "products": 78,
+      "tier": "silver",
+      "subscriptionPaid": true
+    }
+  ],
+  "orders": [
+    {
+      "id": "ORD_001",
+      "buyer": "Sarah Moyo",
+      "amount": 45000,
+      "payment": "mpamba",
+      "deliveryStatus": "delivered",
+      "courier": "Mike Banda - ABC 123",
+      "orderedAt": "2025-11-23 10:30",
+      "deliveryAddress": "Area 25, Lilongwe",
+      "courierPhone": "+265999111222"
+    },
+    {
+      "id": "ORD_002",
+      "buyer": "Patrick Lungu",
+      "amount": 23000,
+      "payment": "airtel",
+      "deliveryStatus": "assigned",
+      "courier": "Joseph Chisi - XYZ 456",
+      "orderedAt": "2025-11-23 11:45",
+      "deliveryAddress": "Limbe, Blantyre",
+      "courierPhone": "+265888333444"
+    },
+    {
+      "id": "ORD_003",
+      "buyer": "Linda Mvula",
+      "amount": 67000,
+      "payment": "bank",
+      "deliveryStatus": "delivered",
+      "courier": "Frank Mbewe - DEF 789",
+      "orderedAt": "2025-11-23 09:15",
+      "deliveryAddress": "Mzimba, Mzuzu",
+      "courierPhone": "+265999555666"
+    },
+    {
+      "id": "ORD_004",
+      "buyer": "George Nyirenda",
+      "amount": 12000,
+      "payment": "mpamba",
+      "deliveryStatus": "pending",
+      "courier": "Not assigned",
+      "orderedAt": "2025-11-23 14:20",
+      "deliveryAddress": "Area 47, Lilongwe",
+      "courierPhone": "-"
+    }
+  ],
+  "fees": [
+    {
+      "id": "1",
+      "name": "Retailer Registration Fee",
+      "amount": 1000,
+      "lastModified": "2025-11-15",
+      "modifiedBy": "Louis Chipofya"
+    },
+    {
+      "id": "2",
+      "name": "Monthly Service Fee",
+      "amount": 5000,
+      "lastModified": "2025-11-15",
+      "modifiedBy": "Louis Chipofya"
+    },
+    {
+      "id": "3",
+      "name": "Chat Service Fee",
+      "amount": 100,
+      "lastModified": "2025-11-15",
+      "modifiedBy": "Louis Chipofya"
+    }
+  ]
+}
